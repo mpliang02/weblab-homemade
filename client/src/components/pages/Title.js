@@ -3,7 +3,7 @@ import React, { Component, useState, useEffect } from "react";
 
 const Title = () => {
     const [font, setFont] = useState("Segoe Script");
-    const [fontsize, setFontSize] = useState("32px")
+    const [fontsize, setFontSize] = useState("36px")
 
     useEffect(() => {
         const timer = () => {
@@ -14,10 +14,10 @@ const Title = () => {
                 return "Segoe Script";
             });
             setFontSize(prevFontSize => {
-                if (prevFontSize == "32px") {
-                    return "48px";
+                if (prevFontSize == "36px") {
+                    return "42.5px";
                 }
-                return "32px";
+                return "36px";
             })
         };
         setInterval(timer, 1000/2);
