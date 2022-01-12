@@ -46,12 +46,19 @@ button {
     width: 25%;
     display: flex;
     justify-content: center;
-    font-family: "Segoe Script";
+    align-items: center;
+    font-family: "Lucida Sans";
     background-color: black;
     color: white;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 21px;
+    padding: 6px;
+    height: 42px;
 }
+
+/*button span {
+    font-size: 14px;
+}*/
 
 button:hover {
     cursor: pointer;
@@ -60,4 +67,8 @@ button:hover {
 
 button:active {
     background-color: #333;
+}
+
+button img {
+    height: 100%;
 }

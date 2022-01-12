@@ -19,7 +19,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
             <GoogleLogout
               clientId={GOOGLE_CLIENT_ID}
               render={renderProps => (
-                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>Logout</button>
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}><img src="/googlelogo.png"></img>&nbsp;&nbsp;logout</button>
               )}          
               buttonText="Logout"
               onLogoutSuccess={handleLogout}
@@ -29,7 +29,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
             <GoogleLogin
               clientId={GOOGLE_CLIENT_ID}
               render={renderProps => (
-                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>Login with Google</button>
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}><img src="/googlelogo.png"></img>&nbsp;&nbsp;login&nbsp;<span>w/ Google</span></button>
               )}          
               buttonText="Login"
               onSuccess={handleLogin}

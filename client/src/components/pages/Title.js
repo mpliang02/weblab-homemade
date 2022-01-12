@@ -3,21 +3,28 @@ import React, { Component, useState, useEffect } from "react";
 
 const Title = () => {
     const [font, setFont] = useState("Segoe Script");
-    const [fontsize, setFontSize] = useState("36px")
+    const [fontsize, setFontSize] = useState("44px")
+    const [padding, setPadding] = useState("0px");
 
     useEffect(() => {
         const timer = () => {
             setFont(prevFont => {
                 if (prevFont == "Segoe Script") {
-                    return "Arial";
+                    return "Lucida Handwriting";
                 }
                 return "Segoe Script";
             });
             setFontSize(prevFontSize => {
-                if (prevFontSize == "36px") {
-                    return "42.5px";
+                if (prevFontSize == "44px") {
+                    return "40px";
                 }
-                return "36px";
+                return "44px";
+            });
+            setPadding(prevPad => {
+                if (prevPad == "0px") {
+                    return "10px";
+                }
+                return "0px";
             })
         };
         setInterval(timer, 1000/2);
@@ -27,7 +34,9 @@ const Title = () => {
 
     const titleStyle = {
         "font-family" : font,
-        "font-size" : fontsize
+        "font-size" : fontsize,
+        "padding-top" : padding,
+        "padding-bottom" : padding
     }
     return (
         <>
