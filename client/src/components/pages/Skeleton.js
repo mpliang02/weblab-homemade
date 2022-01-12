@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
+import Title from "./Title.js"
 
 import "../../utilities.css";
 import "./Skeleton.css";
@@ -12,9 +13,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
     <>
       <div id="homepage">
-        <div id="title">
-          <h1>homemade</h1>
-        </div>
+        <Title />
         <div id="googlelogin" >
           {userId ? (
             <GoogleLogout
