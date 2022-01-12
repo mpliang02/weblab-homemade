@@ -72,3 +72,16 @@ button:active {
 button img {
     height: 100%;
 }
+
+#welcome {
+    height: auto;
+    font-family: "Lucida Sans";
+    padding-left: 10px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#welcome span {
+    color: green;
+}

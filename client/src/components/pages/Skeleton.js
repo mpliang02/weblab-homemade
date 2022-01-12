@@ -9,9 +9,16 @@ const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.goo
 //TODO separate out this skeleton stuff into different files
 //<img src="/homemade.png" id="homemade" alt="homemade"></img>
 //
-const Skeleton = ({ userId, handleLogin, handleLogout }) => {
+const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
   return (
     <>
+      <div id="welcome">
+        {name ? (
+          <p>you are currently logged in as <span>{name}</span>.</p>
+        ) : (
+          <p>you are not logged in.</p>
+        )}
+      </div>
       <div id="homepage">
         <Title />
         <div id="googlelogin" >
