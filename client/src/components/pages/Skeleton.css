@@ -1,1 +1,52 @@
-/* Fill me in :) */
+html, body, #root, Router, Skeleton {
+    width: 100%;
+    height: 100%;
+    background-color: #fbf7f5;
+}
+
+div {
+    height: 100%;
+}
+
+#homepage div {
+    height: auto;
+}
+
+#homepage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#googlelogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe Script";
+    height: auto;
+    font-size: 32px;
+}
+
+#homemade {
+    width: 25%
+}
+
+button {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    font-family: "Segoe Script";
+    background-color: black;
+    color: white;
+}
