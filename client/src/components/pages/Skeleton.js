@@ -1,46 +1,50 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
+import Title from "./Title.js"
 
 import "../../utilities.css";
 import "./Skeleton.css";
 
-//TODO: REPLACE WITH YOUR OWN CLIENT_ID
 const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.googleusercontent.com";
-
-const Skeleton = ({ userId, handleLogin, handleLogout }) => {
+//TODO separate out this skeleton stuff into different files
+//<img src="/homemade.png" id="homemade" alt="homemade"></img>
+//
+const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
   return (
     <>
-      {userId ? (
-        <GoogleLogout
-          clientId={GOOGLE_CLIENT_ID}
-          buttonText="Logout"
-          onLogoutSuccess={handleLogout}
-          onFailure={(err) => console.log(err)}
-        />
-      ) : (
-        <GoogleLogin
-          clientId={GOOGLE_CLIENT_ID}
-          buttonText="Login"
-          onSuccess={handleLogin}
-          onFailure={(err) => console.log(err)}
-        />
-      )}
-      <h1>Good luck on your project :)</h1>
-      <h2> What you need to change in this skeleton</h2>
-      <ul>
-        <li>
-          Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at
-          http://weblab.to/clientid)
-        </li>
-        <li>Change the Server CLIENT_ID to the same CLIENT_ID (auth.js)</li>
-        <li>
-          Change the Database SRV (mongoConnectionURL) for Atlas (server.js). You got this in the
-          MongoDB setup.
-        </li>
-        <li>Change the Database Name for MongoDB to whatever you put in the SRV (server.js)</li>
-      </ul>
-      <h2>How to go from this skeleton to our actual app</h2>
-      <a href="http://weblab.to/get-started">Check out this getting started guide</a>
+      <div id="welcome">
+        {name ? (
+          <p>you are currently logged in as <span>{name}</span>.</p>
+        ) : (
+          <p>you are not logged in.</p>
+        )}
+      </div>
+      <div id="homepage">
+        <Title />
+        <div id="googlelogin" >
+          {userId ? (
+            <GoogleLogout
+              clientId={GOOGLE_CLIENT_ID}
+              render={renderProps => (
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}><img src="/googlelogo.png"></img>&nbsp;&nbsp;logout</button>
+              )}          
+              buttonText="Logout"
+              onLogoutSuccess={handleLogout}
+              onFailure={(err) => console.log(err)}
+            />
+          ) : (
+            <GoogleLogin
+              clientId={GOOGLE_CLIENT_ID}
+              render={renderProps => (
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}><img src="/googlelogo.png"></img>&nbsp;&nbsp;login&nbsp;<span>w/ Google</span></button>
+              )}          
+              buttonText="Login"
+              onSuccess={handleLogin}
+              onFailure={(err) => console.log(err)}
+            />
+          )}
+        </div>
+      </div>
     </>
   );
 };
