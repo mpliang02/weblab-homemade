@@ -1,0 +1,44 @@
+.textBox {
+  border: 7px solid black;
+  width: screen;
+  height: 30%;
+  margin: 2%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.text {
+  position: absolute;
+  bottom: 22%;
+  left: 0;
+  margin: 0 auto;
+  padding: 2%;
+  padding-left: 20%;
+  font-size: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  word-break: break-word;
+  animation: typeLetter 3s steps(90, end);
+  font-family: "Ink Free";
+}
+
+@keyframes typeLetter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.textBoxImage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 3%;
+  padding-left: 3.7%;
+  width: 15%;
+  height: auto;
+}
