@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
-import Title from "./Title.js"
+import Title from "./Title.js";
+import "./homepage css.css";
 
 import "../../utilities.css";
 import "./Skeleton.css";
@@ -14,20 +15,24 @@ const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
     <>
       <div id="welcome">
         {name ? (
-          <p>you are currently logged in as <span>{name}</span>.</p>
+          <p>
+            you are currently logged in as <span>{name}</span>.
+          </p>
         ) : (
           <p>you are not logged in.</p>
         )}
       </div>
       <div id="homepage">
         <Title />
-        <div id="googlelogin" >
+        <div id="googlelogin">
           {userId ? (
             <GoogleLogout
               clientId={GOOGLE_CLIENT_ID}
-              render={renderProps => (
-                <button onClick={renderProps.onClick} disabled={renderProps.disabled}><img src="/googlelogo.png"></img>&nbsp;&nbsp;logout</button>
-              )}          
+              render={(renderProps) => (
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                  <img src="/googlelogo.png"></img>&nbsp;&nbsp;logout
+                </button>
+              )}
               buttonText="Logout"
               onLogoutSuccess={handleLogout}
               onFailure={(err) => console.log(err)}
@@ -35,9 +40,15 @@ const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
           ) : (
             <GoogleLogin
               clientId={GOOGLE_CLIENT_ID}
-              render={renderProps => (
-                <button onClick={renderProps.onClick} disabled={renderProps.disabled}><img src="/googlelogo.png"></img>&nbsp;&nbsp;login&nbsp;<span>w/ Google</span></button>
-              )}          
+              render={(renderProps) => (
+                <button
+                  class="buttonPosition"
+                  onClick={renderProps.onClick}
+                  disabled={renderProps.disabled}
+                >
+                  <img src="/googlelogo.png"></img>&nbsp;&nbsp;login&nbsp;<span>w/ Google</span>
+                </button>
+              )}
               buttonText="Login"
               onSuccess={handleLogin}
               onFailure={(err) => console.log(err)}
