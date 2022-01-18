@@ -60,7 +60,28 @@ let scallion_pancakes = new Recipe({
   ingredients: ["scallions", "flour", "water", "salt", "oil"],
 });
 
+let dumplings = new Recipe({
+  dishName: "Dumplings",
+  ingredients: [
+    "flour",
+    "water",
+    "pork",
+    "cabbage",
+    "salt",
+    "scallions",
+    "soy sauce",
+    "sesame oil",
+  ],
+});
+
+let pizza = new Recipe({
+  dishName: "Pizza",
+  ingredients: ["flour", "salt", "yeast", "cheese", "tomatoes", "sugar", "basil"],
+});
+
 scallion_pancakes.save().then((dish) => console.log("Added ${dish.dishName}"));
+dumplings.save().then((dish) => console.log("Added ${dish.dishName}"));
+pizza.save().then((dish) => console.log("Added ${dish.dishName}"));
 
 // create a new express server
 const app = express();
