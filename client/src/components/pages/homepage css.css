@@ -1,11 +1,12 @@
 .homePageImage {
-  width: 75%;
+  width: 100%;
   height: auto;
   display: inline-block;
   position: relative;
+  top: 13%;
 }
 
 .buttonPosition {
   position: absolute;
-  bottom: 67%;
+  bottom: 62%;
 }
