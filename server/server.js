@@ -15,6 +15,8 @@
 
 // validator runs some basic checks to make sure you've set everything up correctly
 // this is a tool provided by staff, so you don't need to worry about it
+require("dotenv").config();
+
 const validator = require("./validator");
 validator.checkSetup();
 
@@ -32,7 +34,8 @@ const auth = require("./auth");
 const socketManager = require("./server-socket");
 
 // Server configuration below
-const mongoConnectionURL = "mongodb+srv://admin:iYkImZrhSq4DSS0V@cluster0.bnbly.mongodb.net/homemadetest?retryWrites=true&w=majority";
+const mongoConnectionURL =
+  "mongodb+srv://admin:iYkImZrhSq4DSS0V@cluster0.bnbly.mongodb.net/homemadetest?retryWrites=true&w=majority";
 const databaseName = "homemadetest";
 
 // connect to mongodb
@@ -45,6 +48,41 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(`Error connecting to MongoDB: ${err}`));
 
+const RecipeSchema = new mongoose.Schema({
+  dishName: String,
+  ingredients: [String],
+});
+
+const Recipe = mongoose.model("Recipe", RecipeSchema);
+
+let scallion_pancakes = new Recipe({
+  dishName: "Scallion Pancakes",
+  ingredients: ["scallions", "flour", "water", "salt", "oil"],
+});
+
+let dumplings = new Recipe({
+  dishName: "Dumplings",
+  ingredients: [
+    "flour",
+    "water",
+    "pork",
+    "cabbage",
+    "salt",
+    "scallions",
+    "soy sauce",
+    "sesame oil",
+  ],
+});
+
+let pizza = new Recipe({
+  dishName: "Pizza",
+  ingredients: ["flour", "salt", "yeast", "cheese", "tomatoes", "sugar", "basil"],
+});
+
+scallion_pancakes.save().then((dish) => console.log("Added ${dish.dishName}"));
+dumplings.save().then((dish) => console.log("Added ${dish.dishName}"));
+pizza.save().then((dish) => console.log("Added ${dish.dishName}"));
+
 // create a new express server
 const app = express();
 app.use(validator.checkRoutes);
@@ -55,7 +93,7 @@ app.use(express.json());
 // set up a session, which will persist login data across requests
 app.use(
   session({
-    secret: "session-secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
@@ -93,7 +131,7 @@ app.use((err, req, res, next) => {
 });
 
 // hardcode port to 3000 for now
-const port = 3000;
+const port = process.env.PORT || 3000;
 const server = http.Server(app);
 socketManager.init(server);
 
