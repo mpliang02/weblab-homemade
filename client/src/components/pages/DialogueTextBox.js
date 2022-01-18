@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Message from "./Message.js";
+import dialogueTextBox from "../../../dist/extras/Untitled_Artwork.png";
 
 import "./DialogueCSS.css";
 
@@ -35,7 +36,8 @@ const DialogueBox = ({ messages, characterName, dialogueImage }) => {
   }, []);
 
   return (
-    <div className="dialogueTextBox">
+    <div>
+      <img className="dialogueTextBox" src={dialogueTextBox}></img>
       <div className="dialogueSpeaker">{characterName}</div>
       <Message words={messages[currentDialogue].text} key={currentDialogue} />
       <img className="dialogueImage" src={dialogueImage}></img>

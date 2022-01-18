@@ -15,6 +15,8 @@
 
 // validator runs some basic checks to make sure you've set everything up correctly
 // this is a tool provided by staff, so you don't need to worry about it
+require("dotenv").config();
+
 const validator = require("./validator");
 validator.checkSetup();
 
@@ -32,7 +34,8 @@ const auth = require("./auth");
 const socketManager = require("./server-socket");
 
 // Server configuration below
-const mongoConnectionURL = "mongodb+srv://admin:iYkImZrhSq4DSS0V@cluster0.bnbly.mongodb.net/homemadetest?retryWrites=true&w=majority";
+const mongoConnectionURL =
+  "mongodb+srv://admin:iYkImZrhSq4DSS0V@cluster0.bnbly.mongodb.net/homemadetest?retryWrites=true&w=majority";
 const databaseName = "homemadetest";
 
 // connect to mongodb
@@ -55,7 +58,7 @@ app.use(express.json());
 // set up a session, which will persist login data across requests
 app.use(
   session({
-    secret: "session-secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
@@ -93,7 +96,7 @@ app.use((err, req, res, next) => {
 });
 
 // hardcode port to 3000 for now
-const port = 3000;
+const port = process.env.PORT || 3000;
 const server = http.Server(app);
 socketManager.init(server);
 

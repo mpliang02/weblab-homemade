@@ -1,13 +1,11 @@
 .dialogueTextBox {
-  border: 7px solid black;
-  width: 65%;
-  height: 30%;
-  margin: 1.5%;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #836953;
+  margin: 1.5%;
+  width: 65%;
+  height: 35%;
 }
 
 .yesNoBox {
@@ -19,11 +17,10 @@
 
 .dialogueText {
   position: absolute;
-  left: 0;
   margin: 0 auto;
   padding: 2%;
-  top: 25%;
-  padding-left: 25%;
+  padding-left: 19%;
+  top: 70%;
   font-size: 175%;
   white-space: nowrap;
   overflow: hidden;
@@ -42,11 +39,11 @@
 }
 
 .dialogueSpeaker {
-  font-size: 300%;
+  font-size: 250%;
   font-family: "Ink Free";
-  padding-left: 25%;
+  top: 67.5%;
+  padding-left: 19%;
   position: absolute;
-  top: 5%;
 }
 
 .dialogueEnder {
@@ -61,7 +58,9 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 25%;
+  padding-left: 1.5%;
+  margin: 4.3%;
+  width: 13%;
   height: auto;
 }
 
