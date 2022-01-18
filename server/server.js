@@ -48,6 +48,20 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(`Error connecting to MongoDB: ${err}`));
 
+const RecipeSchema = new mongoose.Schema({
+  dishName: String,
+  ingredients: [String],
+});
+
+const Recipe = mongoose.model("Recipe", RecipeSchema);
+
+let scallion_pancakes = new Recipe({
+  dishName: "Scallion Pancakes",
+  ingredients: ["scallions", "flour", "water", "salt", "oil"],
+});
+
+scallion_pancakes.save().then((dish) => console.log("Added ${dish.dishName}"));
+
 // create a new express server
 const app = express();
 app.use(validator.checkRoutes);
