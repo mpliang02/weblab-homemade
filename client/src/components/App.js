@@ -36,11 +36,11 @@ const App = () => {
     });
   }, []);
 
-  const toIngredients = () => {
+  /*const toIngredients = () => {
     let path = `/ingredients`;
     history.push(path);
     alert("hi");
-  };
+  };*/
 
   const handleLogin = (res) => {
     console.log(`Logged in as ${res.profileObj.name}`);
@@ -50,7 +50,7 @@ const App = () => {
       setName(user.name);
       post("/api/initsocket", { socketid: socket.id });
     });
-    toIngredients();
+    //toIngredients();
   };
 
   const handleLogout = () => {
