@@ -36,11 +36,11 @@ const App = () => {
     });
   }, []);
 
-  const toIngredients = () =>{ 
-    let path = `/ingredients`; 
+  const toIngredients = () => {
+    let path = `/ingredients`;
     history.push(path);
     alert("hi");
-  }
+  };
 
   const handleLogin = (res) => {
     console.log(`Logged in as ${res.profileObj.name}`);
@@ -70,7 +70,11 @@ const App = () => {
           name={name}
         />
         <Ingredients path="/ingredients" userId={userId} handleLogout={handleLogout} />
-        <Game path="/game/:ing1/:ing2/:ing3/:ing4/:ing5" userId={userId} handleLogout={handleLogout} />
+        <Game
+          path="/game/:ing1/:ing2/:ing3/:ing4/:ing5"
+          userId={userId}
+          handleLogout={handleLogout}
+        />
         <LotlDialogue path="/lotl-dialogue" />
         <TigerDialogue path="/tiger-dialogue" />
         <MargainDialogue path="/margain-dialogue" />

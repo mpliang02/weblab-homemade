@@ -3,7 +3,7 @@ import GoogleLogin, { GoogleLogout } from "react-google-login";
 import Title from "./Title.js";
 //import  { Redirect, useHistory } from 'react-router-dom';
 // import {browserHistory} from 'react-router'
-import {  Redirect } from "@reach/router";
+import { Redirect } from "@reach/router";
 
 import "./homepage css.css";
 
@@ -16,12 +16,11 @@ const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.goo
 //
 
 const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
-
   //const [login, setLogin] = useState(false);
 
   if (userId) {
     //alert("hi");
-    return <Redirect to='/ingredients/' />
+    return <Redirect to="/ingredients/" />;
     //return browserHistory.push('/ingredients');
   }
 
@@ -35,6 +34,9 @@ const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
         ) : (
           <p>you are not logged in.</p>
         )}
+
+        {/* not routing within react */}
+        <a href="/running-game">Go to running game</a>
       </div>
       <div id="homepage">
         <Title />
