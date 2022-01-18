@@ -1,0 +1,79 @@
+#wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#recipes {
+    width: 90%;
+    height: 100%;/*
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;*/
+    padding-left: 3%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+}
+
+input {
+    height: 40px;
+    width: 50%;
+    background: rgba(255, 165, 0, 0.0);
+    border: none;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    font-size: 24px;
+    font-family: "Lucida Sans";
+    transition: height 0.5s;
+}
+
+input:focus {
+    outline: none;
+    height: 60px;
+}
+
+#wrapper button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lucida Sans";
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 21px;
+    padding: 6px;
+    height: 42px;
+}
+
+#submitbtn {
+    padding-top: 50px;
+}
+
+#submitbtn button {
+    width: 25%;
+}
+
+.ingredient {
+    height: 40px;
+    padding: 20px 0px 20px 0px;
+    transition: height 0.5s;
+}
+
+.ingredient:focus-within {
+    height: 60px;
+}
+
+#logoutdiv {
+    padding: 10px;
+    width: 15%;
+}
+
+::selection {
+    background: pink; 
+}

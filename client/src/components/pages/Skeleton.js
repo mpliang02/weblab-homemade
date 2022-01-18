@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
-import Title from "./Title.js"
+import Title from "./Title.js";
+//import  { Redirect, useHistory } from 'react-router-dom';
+// import {browserHistory} from 'react-router'
+import {  Redirect } from "@reach/router";
+
 
 import "../../utilities.css";
 import "./Skeleton.css";
@@ -9,7 +13,17 @@ const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.goo
 //TODO separate out this skeleton stuff into different files
 //<img src="/homemade.png" id="homemade" alt="homemade"></img>
 //
+
 const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
+
+  //const [login, setLogin] = useState(false);
+
+  if (userId) {
+    //alert("hi");
+    return <Redirect to='/ingredients/' />
+    //return browserHistory.push('/ingredients');
+  }
+
   return (
     <>
       <div id="welcome">
@@ -27,7 +41,7 @@ const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
               clientId={GOOGLE_CLIENT_ID}
               render={renderProps => (
                 <button onClick={renderProps.onClick} disabled={renderProps.disabled}><img src="/googlelogo.png"></img>&nbsp;&nbsp;logout</button>
-              )}          
+              )}
               buttonText="Logout"
               onLogoutSuccess={handleLogout}
               onFailure={(err) => console.log(err)}
