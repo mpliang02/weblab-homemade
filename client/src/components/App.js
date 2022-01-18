@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
-import ExampleGame from "./pages/ExampleGame.js";
+import LotlDialogue from "./pages/LotlDialogue.js";
+import TigerDialogue from "./pages/TigerDialogue.js";
+import MargainDialogue from "./pages/MargainDialogue.js";
+import PheeshDialogue from "./pages/PheeshDialogue.js";
+import EmptyHouseDialogue from "./pages/EmptyHouseDialogue.js";
 
 import "../utilities.css";
 
@@ -53,7 +57,11 @@ const App = () => {
           userId={userId}
           name={name}
         />
-        <ExampleGame path="/example-text" />
+        <LotlDialogue path="/lotl-dialogue" />
+        <TigerDialogue path="/tiger-dialogue" />
+        <MargainDialogue path="/margain-dialogue" />
+        <PheeshDialogue path="/pheesh-dialogue" />
+        <EmptyHouseDialogue path="/emptyhouse-dialogue" />
         <NotFound default />
       </Router>
     </>

@@ -1,27 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Message from "./Message.js";
-import lotlhead1 from "../../../dist/extras/lotlhead1.png";
 
 import "./DialogueCSS.css";
 
-const DialogueBox = ({ messages }) => {
+const DialogueBox = ({ messages, characterName, dialogueImage }) => {
   const [currentDialogue, setCurrentDialogue] = useState(0);
-  const handleClick = () => {
-    if (currentDialogue < messages.length - 1) {
-      setCurrentDialogue(currentDialogue + 1);
-    } else {
-      setCurrentDialogue(0);
-    }
-  };
+  useEffect(() => {
+    window.addEventListener("keydown", (event) => {
+      setCurrentDialogue((previousDialogue) => {
+        if (messages[previousDialogue].type === "normal") {
+          if (event.key === "Enter") {
+            if (previousDialogue + messages[previousDialogue].nextLine < messages.length - 1)
+              return previousDialogue + messages[previousDialogue].nextLine;
+            else {
+              return previousDialogue;
+            }
+          }
+        } else {
+          if (event.key === "ArrowUp") {
+            if (previousDialogue + messages[previousDialogue].yes < messages.length - 1)
+              return previousDialogue + messages[previousDialogue].yes;
+            else {
+              return previousDialogue;
+            }
+          } else if (event.key === "ArrowDown") {
+            if (previousDialogue + messages[previousDialogue].no < messages.length)
+              return previousDialogue + messages[previousDialogue].no;
+          }
+        }
+        return previousDialogue;
+      });
+    });
+  }, []);
+
   return (
     <div className="dialogueTextBox">
-      <div className="dialogueSpeaker">Ms. Lotl</div>
-      <Message words={messages[currentDialogue]} key={currentDialogue} />
-      <img className="dialogueImage" src={lotlhead1}></img>
-      <button onClick={handleClick} className="dialogueEnder">
-        OK
-      </button>
+      <div className="dialogueSpeaker">{characterName}</div>
+      <Message words={messages[currentDialogue].text} key={currentDialogue} />
+      <img className="dialogueImage" src={dialogueImage}></img>
     </div>
   );
 };

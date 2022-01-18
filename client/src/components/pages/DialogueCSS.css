@@ -10,6 +10,13 @@
   background-color: #836953;
 }
 
+.yesNoBox {
+  border: 7px solid black;
+  width: 15%;
+  height: 15%;
+  background-color: #836953;
+}
+
 .dialogueText {
   position: absolute;
   left: 0;
@@ -17,7 +24,7 @@
   padding: 2%;
   top: 25%;
   padding-left: 25%;
-  font-size: 200%;
+  font-size: 175%;
   white-space: nowrap;
   overflow: hidden;
   word-break: break-word;
