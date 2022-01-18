@@ -7,6 +7,7 @@ import TigerDialogue from "./pages/TigerDialogue.js";
 import MargainDialogue from "./pages/MargainDialogue.js";
 import PheeshDialogue from "./pages/PheeshDialogue.js";
 import EmptyHouseDialogue from "./pages/EmptyHouseDialogue.js";
+// import RunningGame from "./pages/running game/RunningGame.js";
 
 import "../utilities.css";
 
@@ -62,6 +63,7 @@ const App = () => {
         <MargainDialogue path="/margain-dialogue" />
         <PheeshDialogue path="/pheesh-dialogue" />
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
+        {/* <RunningGame path="/running-game" /> */}
         <NotFound default />
       </Router>
     </>
