@@ -212,3 +212,5 @@ socketManager.init(server);
 server.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
+
+modules.export = Recipe;
