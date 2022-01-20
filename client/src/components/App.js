@@ -27,6 +27,7 @@ const App = () => {
   const [userId, setUserId] = useState(undefined);
   const [name, setName] = useState(undefined);
   const [firstName, setFirstName] = useState(undefined);
+  //const [userInfo, setUserInfo] = useState(undefined);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -35,6 +36,7 @@ const App = () => {
         setUserId(user._id);
         setName(user.name);
         setFirstName(user.givenName);
+        //setUserInfo(user);
       }
     });
   }, []);
@@ -52,6 +54,7 @@ const App = () => {
       setUserId(user._id);
       setName(user.name);
       setFirstName(user.givenName);
+      //setUserInfo(user);
       post("/api/initsocket", { socketid: socket.id });
     });
     //toIngredients();
@@ -61,6 +64,7 @@ const App = () => {
     setUserId(undefined);
     setName(undefined);
     setFirstName(undefined);
+    //setUserInfo(undefined);
     post("/api/logout");
   };
 
