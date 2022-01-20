@@ -38,6 +38,7 @@ const App = () => {
         setName(user.name);
         setFirstName(user.givenName);
         //setUserInfo(user);
+        console.log(user);
       }
     });
   }, []);
