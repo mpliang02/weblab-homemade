@@ -15,6 +15,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
   const [ing3, setIng3] = useState("");
   const [ing4, setIng4] = useState("");
   const [ing5, setIng5] = useState("");
+  const [recipeName, setRecipeName] = useState("");
   const [sub, setSub] = useState(false);
   const [notebook, setNotebook] = useState(false);
 
@@ -45,8 +46,11 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
       const dish = matchRecipe(recipeObjs);
       if (dish !== null) {
         console.log("success", dish);
+        setRecipeName(dish);
+        setSub(true);
       } else {
         console.log("invalid", dish);
+        alert("invalid dish!  try again")
       }
     });
     //alert(firstName);
@@ -55,7 +59,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     //return <Redirect to='/game' />
     //alert("hi bestie")
     //TODO: add to notebook
-    setSub(true);
+    //setSub(true);
   };
 
   const matchRecipe = (recipeObjs) => {
@@ -68,7 +72,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     // } else {
     //   console.log("false");
     // }
-    const userIngredients = [`${ing1}`, `${ing2}`, `${ing3}`, `${ing4}`, `${ing5}`];
+    const userIngredients = [`${ing1}`, `${ing2}`, `${ing3}`, `${ing4}`, `${ing5}`, `${recipeName}`];
     console.log(userIngredients);
     for (const recipe of recipeObjs) {
       let counter = 0;
@@ -93,7 +97,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     //return <Redirect to={{ pathname: '/game', ing1:  {ing1} , ing2: {ing2}, ing3: {ing3}, ing4: {ing4}, ing5: {ing5}}} />
     //return <Redirect to='/game' />
     //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
-    return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}`} />;
+    return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}/${recipeName}`} />;
   }
 
   const accessNotebook = (e) => {

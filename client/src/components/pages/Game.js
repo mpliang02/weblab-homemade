@@ -11,6 +11,8 @@ const Game = (props) => {
     const [ing3, setIng3] = useState(props.ing3 ? props.ing3 : '');
     const [ing4, setIng4] = useState(props.ing4 ? props.ing4 : '');
     const [ing5, setIng5] = useState(props.ing5 ? props.ing5 : '');
+    const [recipeName, setRecipeName] = useState(props.recipeName ? props.recipeName : '');
+    //TODO: handle if one of these doesn't exist
     return (
         <>
             <div id="gamewrapper">
@@ -20,6 +22,8 @@ const Game = (props) => {
                 <p>{ing3}</p>
                 <p>{ing4}</p>
                 <p>{ing5}</p>
+                <p>this makes the recipe:</p>
+                <p>{recipeName}</p>
             </div>
         </>
     );
