@@ -35,7 +35,7 @@ const App = () => {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
         setName(user.name);
-        setFirstName(user._givenName);
+        setFirstName(user.givenName);
         //setUserInfo(user);
       }
     });
@@ -53,7 +53,7 @@ const App = () => {
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
       setName(user.name);
-      setFirstName(user._givenName);
+      setFirstName(user.givenName);
       //setUserInfo(user);
       post("/api/initsocket", { socketid: socket.id });
     });
