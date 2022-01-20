@@ -7,7 +7,7 @@ import "./Ingredients.css";
 
 const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.googleusercontent.com";
 //ref="fdjisofdjs" onSubmit="fjdisofds"
-const Ingredients = ({userId, handleLogout}) => {
+const Ingredients = ({userId, firstName, handleLogout}) => {
     const [ing1, setIng1] = useState('');
     const [ing2, setIng2] = useState('');
     const [ing3, setIng3] = useState('');
@@ -33,6 +33,7 @@ const Ingredients = ({userId, handleLogout}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        //alert(firstName);
         //alert(`your ingredients are: ${ing1} and ${ing2} and ${ing3} and ${ing4} and ${ing5} and thats it lolz `);
         //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
         //return <Redirect to='/game' />
