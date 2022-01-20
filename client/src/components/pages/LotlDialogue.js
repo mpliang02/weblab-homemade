@@ -6,9 +6,9 @@ import lotlhead1 from "../../../dist/extras/lotlhead1.png";
 
 
 
-const LotlDialogue = ({userInfo, firstName, name}) => {
+const LotlDialogue = ({firstName, name}) => {
   const messages = [
-    { type: "normal", text: `${Object.keys(userInfo)} ${name} Hello ${firstName}! My name is Ms. Lotl. (Press ENTER to continue)`, nextLine: 1 },
+    { type: "normal", text: `${name} Hello ${firstName}! My name is Ms. Lotl. (Press ENTER to continue)`, nextLine: 1 },
     {
       type: "choice",
       text: "I heard you were making a meal! Do you need ingredients? (Press UP for yes, DOWN for no)",
