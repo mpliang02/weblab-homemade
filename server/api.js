@@ -9,6 +9,8 @@
 
 const Recipe = require("./models/recipesDB.js");
 
+const Note = require("./models/notes.js");
+
 const express = require("express");
 
 // import models so we can interact with the database
@@ -36,6 +38,22 @@ router.get("/whoami", (req, res) => {
 
 router.get("/recipes", (req, res) => {
   Recipe.find({}).then((recipes) => res.send(recipes));
+});
+
+router.get("/notes", (req, res) => {
+  const userid = req.query.userid;
+  //console.log(userid);
+  Note.find({userid}).then((notes) => res.send(notes));
+});
+
+router.post("/newnote", (req, res) => {
+  const newNote = new Note({
+    userid: req.body.userid,
+    ings: req.body.ings,
+    recipeName: req.body.recipeName,
+  });
+
+  newNote.save().then((note) => res.send(note));
 });
 
 router.post("/initsocket", (req, res) => {

@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from "react";
 import { GoogleLogout } from "react-google-login";
 import { Redirect } from "@reach/router";
 import { Notebook } from "./Notebook.js";
-import { get } from "../../utilities.js";
+import { get, post } from "../../utilities.js";
 
 import "../../utilities.css";
 import "./Ingredients.css";
@@ -48,6 +48,13 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
         console.log("success", dish);
         setRecipeName(dish);
         setSub(true);
+        post("/api/newnote", {
+            userid: userId,
+            ings: [ing1, ing2, ing3, ing4, ing5],
+            recipeName: dish,
+        }).then((note) => {
+            console.log(note);
+        });
       } else {
         console.log("invalid", dish);
         alert("invalid dish!  try again")
