@@ -81,7 +81,7 @@ const App = () => {
           handleLogout={handleLogout}
         />
         <Notebook path ="/notebook" userId={userId} />
-        <LotlDialogue path="/lotl-dialogue" firstname={firstName} />
+        <LotlDialogue path="/lotl-dialogue" firstname={firstName} name={name}/>
         <TigerDialogue path="/tiger-dialogue" firstname={firstName} />
         <MargainDialogue path="/margain-dialogue" firstname={firstName} />
         <PheeshDialogue path="/pheesh-dialogue" firstname={firstName} />
