@@ -28,6 +28,10 @@ function getOrCreateUser(user) {
       givenName: user.givenName,
     });
 
+    console.log(newUser.name);
+    console.log(newUser.givenName);
+    console.log(newUser.googleid);
+
     return newUser.save();
   });
 }

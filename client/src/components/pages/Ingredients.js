@@ -16,6 +16,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
   const [ing4, setIng4] = useState("");
   const [ing5, setIng5] = useState("");
   const [sub, setSub] = useState(false);
+  const [notebook, setNotebook] = useState(false);
 
   const [good, setGood] = useState(true);
 
@@ -76,8 +77,12 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
   }
 
   const accessNotebook = (e) => {
-    return <Redirect to="/notebook" />;
+    setNotebook(true);
   };
+
+  if (notebook) {
+    return <Redirect to="/notebook" />;
+  }
 
   return (
     <>

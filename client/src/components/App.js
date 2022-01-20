@@ -12,6 +12,7 @@ import TigerDialogue from "./pages/TigerDialogue.js";
 import MargainDialogue from "./pages/MargainDialogue.js";
 import PheeshDialogue from "./pages/PheeshDialogue.js";
 import EmptyHouseDialogue from "./pages/EmptyHouseDialogue.js";
+import Run from "./pages/run.js";
 // import RunningGame from "./pages/running game/RunningGame.js";
 
 import "../utilities.css";
@@ -37,6 +38,7 @@ const App = () => {
         setName(user.name);
         setFirstName(user.givenName);
         //setUserInfo(user);
+        console.log(user);
       }
     });
   }, []);
@@ -90,6 +92,7 @@ const App = () => {
         <MargainDialogue path="/margain-dialogue" firstname={firstName} />
         <PheeshDialogue path="/pheesh-dialogue" firstname={firstName} />
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
+        <Run path="/run" />
         {/* <RunningGame path="/running-game" /> */}
         <NotFound default />
       </Router>

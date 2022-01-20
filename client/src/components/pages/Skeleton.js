@@ -42,6 +42,7 @@ const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
         <a href="/margain-dialogue">Go to Mr. Margain's dialogue</a>
         <a href="/pheesh-dialogue">Go to Mr. Pheesh's dialogue</a>
         <a href="/emptyhouse-dialogue">Go to empty house dialogue</a>
+        <a href = "/run">Go to running game</a>
       </div>
       <div id="homepage">
         <Title />
