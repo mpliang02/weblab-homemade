@@ -40,8 +40,8 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     e.preventDefault();
     console.log("about to call api");
     get("/api/recipes").then((recipeObjs) => {
-        console.log("api called");
-        //console.log(recipeObjs);
+      console.log("api called");
+      //console.log(recipeObjs);
       const dish = matchRecipe(recipeObjs);
       if (dish !== null) {
         console.log("success", dish);
