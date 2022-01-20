@@ -22,7 +22,12 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
 
   useEffect(() => {
     get("/api/recipes").then((recipeObjs) => {
-      checkIfValid(recipeObjs);
+      const dish = matchRecipe(recipeObjs);
+      if (dish !== null) {
+        console.log("success", dish);
+      } else {
+        console.log("invalid");
+      }
     });
   }, []);
 
@@ -53,16 +58,30 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     setSub(true);
   };
 
-  const checkIfValid = (recipeObjs) => {
+  const matchRecipe = (recipeObjs) => {
     // look at objects and check
-    let ingredientsList = recipeObjs.ingredients;
-    let userList = [`${ing1}`, `${ing2}`, `${ing3}`, `${ing4}`, `${ing5}`];
-    let matchedRecipes = ingredientsList.filter((recipe) => recipe.includes(userList));
-    if (matchedRecipes.length > 0) {
-      console.log("valid");
-    } else {
-      console.log("false");
+    // let ingredientsList = recipeObjs.ingredients;
+    // let userList = [`${ing1}`, `${ing2}`, `${ing3}`, `${ing4}`, `${ing5}`];
+    // let matchedRecipes = ingredientsList.filter((recipe) => recipe.includes(userList));
+    // if (matchedRecipes.length > 0) {
+    //   console.log("valid");
+    // } else {
+    //   console.log("false");
+    // }
+    const userIngredients = [`${ing1}`, `${ing2}`, `${ing3}`, `${ing4}`, `${ing5}`];
+    for (const recipe of recipeObjs) {
+      let counter = 0;
+      const ingredients = recipe.ingredients;
+      for (const ing of ingredients) {
+        if (userIngredients.includes(ing)) {
+          counter++;
+        }
+      }
+      if (counter === 5) {
+        return recipe.dishName;
+      }
     }
+    return null;
   };
 
   if (!userId) {

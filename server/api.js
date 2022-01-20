@@ -33,6 +33,7 @@ router.get("/whoami", (req, res) => {
 
   res.send(req.user);
 });
+
 router.get("/recipes", (req, res) => {
   Recipe.find({}).then((recipes) => res.send(recipes));
 });
