@@ -7,6 +7,8 @@
 |
 */
 
+const Recipe = require("./models/recipesDB.js");
+
 const express = require("express");
 
 // import models so we can interact with the database
@@ -31,10 +33,14 @@ router.get("/whoami", (req, res) => {
 
   res.send(req.user);
 });
+router.get("/recipes", (req, res) => {
+  Recipe.find({}).then((recipes) => res.send(recipes));
+});
 
 router.post("/initsocket", (req, res) => {
   // do nothing if user not logged in
-  if (req.user) socketManager.addUser(req.user, socketManager.getSocketFromSocketID(req.body.socketid));
+  if (req.user)
+    socketManager.addUser(req.user, socketManager.getSocketFromSocketID(req.body.socketid));
   res.send({});
 });
 

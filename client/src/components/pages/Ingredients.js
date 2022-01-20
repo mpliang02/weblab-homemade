@@ -1,13 +1,11 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { GoogleLogout } from "react-google-login";
 import { Redirect } from "@reach/router";
 import { Notebook } from "./Notebook.js";
-// import { RecipeSchema } from "../../../../server/server.js";
+import { get } from "../../utilities.js";
 
 import "../../utilities.css";
 import "./Ingredients.css";
-
-var Recipe = require("recipesDB");
 
 const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.googleusercontent.com";
 //ref="fdjisofdjs" onSubmit="fjdisofds"
@@ -18,6 +16,14 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
   const [ing4, setIng4] = useState("");
   const [ing5, setIng5] = useState("");
   const [sub, setSub] = useState(false);
+
+  const [good, setGood] = useState(true);
+
+  useEffect(() => {
+    get("/api/recipes").then((recipeObjs) => {
+      checkIfValid(recipeObjs);
+    });
+  }, []);
 
   const handleIng1Change = (e) => {
     setIng1(e.target.value);
@@ -44,6 +50,18 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     //alert("hi bestie")
     //TODO: add to notebook
     setSub(true);
+  };
+
+  const checkIfValid = (recipeObjs) => {
+    // look at objects and check
+    let ingredientsList = recipeObjs.ingredients;
+    let userList = [`${ing1}`, `${ing2}`, `${ing3}`, `${ing4}`, `${ing5}`];
+    let matchedRecipes = ingredientsList.filter((recipe) => recipe.includes(userList));
+    if (matchedRecipes.length > 0) {
+      console.log("valid");
+    } else {
+      console.log("false");
+    }
   };
 
   if (!userId) {
