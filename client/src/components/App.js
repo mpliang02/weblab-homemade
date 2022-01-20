@@ -89,7 +89,7 @@ const App = () => {
         />
         <Ingredients path="/ingredients" userId={userId} handleLogout={handleLogout} />
         <Game
-          path="/game/:ing1/:ing2/:ing3/:ing4/:ing5"
+          path="/game/:ing1/:ing2/:ing3/:ing4/:ing5/:recipeName"
           userId={userId}
           handleLogout={handleLogout}
         />
