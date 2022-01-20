@@ -72,7 +72,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     // } else {
     //   console.log("false");
     // }
-    const userIngredients = [`${ing1}`, `${ing2}`, `${ing3}`, `${ing4}`, `${ing5}`, `${recipeName}`];
+    const userIngredients = [`${ing1}`, `${ing2}`, `${ing3}`, `${ing4}`, `${ing5}`];
     console.log(userIngredients);
     for (const recipe of recipeObjs) {
       let counter = 0;
