@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import Ingredients from "./pages/Ingredients.js";
 import Game from "./pages/Game.js";
+import Notebook from "./pages/Notebook.js";
 import LotlDialogue from "./pages/LotlDialogue.js";
 import TigerDialogue from "./pages/TigerDialogue.js";
 import MargainDialogue from "./pages/MargainDialogue.js";
@@ -79,6 +80,7 @@ const App = () => {
           userId={userId}
           handleLogout={handleLogout}
         />
+        <Notebook path ="/notebook" userId={userId} />
         <LotlDialogue path="/lotl-dialogue" firstname={firstName} />
         <TigerDialogue path="/tiger-dialogue" firstname={firstName} />
         <MargainDialogue path="/margain-dialogue" firstname={firstName} />

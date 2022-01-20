@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import { GoogleLogout } from "react-google-login";
 import {  Redirect } from "@reach/router";
+import {Notebook} from "./Notebook.js";
 
 import "../../utilities.css";
 import "./Ingredients.css";
@@ -38,6 +39,7 @@ const Ingredients = ({userId, firstName, handleLogout}) => {
         //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
         //return <Redirect to='/game' />
         //alert("hi bestie")
+        //TODO: add to notebook
         setSub(true);
     };
 
@@ -50,6 +52,10 @@ const Ingredients = ({userId, firstName, handleLogout}) => {
         //return <Redirect to='/game' />
         //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
         return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}`} />
+    }
+
+    const accessNotebook = () => {
+        return <Redirect to="/notebook" />
     }
 
     return (
@@ -87,6 +93,7 @@ const Ingredients = ({userId, firstName, handleLogout}) => {
                         onLogoutSuccess={handleLogout}
                         onFailure={(err) => console.log(err)}
                     />
+                    <button id="notebookbtn" onClick={accessNotebook}>Notebook</button>
                 </div>
             </div>
         </>
