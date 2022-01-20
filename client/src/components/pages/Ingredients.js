@@ -57,7 +57,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}`} />;
   }
 
-  const accessNotebook = () => {
+  const accessNotebook = (e) => {
     return <Redirect to="/notebook" />;
   };
 
