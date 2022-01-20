@@ -12,7 +12,7 @@ import TigerDialogue from "./pages/TigerDialogue.js";
 import MargainDialogue from "./pages/MargainDialogue.js";
 import PheeshDialogue from "./pages/PheeshDialogue.js";
 import EmptyHouseDialogue from "./pages/EmptyHouseDialogue.js";
-// import Run from "./pages/run.js";
+//import Run from "./pages/run.js";
 // import RunningGame from "./pages/running game/RunningGame.js";
 
 import "../utilities.css";
@@ -31,14 +31,18 @@ const App = () => {
   //const [userInfo, setUserInfo] = useState(undefined);
 
   useEffect(() => {
+    console.log("jfiodsjfoidsijfdsoijfds");
     get("/api/whoami").then((user) => {
+      console.log(user);
       if (user._id) {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
         setName(user.name);
         setFirstName(user.givenName);
         //setUserInfo(user);
-        console.log(user);
+        //console.log(user);
+        //console.log(user.name);
+        //console.log(name);
       }
     });
   }, []);
@@ -56,6 +60,9 @@ const App = () => {
       setUserId(user._id);
       setName(user.name);
       setFirstName(user.givenName);
+
+      console.log("fjdsiofijsdo");
+      console.log(user);
       //setUserInfo(user);
       post("/api/initsocket", { socketid: socket.id });
     });
@@ -87,12 +94,12 @@ const App = () => {
           handleLogout={handleLogout}
         />
         <Notebook path="/notebook" userId={userId} />
-        <LotlDialogue path="/lotl-dialogue" firstname={firstName} name={name} />
-        <TigerDialogue path="/tiger-dialogue" firstname={firstName} />
-        <MargainDialogue path="/margain-dialogue" firstname={firstName} />
-        <PheeshDialogue path="/pheesh-dialogue" firstname={firstName} />
+        <LotlDialogue path="/lotl-dialogue" firstName={firstName} />
+        <TigerDialogue path="/tiger-dialogue" firstName={firstName} />
+        <MargainDialogue path="/margain-dialogue" firstName={firstName} />
+        <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} />
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
-        {/* <Run path="/run" /> */}
+        {/*<Run path="/run" />*/}
         {/* <RunningGame path="/running-game" /> */}
         <NotFound default />
       </Router>

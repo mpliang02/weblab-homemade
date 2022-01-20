@@ -19,13 +19,17 @@ function verify(token) {
 // gets user from DB, or makes a new account if it doesn't exist yet
 function getOrCreateUser(user) {
   // the "sub" field means "subject", which is a unique identifier for each user
+  //console.log("getOrCreateUser", user);
   return User.findOne({ googleid: user.sub }).then((existingUser) => {
-    if (existingUser) return existingUser;
-
+    if (existingUser) {
+      console.log("user exists");
+      return existingUser;
+    }
+    console.log("user does not exist");
     const newUser = new User({
       name: user.name,
       googleid: user.sub,
-      givenName: user.givenName,
+      givenName: user.given_name,
     });
 
     console.log(newUser.name);
