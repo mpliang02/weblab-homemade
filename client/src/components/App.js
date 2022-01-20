@@ -27,6 +27,7 @@ const App = () => {
   const [userId, setUserId] = useState(undefined);
   const [name, setName] = useState(undefined);
   const [firstName, setFirstName] = useState(undefined);
+  const [userInfo, setUserInfo] = useState(undefined);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -34,7 +35,8 @@ const App = () => {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
         setName(user.name);
-        setFirstName(user.givenName);
+        setFirstName(user._givenName);
+        setUserInfo(user);
       }
     });
   }, []);
@@ -51,7 +53,8 @@ const App = () => {
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
       setName(user.name);
-      setFirstName(user.givenName);
+      setFirstName(user._givenName);
+      setUserInfo(user);
       post("/api/initsocket", { socketid: socket.id });
     });
     //toIngredients();
@@ -61,6 +64,7 @@ const App = () => {
     setUserId(undefined);
     setName(undefined);
     setFirstName(undefined);
+    setUserInfo(undefined);
     post("/api/logout");
   };
 
@@ -81,7 +85,7 @@ const App = () => {
           handleLogout={handleLogout}
         />
         <Notebook path ="/notebook" userId={userId} />
-        <LotlDialogue path="/lotl-dialogue" firstname={firstName} name={name}/>
+        <LotlDialogue path="/lotl-dialogue" firstname={firstName} userInfo={userInfo} name={name}/>
         <TigerDialogue path="/tiger-dialogue" firstname={firstName} />
         <MargainDialogue path="/margain-dialogue" firstname={firstName} />
         <PheeshDialogue path="/pheesh-dialogue" firstname={firstName} />
