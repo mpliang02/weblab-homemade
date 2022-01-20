@@ -4,11 +4,13 @@ import React, { Component } from "react";
 import lotlbackground from "../../../dist/characters/lotl1.png";
 import lotlhead1 from "../../../dist/extras/lotlhead1.png";
 
-
-
-const LotlDialogue = ({firstName}) => {
+const LotlDialogue = ({ firstName }) => {
   const messages = [
-    { type: "normal", text: `Hello, ${firstName}! My name is Ms. Lotl. (Press ENTER to continue)`, nextLine: 1 },
+    {
+      type: "normal",
+      text: `Hello, ${firstName}! My name is Ms. Lotl. (Press ENTER to continue)`,
+      nextLine: 1,
+    },
     {
       type: "choice",
       text: "I heard you were making a meal! Do you need ingredients? (Press UP for yes, DOWN for no)",
@@ -21,7 +23,7 @@ const LotlDialogue = ({firstName}) => {
 
   return (
     <>
-      <img src={lotlbackground} class="dialogueBackground"></img>
+      <img src={lotlbackground} className="dialogueBackground"></img>
       <DialogueBox
         messages={messages}
         characterName={"Ms. Lotl"}
