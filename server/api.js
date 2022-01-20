@@ -42,6 +42,7 @@ router.get("/recipes", (req, res) => {
 
 router.get("/notes", (req, res) => {
   const userid = req.query.userid;
+  //console.log(userid);
   Note.find({userid}).then((notes) => res.send(notes));
 });
 
