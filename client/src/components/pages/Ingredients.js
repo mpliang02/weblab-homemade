@@ -20,17 +20,6 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
 
   const [good, setGood] = useState(true);
 
-  useEffect(() => {
-    get("/api/recipes").then((recipeObjs) => {
-      const dish = matchRecipe(recipeObjs);
-      if (dish !== null) {
-        console.log("success", dish);
-      } else {
-        console.log("invalid");
-      }
-    });
-  }, []);
-
   const handleIng1Change = (e) => {
     setIng1(e.target.value);
   };
@@ -49,6 +38,17 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("about to call api");
+    get("/api/recipes").then((recipeObjs) => {
+        console.log("api called");
+        //console.log(recipeObjs);
+      const dish = matchRecipe(recipeObjs);
+      if (dish !== null) {
+        console.log("success", dish);
+      } else {
+        console.log("invalid", dish);
+      }
+    });
     //alert(firstName);
     //alert(`your ingredients are: ${ing1} and ${ing2} and ${ing3} and ${ing4} and ${ing5} and thats it lolz `);
     //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
@@ -69,6 +69,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     //   console.log("false");
     // }
     const userIngredients = [`${ing1}`, `${ing2}`, `${ing3}`, `${ing4}`, `${ing5}`];
+    console.log(userIngredients);
     for (const recipe of recipeObjs) {
       let counter = 0;
       const ingredients = recipe.ingredients;
