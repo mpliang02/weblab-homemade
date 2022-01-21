@@ -13,7 +13,7 @@ const messages = [
   },
   {
     type: "choice",
-    text: "Here's the final ingredient. (Press UP for yes, DOWN for no)",
+    text: "Here's the final ingredient.",
     yes: 1,
     no: 2,
   },
