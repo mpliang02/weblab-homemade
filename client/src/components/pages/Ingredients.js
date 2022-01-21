@@ -117,7 +117,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
 
   return (
     <>
-      <div id="wrapper">
+      <div class="wrapper" id="ingwrapper">
         <div id="recipes">
           <form id="ingredient-list" onSubmit={handleSubmit}>
             <div class="ingredient">
@@ -170,7 +170,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
             </div>
           </form>
         </div>
-        <div id="logoutdiv">
+        <div class="buttonside">
           <GoogleLogout
             clientId={GOOGLE_CLIENT_ID}
             render={(renderProps) => (

@@ -93,7 +93,7 @@ const App = () => {
           userId={userId}
           handleLogout={handleLogout}
         />
-        <Notebook path="/notebook" userId={userId} />
+        <Notebook path="/notebook" userId={userId} firstName={firstName} handleLogout={handleLogout}/>
         <LotlDialogue path="/lotl-dialogue" firstName={firstName} />
         <TigerDialogue path="/tiger-dialogue" firstName={firstName} />
         <MargainDialogue path="/margain-dialogue" firstName={firstName} />

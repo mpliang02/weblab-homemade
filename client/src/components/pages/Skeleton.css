@@ -90,3 +90,24 @@ button img {
 #welcome span {
   color: green;
 }
+
+.wrapper button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Sans";
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 21px;
+  padding: 6px;
+  height: 42px;
+}
+
+.buttonside {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 150px;
+}
