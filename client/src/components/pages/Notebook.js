@@ -9,7 +9,7 @@ import "../../utilities.css";
 import "./Notebook.css";
 
 const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.googleusercontent.com";
-
+//TODO stop from adding duplicates or smth as well
 const Notebook = ({userId, firstName, handleLogout}) => {
     const [notes, setNotes] = useState([]);
 
@@ -34,8 +34,8 @@ const Notebook = ({userId, firstName, handleLogout}) => {
     //TODO: load data in from somewhere
     return (
         <>
-            <div class="wrapper">
-                <p id="ntbk">{firstName}'s Notebook</p>
+            <div class="wrapper" id="nbwrapper">
+                <p id="ntbk" class="impt">{firstName}'s Notebook</p>
                 <div id="notes" >
                     <Note notelist={notes} />
                 </div>

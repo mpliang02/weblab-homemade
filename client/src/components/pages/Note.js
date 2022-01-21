@@ -5,7 +5,17 @@ const Note = ({notelist}) => {
     return (
     <>
         {notelist.map(note => (
-            <p>Ingredients: {note.ings[0]}, {note.ings[1]}, {note.ings[2]}, {note.ings[3]}, {note.ings[4]}; Recipe: {note.recipeName}</p>
+            <>
+                <p><span class="impt">Recipe:</span> {note.recipeName}</p>
+                <p class="impt">Ingredients:</p>
+                <ul>
+                    <li>{note.ings[0]}</li>
+                    <li>{note.ings[1]}</li>
+                    <li>{note.ings[2]}</li>
+                    <li>{note.ings[3]}</li>
+                    <li>{note.ings[4]}</li>
+                </ul>
+            </>
         ))}
     </>
     );

@@ -120,6 +120,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
       <div class="wrapper" id="ingwrapper">
         <div id="recipes">
           <form id="ingredient-list" onSubmit={handleSubmit}>
+            <p>enter 5 ingredients below:</p>
             <div class="ingredient">
               <input
                 type="text"
@@ -171,20 +172,22 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
           </form>
         </div>
         <div class="buttonside">
-          <GoogleLogout
-            clientId={GOOGLE_CLIENT_ID}
-            render={(renderProps) => (
-              <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                <img src="/googlelogo.png"></img>&nbsp;&nbsp;logout
-              </button>
-            )}
-            buttonText="Logout"
-            onLogoutSuccess={handleLogout}
-            onFailure={(err) => console.log(err)}
-          />
-          <button id="notebookbtn" onClick={accessNotebook}>
-            Notebook
-          </button>
+            <div>
+                <GoogleLogout
+                    clientId={GOOGLE_CLIENT_ID}
+                    render={(renderProps) => (
+                    <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                        <img src="/googlelogo.png"></img>&nbsp;&nbsp;logout
+                    </button>
+                    )}
+                    buttonText="Logout"
+                    onLogoutSuccess={handleLogout}
+                    onFailure={(err) => console.log(err)}
+                />
+            </div>
+            <div>
+                <button id="notebookbtn" onClick={accessNotebook}>Notebook</button>
+          </div>
         </div>
       </div>
     </>

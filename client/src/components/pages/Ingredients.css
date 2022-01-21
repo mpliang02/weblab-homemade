@@ -20,9 +20,17 @@
     justify-content: flex-start;
 }
 
+#ingredient-list p {
+    font-size: 24px;
+    font-family: "Lucida Sans";
+    width: 60%;
+    text-align: left;
+    padding-top: 10px;
+}
+
 input {
     height: 40px;
-    width: 50%;
+    width: 60%;
     background: rgba(255, 165, 0, 0.0);
     border: none;
     padding: 10px;
@@ -53,11 +61,6 @@ input:focus {
 
 .ingredient:focus-within {
     height: 60px;
-}
-
-.buttonside {
-    padding: 10px;
-    width: 15%;
 }
 
 ::selection {
