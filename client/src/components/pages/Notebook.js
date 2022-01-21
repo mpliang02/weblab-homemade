@@ -48,7 +48,7 @@ const Notebook = ({userId, firstName, handleLogout}) => {
                 <div id="notes" >
                     <Note notelist={notes} />
                 </div>
-                <div class="buttonside">
+                <div class="buttonside" id="ntbkbtn">
                     <div>
                         <GoogleLogout
                             clientId={GOOGLE_CLIENT_ID}

@@ -4,10 +4,8 @@
     background-position: top center;
     font-family: "Segoe Script", "sans-serif";
     height: 100%;
-    padding: 50px;
-    padding-left: 70px;
-    padding-right: 70px;
-    column-count: 2;
+    padding: 50px 0px 0px 100px;
+    /* overflow: hidden; */
 }
 
 /* #wrapper button {
@@ -22,11 +20,17 @@
     border-radius: 21px;
     padding: 6px;
     height: 42px;
-} */
+} *//*help the way i coded this is SO janky*/
 
 #ntbk {
     font-size: 24px;
-    text-align: center;
+    text-align: left;
+    column-count: 2;
+}
+
+#notes {
+    column-count: 2;
+    height: 75%;
 }
 
 .impt {
@@ -38,3 +42,7 @@
     position: absolute;
 
 } */
+
+#ntbkbtn {
+    position: fixed;
+}
