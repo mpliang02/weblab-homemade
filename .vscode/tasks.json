@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "hotloader",
+			"problemMatcher": [],
+			"label": "npm: hotloader",
+			"detail": "webpack serve --config ./webpack.config.js --mode development --port 5000"
+		}
+	]
+}
