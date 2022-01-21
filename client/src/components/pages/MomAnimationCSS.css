@@ -1,0 +1,40 @@
+.fadeOutTransition {
+  width: auto;
+  height: 100%;
+  animation: fadeOut 6s linear forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+.fadeInTransition {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  animation: fadeIn 6s linear 20s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+    visibility: visible;
+  }
+}
+
+.fadeInOut {
+  width: auto;
+  height: 100%;
+  position: relative;
+  animation: fadeIn 6s, fadeOut 6s linear 12s forwards;
+}

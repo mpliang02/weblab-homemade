@@ -14,6 +14,7 @@ import PheeshDialogue from "./pages/PheeshDialogue.js";
 import EmptyHouseDialogue from "./pages/EmptyHouseDialogue.js";
 //import Run from "./pages/run.js";
 // import RunningGame from "./pages/running game/RunningGame.js";
+import MomAnimation from "./pages/MomAnimation.js";
 
 import "../utilities.css";
 
@@ -89,7 +90,13 @@ const App = () => {
           userId={userId}
           name={name}
         />
-        <Ingredients path="/ingredients" userId={userId} handleLogout={handleLogout} setIngs={setIngs} setRecipe={setRecipe} />
+        <Ingredients
+          path="/ingredients"
+          userId={userId}
+          handleLogout={handleLogout}
+          setIngs={setIngs}
+          setRecipe={setRecipe}
+        />
         <Game
           // path="/game/:ing1/:ing2/:ing3/:ing4/:ing5/:recipeName"
           path="/game"
@@ -98,7 +105,12 @@ const App = () => {
           userId={userId}
           handleLogout={handleLogout}
         />
-        <Notebook path="/notebook" userId={userId} firstName={firstName} handleLogout={handleLogout}/>
+        <Notebook
+          path="/notebook"
+          userId={userId}
+          firstName={firstName}
+          handleLogout={handleLogout}
+        />
         <LotlDialogue path="/lotl-dialogue" firstName={firstName} />
         <TigerDialogue path="/tiger-dialogue" firstName={firstName} />
         <MargainDialogue path="/margain-dialogue" firstName={firstName} />
@@ -106,6 +118,7 @@ const App = () => {
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
         {/*<Run path="/run" />*/}
         {/* <RunningGame path="/running-game" /> */}
+        <MomAnimation path="/end" className="fadeOutTransition"></MomAnimation>
         <NotFound default />
       </Router>
     </>
