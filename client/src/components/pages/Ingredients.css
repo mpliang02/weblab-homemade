@@ -47,6 +47,7 @@ input:focus {
 
 #submitbtn {
     padding-top: 50px;
+    height: auto;
 }
 
 #submitbtn button {

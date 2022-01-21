@@ -7,7 +7,7 @@ import Note from "./Note.js"
 
 import "../../utilities.css";
 import "./Notebook.css";
-
+//TODO: handle overflow
 const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.googleusercontent.com";
 //TODO stop from adding duplicates or smth as well
 const Notebook = ({userId, firstName, handleLogout}) => {

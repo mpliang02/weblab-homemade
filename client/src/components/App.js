@@ -28,6 +28,8 @@ const App = () => {
   const [userId, setUserId] = useState(undefined);
   const [name, setName] = useState(undefined);
   const [firstName, setFirstName] = useState(undefined);
+  const [ings, setIngs] = useState(undefined);
+  const [recipe, setRecipe] = useState(undefined);
   //const [userInfo, setUserInfo] = useState(undefined);
 
   useEffect(() => {
@@ -87,9 +89,12 @@ const App = () => {
           userId={userId}
           name={name}
         />
-        <Ingredients path="/ingredients" userId={userId} handleLogout={handleLogout} />
+        <Ingredients path="/ingredients" userId={userId} handleLogout={handleLogout} setIngs={setIngs} setRecipe={setRecipe} />
         <Game
-          path="/game/:ing1/:ing2/:ing3/:ing4/:ing5/:recipeName"
+          // path="/game/:ing1/:ing2/:ing3/:ing4/:ing5/:recipeName"
+          path="/game"
+          ings={ings}
+          recipe={recipe}
           userId={userId}
           handleLogout={handleLogout}
         />

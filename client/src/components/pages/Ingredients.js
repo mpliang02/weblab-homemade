@@ -9,7 +9,7 @@ import "./Ingredients.css";
 
 const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.googleusercontent.com";
 //ref="fdjisofdjs" onSubmit="fjdisofds"
-const Ingredients = ({ userId, firstName, handleLogout }) => {
+const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) => {
   const [ing1, setIng1] = useState("");
   const [ing2, setIng2] = useState("");
   const [ing3, setIng3] = useState("");
@@ -96,16 +96,19 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
     return null;
   };
 
-  if (!userId) {
-    return <Redirect to="/" />;
-  }
+    if (!userId) {
+        return <Redirect to="/" />;
+    }
 
-  if (sub) {
-    //return <Redirect to={{ pathname: '/game', ing1:  {ing1} , ing2: {ing2}, ing3: {ing3}, ing4: {ing4}, ing5: {ing5}}} />
-    //return <Redirect to='/game' />
-    //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
-    return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}/${recipeName}`} />;
-  }
+    if (sub) {
+        setIngs([ing1, ing2, ing3, ing4, ing5]);
+        setRecipe(recipeName);
+        //return <Redirect to={{ pathname: '/game', ing1:  {ing1} , ing2: {ing2}, ing3: {ing3}, ing4: {ing4}, ing5: {ing5}}} />
+        //return <Redirect to='/game' />
+        //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
+        //return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}/${recipeName}`} />;
+        return <Redirect to="/game" />
+    }
 
   const accessNotebook = (e) => {
     setNotebook(true);
