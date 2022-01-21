@@ -128,6 +128,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
                 onChange={handleIng1Change}
                 value={ing1}
                 placeholder="ingredient 1"
+                autoFocus
               />
             </div>
             <div class="ingredient">

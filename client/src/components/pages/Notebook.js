@@ -12,6 +12,7 @@ const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.goo
 //TODO stop from adding duplicates or smth as well
 const Notebook = ({userId, firstName, handleLogout}) => {
     const [notes, setNotes] = useState([]);
+    const [ingredients, setIngredients] = useState(false);//should we actually just access the history and go back or do this??
 
     if (!userId) {
         console.log("no user id !!!");
@@ -29,6 +30,14 @@ const Notebook = ({userId, firstName, handleLogout}) => {
         });
     }
 
+    const toIngredients = (e) => {
+        setIngredients(true);
+    }
+
+    if (ingredients) {
+        return <Redirect to="/ingredients" />
+    }
+
     //}, []);
 
     //TODO: load data in from somewhere
@@ -40,17 +49,22 @@ const Notebook = ({userId, firstName, handleLogout}) => {
                     <Note notelist={notes} />
                 </div>
                 <div class="buttonside">
-                    <GoogleLogout
-                        clientId={GOOGLE_CLIENT_ID}
-                        render={(renderProps) => (
-                        <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                            <img src="/googlelogo.png"></img>&nbsp;&nbsp;logout
-                        </button>
-                        )}
-                        buttonText="Logout"
-                        onLogoutSuccess={handleLogout}
-                        onFailure={(err) => console.log(err)}
-                    />
+                    <div>
+                        <GoogleLogout
+                            clientId={GOOGLE_CLIENT_ID}
+                            render={(renderProps) => (
+                            <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                                <img src="/googlelogo.png"></img>&nbsp;&nbsp;logout
+                            </button>
+                            )}
+                            buttonText="Logout"
+                            onLogoutSuccess={handleLogout}
+                            onFailure={(err) => console.log(err)}
+                        />
+                    </div>
+                    <div>
+                        <button onClick={toIngredients}>Back</button>
+                    </div>
                 </div>
             </div>
         </>
