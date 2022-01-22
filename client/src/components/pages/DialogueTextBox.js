@@ -12,7 +12,7 @@ const DialogueBox = ({ messages, characterName, dialogueImage }) => {
       setCurrentDialogue((previousDialogue) => {
         if (messages[previousDialogue].type === "normal") {
           if (event.key === "Enter") {
-            if (previousDialogue + messages[previousDialogue].nextLine < messages.length - 1)
+            if (previousDialogue + messages[previousDialogue].nextLine <= messages.length - 1)
               return previousDialogue + messages[previousDialogue].nextLine;
             else {
               return previousDialogue;
@@ -20,13 +20,13 @@ const DialogueBox = ({ messages, characterName, dialogueImage }) => {
           }
         } else {
           if (event.key === "ArrowUp") {
-            if (previousDialogue + messages[previousDialogue].yes < messages.length - 1)
+            if (previousDialogue + messages[previousDialogue].yes <= messages.length - 1)
               return previousDialogue + messages[previousDialogue].yes;
             else {
               return previousDialogue;
             }
           } else if (event.key === "ArrowDown") {
-            if (previousDialogue + messages[previousDialogue].no < messages.length)
+            if (previousDialogue + messages[previousDialogue].no <= messages.length)
               return previousDialogue + messages[previousDialogue].no;
           }
         }

@@ -49,15 +49,15 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
         setRecipeName(dish);
         setSub(true);
         post("/api/newnote", {
-            userid: userId,
-            ings: [ing1, ing2, ing3, ing4, ing5],
-            recipeName: dish,
+          userid: userId,
+          ings: [ing1, ing2, ing3, ing4, ing5],
+          recipeName: dish,
         }).then((note) => {
-            console.log(note);
+          console.log(note);
         });
       } else {
         console.log("invalid", dish);
-        alert("invalid dish!  try again")
+        alert("invalid dish!  try again");
       }
     });
     //alert(firstName);
@@ -96,19 +96,19 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
     return null;
   };
 
-    if (!userId) {
-        return <Redirect to="/" />;
-    }
+  if (!userId) {
+    return <Redirect to="/" />;
+  }
 
-    if (sub) {
-        setIngs([ing1, ing2, ing3, ing4, ing5]);
-        setRecipe(recipeName);
-        //return <Redirect to={{ pathname: '/game', ing1:  {ing1} , ing2: {ing2}, ing3: {ing3}, ing4: {ing4}, ing5: {ing5}}} />
-        //return <Redirect to='/game' />
-        //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
-        //return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}/${recipeName}`} />;
-        return <Redirect to="/game" />
-    }
+  if (sub) {
+    setIngs([ing1, ing2, ing3, ing4, ing5]);
+    setRecipe(recipeName);
+    //return <Redirect to={{ pathname: '/game', ing1:  {ing1} , ing2: {ing2}, ing3: {ing3}, ing4: {ing4}, ing5: {ing5}}} />
+    //return <Redirect to='/game' />
+    //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
+    //return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}/${recipeName}`} />;
+    return <Redirect to="/welcome" />;
+  }
 
   const accessNotebook = (e) => {
     setNotebook(true);
@@ -176,21 +176,23 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
           </form>
         </div>
         <div class="buttonside">
-            <div>
-                <GoogleLogout
-                    clientId={GOOGLE_CLIENT_ID}
-                    render={(renderProps) => (
-                    <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                        <img src="/googlelogo.png"></img>&nbsp;&nbsp;logout
-                    </button>
-                    )}
-                    buttonText="Logout"
-                    onLogoutSuccess={handleLogout}
-                    onFailure={(err) => console.log(err)}
-                />
-            </div>
-            <div>
-                <button id="notebookbtn" onClick={accessNotebook}>Notebook</button>
+          <div>
+            <GoogleLogout
+              clientId={GOOGLE_CLIENT_ID}
+              render={(renderProps) => (
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                  <img src="/googlelogo.png"></img>&nbsp;&nbsp;logout
+                </button>
+              )}
+              buttonText="Logout"
+              onLogoutSuccess={handleLogout}
+              onFailure={(err) => console.log(err)}
+            />
+          </div>
+          <div>
+            <button id="notebookbtn" onClick={accessNotebook}>
+              Notebook
+            </button>
           </div>
         </div>
       </div>

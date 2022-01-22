@@ -7,6 +7,7 @@ import Skeleton from "./pages/Skeleton.js";
 import Ingredients from "./pages/Ingredients.js";
 import Game from "./pages/Game.js";
 import Notebook from "./pages/Notebook.js";
+import FroggyDialogue from "./pages/FroggyDialogue.js";
 import LotlDialogue from "./pages/LotlDialogue.js";
 import TigerDialogue from "./pages/TigerDialogue.js";
 import MargainDialogue from "./pages/MargainDialogue.js";
@@ -111,6 +112,7 @@ const App = () => {
           firstName={firstName}
           handleLogout={handleLogout}
         />
+        <FroggyDialogue path="/welcome" firstName={firstName} recipe={recipe}></FroggyDialogue>
         <LotlDialogue path="/lotl-dialogue" firstName={firstName} />
         <TigerDialogue path="/tiger-dialogue" firstName={firstName} />
         <MargainDialogue path="/margain-dialogue" firstName={firstName} />
