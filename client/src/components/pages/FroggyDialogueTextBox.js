@@ -38,7 +38,7 @@ const DialogueBox = ({ messages, characterName, dialogueImage }) => {
 
   return (
     <div>
-      <img className="dialogueTextBox" src={dialogueTextBox}></img>
+      <img className="froggyTextBox" src={dialogueTextBox}></img>
       <div className="dialogueSpeaker">{characterName}</div>
       <Message words={messages[currentDialogue].text} key={currentDialogue} />
       <img className="dialogueImage" src={blankBox}></img>

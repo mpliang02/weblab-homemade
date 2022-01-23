@@ -14,7 +14,7 @@ const FroggyDialogue = ({ firstName, recipe }) => {
     },
     {
       type: "normal",
-      text: `I'm Mr. Frog. I'm here to help you make ${recipe}!`,
+      text: `I'm Mr. Frog. I'm helping you make ${recipe}!`,
       nextLine: 1,
     },
     {

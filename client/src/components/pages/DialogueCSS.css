@@ -14,7 +14,7 @@
   padding: 2%;
   padding-left: 19%;
   top: 70%;
-  font-size: 175%;
+  font-size: 160%;
   white-space: nowrap;
   overflow: hidden;
   animation: typeLetter 3s steps(90, end);
@@ -69,4 +69,14 @@
   margin: 4.3%;
   width: 7.5%;
   height: auto;
+}
+
+.froggyTextBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 1.4%;
+  width: 61%;
+  height: 35%;
 }
