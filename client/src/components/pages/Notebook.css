@@ -1,11 +1,11 @@
 #nbwrapper {
-    background-image: url("../../../dist/extras/notebook.png");
-    background-size: cover;
-    background-position: top center;
-    font-family: "Segoe Script", "sans-serif";
-    height: 100%;
-    padding: 50px 0px 0px 100px;
-    /* overflow: hidden; */
+  background-image: url("../../../dist/extras/notebook.png");
+  background-size: cover;
+  background-position: top center;
+  font-family: "Ink Free";
+  height: 100%;
+  padding: 50px 0px 0px 100px;
+  /* overflow: hidden; */
 }
 
 /* #wrapper button {
@@ -20,22 +20,23 @@
     border-radius: 21px;
     padding: 6px;
     height: 42px;
-} *//*help the way i coded this is SO janky*/
+} */
 
+/* /help the way i coded this is SO janky /  */
 #ntbk {
-    font-size: 24px;
-    text-align: left;
-    column-count: 2;
+  font-size: 24px;
+  text-align: left;
+  column-count: 2;
 }
 
 #notes {
-    column-count: 2;
-    height: 75%;
+  column-count: 2;
+  height: 75%;
 }
 
 .impt {
-    text-decoration: underline;
-    text-decoration-color: palevioletred;
+  text-decoration: underline;
+  text-decoration-color: palevioletred;
 }
 
 /* #logoutdiv {
@@ -44,5 +45,5 @@
 } */
 
 #ntbkbtn {
-    position: fixed;
+  position: fixed;
 }
