@@ -7,6 +7,7 @@ import Skeleton from "./pages/Skeleton.js";
 import Ingredients from "./pages/Ingredients.js";
 import Game from "./pages/Game.js";
 import Notebook from "./pages/Notebook.js";
+import FroggyDialogue from "./pages/FroggyDialogue.js";
 import LotlDialogue from "./pages/LotlDialogue.js";
 import TigerDialogue from "./pages/TigerDialogue.js";
 import MargainDialogue from "./pages/MargainDialogue.js";
@@ -14,6 +15,7 @@ import PheeshDialogue from "./pages/PheeshDialogue.js";
 import EmptyHouseDialogue from "./pages/EmptyHouseDialogue.js";
 import Run from "./pages/RUNPLS.js";
 // import RunningGame from "./pages/running game/RunningGame.js";
+import MomAnimation from "./pages/MomAnimation.js";
 
 import "../utilities.css";
 
@@ -31,6 +33,8 @@ const App = () => {
   const [userId, setUserId] = useState(undefined);
   const [name, setName] = useState(undefined);
   const [firstName, setFirstName] = useState(undefined);
+  const [ings, setIngs] = useState(undefined);
+  const [recipe, setRecipe] = useState(undefined);
   //const [userInfo, setUserInfo] = useState(undefined);
 
   useEffect(() => {
@@ -93,20 +97,36 @@ const App = () => {
           userId={userId}
           name={name}
         />
-        <Ingredients path="/ingredients" userId={userId} handleLogout={handleLogout} />
+        <Ingredients
+          path="/ingredients"
+          userId={userId}
+          handleLogout={handleLogout}
+          setIngs={setIngs}
+          setRecipe={setRecipe}
+        />
         <Game
-          path="/game/:ing1/:ing2/:ing3/:ing4/:ing5/:recipeName"
+          // path="/game/:ing1/:ing2/:ing3/:ing4/:ing5/:recipeName"
+          path="/game"
+          ings={ings}
+          recipe={recipe}
           userId={userId}
           handleLogout={handleLogout}
         />
-        <Notebook path="/notebook" userId={userId} />
-        <LotlDialogue path="/lotl-dialogue" firstName={firstName} />
-        <TigerDialogue path="/tiger-dialogue" firstName={firstName} />
-        <MargainDialogue path="/margain-dialogue" firstName={firstName} />
-        <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} />
+        <Notebook
+          path="/notebook"
+          userId={userId}
+          firstName={firstName}
+          handleLogout={handleLogout}
+        />
+        <FroggyDialogue path="/welcome" firstName={firstName} recipe={recipe}></FroggyDialogue>
+        <LotlDialogue path="/lotl-dialogue" firstName={firstName} recipe={recipe} />
+        <TigerDialogue path="/tiger-dialogue" firstName={firstName} recipe={recipe} />
+        <MargainDialogue path="/margain-dialogue" firstName={firstName} recipe={recipe} />
+        <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} recipe={recipe} />
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
         <Run path="/run" />
         {/* <RunningGame path="/running-game" /> */}
+        <MomAnimation path="/end" className="fadeOutTransition"></MomAnimation>
         <NotFound default />
       </Router>
     </>

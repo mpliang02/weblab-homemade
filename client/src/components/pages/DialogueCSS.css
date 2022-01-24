@@ -34,8 +34,8 @@
   margin: 0 auto;
   padding: 20%;
   padding-left: 19%;
-  top: 70%;
-  font-size: 175%;
+  top: 70.5%;
+  font-size: 160%;
   white-space: nowrap;
   overflow: hidden;
   animation: typeLetter 3s steps(90, end);
@@ -45,11 +45,9 @@
 @keyframes typeLetter {
   from {
     width: 0;
-    height: 0;
   }
   to {
-    width: 85%;
-    height: 35%;
+    width: 75%;
   }
 }
 
@@ -91,4 +89,55 @@
 
 body {
   overflow: hidden;
+}
+.froggyImage {
+  position: absolute;
+  bottom: 2.5%;
+  left: 0;
+  padding-left: 3.9%;
+  margin: 4.3%;
+  width: 7.5%;
+  height: auto;
+}
+
+.froggyTextBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 1.4%;
+  width: 61%;
+  height: 35%;
+}
+
+.InstructionsBox {
+  position: absolute;
+  width: 20%;
+  height: 10%;
+  bottom: 9%;
+  left: 41.8%;
+}
+
+.InstructionsText {
+  position: absolute;
+  top: 84.8%;
+  left: 43.6%;
+  font-size: 90%;
+  font-family: "Ink Free";
+}
+
+.froggyInstructionsBox {
+  position: absolute;
+  width: 20%;
+  height: 10%;
+  bottom: 9%;
+  left: 38%;
+}
+
+.froggyInstructionsText {
+  position: absolute;
+  top: 84.8%;
+  left: 39.7%;
+  font-size: 90%;
+  font-family: "Ink Free";
 }

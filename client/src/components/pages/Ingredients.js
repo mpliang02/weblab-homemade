@@ -9,7 +9,7 @@ import "./Ingredients.css";
 
 const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.googleusercontent.com";
 //ref="fdjisofdjs" onSubmit="fjdisofds"
-const Ingredients = ({ userId, firstName, handleLogout }) => {
+const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) => {
   const [ing1, setIng1] = useState("");
   const [ing2, setIng2] = useState("");
   const [ing3, setIng3] = useState("");
@@ -49,15 +49,15 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
         setRecipeName(dish);
         setSub(true);
         post("/api/newnote", {
-            userid: userId,
-            ings: [ing1, ing2, ing3, ing4, ing5],
-            recipeName: dish,
+          userid: userId,
+          ings: [ing1, ing2, ing3, ing4, ing5],
+          recipeName: dish,
         }).then((note) => {
-            console.log(note);
+          console.log(note);
         });
       } else {
         console.log("invalid", dish);
-        alert("invalid dish!  try again")
+        alert("invalid dish!  try again");
       }
     });
     //alert(firstName);
@@ -101,10 +101,13 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
   }
 
   if (sub) {
+    setIngs([ing1, ing2, ing3, ing4, ing5]);
+    setRecipe(recipeName);
     //return <Redirect to={{ pathname: '/game', ing1:  {ing1} , ing2: {ing2}, ing3: {ing3}, ing4: {ing4}, ing5: {ing5}}} />
     //return <Redirect to='/game' />
     //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
-    return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}/${recipeName}`} />;
+    //return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}/${recipeName}`} />;
+    return <Redirect to="/welcome" />;
   }
 
   const accessNotebook = (e) => {
@@ -117,9 +120,10 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
 
   return (
     <>
-      <div id="wrapper">
+      <div class="wrapper" id="ingwrapper">
         <div id="recipes">
           <form id="ingredient-list" onSubmit={handleSubmit}>
+            <p>enter 5 ingredients below:</p>
             <div class="ingredient">
               <input
                 type="text"
@@ -127,6 +131,7 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
                 onChange={handleIng1Change}
                 value={ing1}
                 placeholder="ingredient 1"
+                autoFocus
               />
             </div>
             <div class="ingredient">
@@ -170,21 +175,25 @@ const Ingredients = ({ userId, firstName, handleLogout }) => {
             </div>
           </form>
         </div>
-        <div id="logoutdiv">
-          <GoogleLogout
-            clientId={GOOGLE_CLIENT_ID}
-            render={(renderProps) => (
-              <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                <img src="/googlelogo.png"></img>&nbsp;&nbsp;logout
-              </button>
-            )}
-            buttonText="Logout"
-            onLogoutSuccess={handleLogout}
-            onFailure={(err) => console.log(err)}
-          />
-          <button id="notebookbtn" onClick={accessNotebook}>
-            Notebook
-          </button>
+        <div class="buttonside">
+          <div>
+            <GoogleLogout
+              clientId={GOOGLE_CLIENT_ID}
+              render={(renderProps) => (
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                  <img src="/googlelogo.png"></img>&nbsp;&nbsp;logout
+                </button>
+              )}
+              buttonText="Logout"
+              onLogoutSuccess={handleLogout}
+              onFailure={(err) => console.log(err)}
+            />
+          </div>
+          <div>
+            <button id="notebookbtn" onClick={accessNotebook}>
+              Notebook
+            </button>
+          </div>
         </div>
       </div>
     </>

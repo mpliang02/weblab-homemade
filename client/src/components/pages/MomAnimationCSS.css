@@ -1,0 +1,66 @@
+.fadeOutTransition {
+  width: auto;
+  height: 100%;
+  animation: fadeOut 6s linear forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+.fadeInTransition {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  animation: fadeIn 6s linear 16s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+    visibility: visible;
+  }
+}
+
+.fadeInOut {
+  width: auto;
+  height: 100%;
+  position: relative;
+  animation: fadeIn 6s, fadeOut 6s 10s forwards;
+}
+
+.fadeInOutFirst {
+  font-family: "Ink Free";
+  font-size: 200%;
+  z-index: 100;
+  position: absolute;
+  margin: 0;
+  top: 15%;
+  left: 29%;
+  visibility: hidden;
+  animation: fadeIn 4s 25s forwards;
+  color: white;
+}
+
+.fadeInOutSecond {
+  font-family: "Ink Free";
+  font-size: 200%;
+  z-index: 100;
+  position: absolute;
+  margin: 0;
+  top: 21%;
+  left: 26.25%;
+  visibility: hidden;
+  animation: fadeIn 4s 29s forwards;
+  color: white;
+}
