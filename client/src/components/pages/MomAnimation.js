@@ -25,6 +25,8 @@ const Mom = () => {
     <>
       <img className="fadeInOut" src={imageArray[imageNumber]}></img>
       <img className="fadeInTransition" src={grave}></img>
+      <div className="fadeInOutFirst">made with love</div>
+      <div className="fadeInOutSecond">thank you for playing</div>
     </>
   );
 };
