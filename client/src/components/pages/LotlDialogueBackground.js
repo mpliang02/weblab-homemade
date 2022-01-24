@@ -1,8 +1,8 @@
 import React, { Component, useState, useEffect } from "react";
 import "./DialogueCSS.css";
 
-import lotlbackground1 from "../../../dist/characters/lotl1.png";
-import lotlbackground2 from "../../../dist/characters/lotl2.png";
+import lotlbackground1 from "../../../dist/characters/Denial.png";
+import lotlbackground2 from "../../../dist/characters/Denial2.png";
 
 const LotlDialogueBackground = () => {
   const [imageNumber, setImageNumber] = useState(0);

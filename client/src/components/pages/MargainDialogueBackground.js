@@ -1,8 +1,8 @@
 import React, { Component, useState, useEffect } from "react";
 import "./DialogueCSS.css";
 
-import margainbackground1 from "../../../dist/characters/margain1.png";
-import margainbackground2 from "../../../dist/characters/margain2.png";
+import margainbackground1 from "../../../dist/characters/Bargaining.png";
+import margainbackground2 from "../../../dist/characters/Bargaining2.png";
 
 const MargainDialogueBackground = () => {
   const [imageNumber, setImageNumber] = useState(0);
