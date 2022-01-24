@@ -1,7 +1,7 @@
 import DialogueBox from "./DialogueTextBox.js";
 import "./DialogueCSS.css";
 import React, { Component } from "react";
-import pheeshbackground from "../../../dist/characters/pheesh1.png";
+import pheeshbackground from "../../../dist/characters/Depress.png";
 import pheeshhead1 from "../../../dist/extras/pheeshhead1.png";
 
 

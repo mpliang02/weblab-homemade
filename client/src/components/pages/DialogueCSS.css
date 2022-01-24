@@ -1,17 +1,38 @@
+
 .dialogueTextBox {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 1.5%;
-  width: 65%;
-  height: 35%;
+  position:absolute;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 68px; 
+  resize: none; 
+  bottom: 4%;
+  line-height: 1cm;
+  font-family: "Chalkduster", fantasy;
+  font-size:20px;
+  margin-left: 33%; 
+  margin-right: auto; 
+  margin-bottom: 10px;
+  background-color: transparent;
+  border-color:transparent;
+  width: 800px;
+  height: 250px;
+}
+
+.dialogueBack {
+  position:absolute;
+  width: 800px;
+  height: 250px;
+  margin-bottom: 10px;
+  bottom: 3%;
+  margin-left: 33%;
+  background-image: url("../../../dist/extras/Untitled_Artwork.png");
+  
 }
 
 .dialogueText {
   position: absolute;
   margin: 0 auto;
-  padding: 2%;
+  padding: 20%;
   padding-left: 19%;
   top: 70%;
   font-size: 175%;
@@ -32,13 +53,13 @@
   }
 }
 
-.dialogueSpeaker {
+/*.dialogueSpeaker {
   font-size: 250%;
   font-family: "Ink Free";
   top: 67.5%;
-  padding-left: 19%;
+  padding-left: 0%;
   position: absolute;
-}
+}*/
 
 .dialogueEnder {
   font-size: 80%;
@@ -50,15 +71,24 @@
 
 .dialogueImage {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  padding-left: 1.5%;
-  margin: 4.3%;
-  width: 13%;
-  height: auto;
+  bottom: 0%;
+  left: 0%;
+  padding-left: 8.5%;
+  margin: 45px;
+  width: auto;
+  height: 250px;
+  
 }
 
 .dialogueBackground {
   width: auto;
   height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  
+  
+}
+
+body {
+  overflow: hidden;
 }

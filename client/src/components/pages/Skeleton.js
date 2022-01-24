@@ -20,7 +20,9 @@ const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
 
   if (userId) {
     //alert("hi");
-    return <Redirect to="/ingredients/" />;
+    
+    return <Redirect to="/ingredients/"/>
+    
     //return browserHistory.push('/ingredients');
   }
 

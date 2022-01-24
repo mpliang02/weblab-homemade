@@ -1,7 +1,7 @@
 import DialogueBox from "./DialogueTextBox.js";
 import "./DialogueCSS.css";
 import React, { Component } from "react";
-import lotlbackground from "../../../dist/characters/lotl1.png";
+import lotlbackground from "../../../dist/characters/Denial.png";
 import lotlhead1 from "../../../dist/extras/lotlhead1.png";
 
 const LotlDialogue = ({ firstName }) => {

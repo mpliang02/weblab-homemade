@@ -22,7 +22,7 @@ class Dish {
       this.imageLoaded = true;
     };
 
-    this.image.src = "assets/end.png";
+    this.image.src = "./assets/end.png";
   }
 
   draw() {
@@ -54,16 +54,16 @@ class MC {
       this.imageLoaded = true;
     };
 
-    this.image.src = "assets/stand.png";
+    this.image.src = "./assets/stand.png";
 
     addEventListener("keydown", ({ keyCode }) => {
       switch (keyCode) {
         case 39:
-          this.image.src = "assets/right.png";
+          this.image.src = "./assets/right.png";
           break;
 
         case 37:
-          this.image.src = "assets/left.png";
+          this.image.src = "./assets/left.png";
           break;
       }
     });
@@ -71,11 +71,11 @@ class MC {
     addEventListener("keyup", ({ keyCode }) => {
       switch (keyCode) {
         case 39:
-          this.image.src = "assets/stand.png";
+          this.image.src = "./assets/stand.png";
           break;
 
         case 37:
-          this.image.src = "assets/standleft.png";
+          this.image.src = "./assets/standleft.png";
           break;
       }
     });
@@ -108,7 +108,7 @@ class Platform {
     this.image.onload = () => {
       this.imageLoaded = true;
     };
-    this.image.src = "assets/grass_platform.png";
+    this.image.src = "./assets/grass_platform.png";
     this.position = {
       x,
       y,
@@ -134,7 +134,7 @@ class Obstacle {
     this.image.onload = () => {
       this.imageLoaded = true;
     };
-    this.image.src = "assets/puddle.png";
+    this.image.src = "./assets/puddle.png";
     this.position = {
       x,
       y,

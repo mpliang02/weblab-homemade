@@ -1,7 +1,7 @@
 import DialogueBox from "./DialogueTextBox.js";
 import "./DialogueCSS.css";
 import React, { Component } from "react";
-import tigerbackground from "../../../dist/characters/tiger1.png";
+import tigerbackground from "../../../dist/characters/Anger.png";
 import tigerhead1 from "../../../dist/extras/tigerhead1.png";
 
 

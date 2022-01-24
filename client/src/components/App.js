@@ -12,7 +12,7 @@ import TigerDialogue from "./pages/TigerDialogue.js";
 import MargainDialogue from "./pages/MargainDialogue.js";
 import PheeshDialogue from "./pages/PheeshDialogue.js";
 import EmptyHouseDialogue from "./pages/EmptyHouseDialogue.js";
-//import Run from "./pages/run.js";
+import Run from "./pages/RUNPLS.js";
 // import RunningGame from "./pages/running game/RunningGame.js";
 
 import "../utilities.css";
@@ -24,6 +24,9 @@ import { get, post } from "../utilities";
 /**
  * Define the "App" component
  */
+
+
+ 
 const App = () => {
   const [userId, setUserId] = useState(undefined);
   const [name, setName] = useState(undefined);
@@ -77,8 +80,11 @@ const App = () => {
     post("/api/logout");
   };
 
+
+
   return (
     <>
+      
       <Router>
         <Skeleton
           path="/"
@@ -99,7 +105,7 @@ const App = () => {
         <MargainDialogue path="/margain-dialogue" firstName={firstName} />
         <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} />
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
-        {/*<Run path="/run" />*/}
+        <Run path="/run" />
         {/* <RunningGame path="/running-game" /> */}
         <NotFound default />
       </Router>

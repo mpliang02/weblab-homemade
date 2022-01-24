@@ -1,8 +1,14 @@
 
-const canvas = document.querySelector('canvas')
-const c = canvas.getContext('2d')
-canvas.width = innerWidth; 
-canvas.height = innerHeight; 
+let canvas;
+let c;
+
+import end from "./assets/end.png";
+import right from "./assets/right.png";
+import stand from "./assets/stand.png";
+import left from "./assets/left.png";
+import standleft from "./assets/standleft.png";
+import grass_platform from "./assets/grass_platform.png";
+import puddle from "./assets/puddle.png";
 
 const gravity = 0.5
 
@@ -23,7 +29,7 @@ class Dish {
         }
     
 
-        this.image.src = 'assets/end.png'
+        this.image.src = end;
 
 
     }
@@ -59,16 +65,16 @@ class MC {
             this.imageLoaded = true;
         }
 
-        this.image.src = 'assets/stand.png';
+        this.image.src = stand;
 
         addEventListener('keydown', ({keyCode}) => {
             switch (keyCode) {
                 case 39:
-                    this.image.src = 'assets/right.png';
+                    this.image.src = right;
                     break
         
                 case 37:
-                    this.image.src = 'assets/left.png';
+                    this.image.src = left;
                     break
             }
         })
@@ -76,11 +82,11 @@ class MC {
         addEventListener('keyup', ({keyCode}) => {
             switch (keyCode) {
                 case 39:
-                    this.image.src = 'assets/stand.png';
+                    this.image.src = stand;
                     break
         
                 case 37:
-                    this.image.src = 'assets/standleft.png';
+                    this.image.src = standleft;
                     break
             }
         })
@@ -115,13 +121,13 @@ class Platform {
         this.image.onload = () => {
             this.imageLoaded = true;
         }
-        this.image.src = 'assets/grass_platform.png';
+        this.image.src = grass_platform;
         this.position = {
             x, 
             y
         }
 
-        this.width = 640
+        this.width = 600
         this.height = 184
     }
 
@@ -142,7 +148,7 @@ class Obstacle {
         this.image.onload = () => {
             this.imageLoaded = true;
         }
-        this.image.src = 'assets/puddle.png';
+        this.image.src = puddle;
         this.position = {
             x, 
             y
@@ -165,11 +171,11 @@ class Obstacle {
 }
 
 
-const player = new MC()
+let player = new MC()
     
 //array to create multiple platforms (use for each to apply to all)
-const platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 500, y: 200})]
-const obstacles = [new Obstacle({x: 260, y: 584})]
+let platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 500, y: 200})]
+let obstacles = [new Obstacle({x: 260, y: 584})]
 const dish = new Dish()
 const keys = {
     right: {
@@ -180,10 +186,23 @@ const keys = {
     }
 }
 
+//resets the game
+function restart() {
+    player = new MC()
+    platforms = [new Platform({x:-2, y:585}), new Platform({x: -602, y: 585}), new Platform({x: 598, y: 585}), new Platform({x: 500, y: 200})]
+    obstacles = [new Obstacle({x: 260, y: 584})]
+}
+
 //how far player has travelled from start 
 let scrollOffset = 0
-
-function animate() {
+function init() {
+    canvas = document.getElementById('game-canvas');
+    c = canvas.getContext('2d');
+    canvas.width = innerWidth; 
+    canvas.height = innerHeight; 
+    animate();
+}
+function animate() {   
     //gravity 
     requestAnimationFrame(animate)
     c.clearRect(0, 0, canvas.width, canvas.height);
@@ -203,7 +222,7 @@ function animate() {
 
     //Moves only if pressed (and can keep moving by holding)
     //Limits how far to the right/left player can go
-
+    
     if (keys.right.pressed && player.position.x < 400) {
         player.velocity.x = 5;
     } else if ((keys.left.pressed && player.position.x > 100) || (keys.left.pressed && scrollOffset === 0 && player.position.x > 0)) {
@@ -246,16 +265,31 @@ function animate() {
     }
     })
 
+    
+
     obstacles.forEach(obstacle => {
         if (obstacle.position.x < player.position.x + player.width && obstacle.position.x + obstacle.width > player.position.x && obstacle.position.y < player.position.y + player.height && obstacle.height + obstacle.position.y > player.position.y) {
-            window.location.reload()
-        }
+            /*platforms.forEach(platform => {
+               platform.position.x -= scrollOffset
+            })
+            
+     
+            if (scrollOffset > 0) {
+                obstacle.position.x = (500 - obstacle.position.x) - scrollOffset;
+            }
 
-        if (dish.position.x < player.position.x + player.width && dish.position.x + dish.width > player.position.x && dish.position.y < player.position.y + player.height && dish.height + dish.position.y > player.position.y) {
-            dish.position.y = 900
+            player.position.x = 100;*/
+
+           restart();
+
+      
         }
     
     })
+
+    if (dish.position.x < player.position.x + player.width && dish.position.x + dish.width > player.position.x && dish.position.y < player.position.y + player.height && dish.height + dish.position.y > player.position.y) {
+        dish.position.y = 900
+    }
 
     //win limiter
     if (scrollOffset > 300) {
@@ -268,7 +302,7 @@ addEventListener('keydown', ({keyCode}) => {
     switch (keyCode) {
         case 38:
             if (player.jumping == false) {
-                player.velocity.y = -30
+                player.velocity.y = -23
                 player.jumping = true
                 break
             }
@@ -300,4 +334,7 @@ addEventListener('keyup', ({keyCode}) => {
     }
 })
 
-export default animate();
+
+// animate()
+
+export default init;

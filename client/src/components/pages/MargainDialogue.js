@@ -1,7 +1,7 @@
 import DialogueBox from "./DialogueTextBox.js";
 import "./DialogueCSS.css";
 import React, { Component } from "react";
-import margainbackground from "../../../dist/characters/margain1.png";
+import margainbackground from "../../../dist/characters/Bargaining.png";
 import margainhead1 from "../../../dist/extras/margainhead1.png";
 
 
