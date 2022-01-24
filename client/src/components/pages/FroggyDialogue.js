@@ -4,6 +4,7 @@ import React, { Component } from "react";
 // import lotlbackground from "../../../dist/characters/lotl1.png";
 import MapBackground from "./MapBackground.js";
 import froggy from "../../../dist/mrfrog.png";
+import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
 
 const FroggyDialogue = ({ firstName, recipe }) => {
   const messages = [
@@ -33,6 +34,8 @@ const FroggyDialogue = ({ firstName, recipe }) => {
         characterName={"Mr. Frog"}
         dialogueImage={froggy}
       ></DialogueBox>
+      <img className="froggyInstructionsBox" src={instructionsBox}></img>
+      <div className="froggyInstructionsText">'Enter' to continue, 'w' for YES, 's' for NO</div>
     </>
   );
 };

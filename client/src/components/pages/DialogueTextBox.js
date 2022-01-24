@@ -19,13 +19,13 @@ const DialogueBox = ({ messages, characterName, dialogueImage }) => {
             }
           }
         } else {
-          if (event.key === "ArrowUp") {
+          if (event.key === "w") {
             if (previousDialogue + messages[previousDialogue].yes <= messages.length - 1)
               return previousDialogue + messages[previousDialogue].yes;
             else {
               return previousDialogue;
             }
-          } else if (event.key === "ArrowDown") {
+          } else if (event.key === "s") {
             if (previousDialogue + messages[previousDialogue].no <= messages.length)
               return previousDialogue + messages[previousDialogue].no;
           }

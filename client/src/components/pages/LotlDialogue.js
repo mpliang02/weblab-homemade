@@ -4,6 +4,7 @@ import React, { Component } from "react";
 // import lotlbackground from "../../../dist/characters/lotl1.png";
 import LotlDialogueBackground from "./LotlDialogueBackground.js";
 import lotlhead1 from "../../../dist/extras/lotlhead1.png";
+import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
 
 const LotlDialogue = ({ firstName }) => {
   const messages = [
@@ -14,7 +15,12 @@ const LotlDialogue = ({ firstName }) => {
     },
     {
       type: "normal",
-      text: "I heard you were making a meal!",
+      text: `I heard you were making a meal for your mom!`,
+      nextLine: 1,
+    },
+    {
+      type: "normal",
+      text: "I hope she's feeling better, poor thing.",
       nextLine: 1,
     },
     {
@@ -39,6 +45,8 @@ const LotlDialogue = ({ firstName }) => {
         characterName={"Ms. Lotl"}
         dialogueImage={lotlhead1}
       ></DialogueBox>
+      <img className="InstructionsBox" src={instructionsBox}></img>
+      <div className="InstructionsText">'Enter' to continue, 'w' for YES, 's' for NO</div>
     </>
   );
 };

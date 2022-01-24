@@ -113,10 +113,10 @@ const App = () => {
           handleLogout={handleLogout}
         />
         <FroggyDialogue path="/welcome" firstName={firstName} recipe={recipe}></FroggyDialogue>
-        <LotlDialogue path="/lotl-dialogue" firstName={firstName} />
-        <TigerDialogue path="/tiger-dialogue" firstName={firstName} />
-        <MargainDialogue path="/margain-dialogue" firstName={firstName} />
-        <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} />
+        <LotlDialogue path="/lotl-dialogue" firstName={firstName} recipe={recipe} />
+        <TigerDialogue path="/tiger-dialogue" firstName={firstName} recipe={recipe} />
+        <MargainDialogue path="/margain-dialogue" firstName={firstName} recipe={recipe} />
+        <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} recipe={recipe} />
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
         {/*<Run path="/run" />*/}
         {/* <RunningGame path="/running-game" /> */}

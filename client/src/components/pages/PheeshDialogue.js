@@ -4,6 +4,7 @@ import React, { Component } from "react";
 // import pheeshbackground from "../../../dist/characters/pheesh1.png";
 import PheeshDialogueBackground from "./PheeshDialogueBackground.js";
 import pheeshhead1 from "../../../dist/extras/pheeshhead1.png";
+import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
 
 const PheeshDialogue = ({ firstName }) => {
   const messages = [
@@ -20,9 +21,11 @@ const PheeshDialogue = ({ firstName }) => {
       nextLine: 1,
     },
     { type: "normal", text: "...But you already knew that, didn't you?", nextLine: 1 },
+    { type: "normal", text: `Who are you cooking for, really?`, nextLine: 1 },
+    { type: "normal", text: "...Just some food for thought.", nextLine: 1 },
     {
       type: "choice",
-      text: "Do you want to keep going?",
+      text: `Do you want to keep going?`,
       yes: 1,
       no: 2,
     },
@@ -38,6 +41,8 @@ const PheeshDialogue = ({ firstName }) => {
         characterName={"Mr. Pheesh"}
         dialogueImage={pheeshhead1}
       ></DialogueBox>
+      <img className="InstructionsBox" src={instructionsBox}></img>
+      <div className="InstructionsText">'Enter' to continue, 'w' for YES, 's' for NO</div>
     </>
   );
 };
