@@ -4,9 +4,11 @@ import "./DialogueCSS.css";
 import "./map.css";
 import { Redirect } from "@reach/router";
 
-
+/*let door1b
+Boolean(door1b)*/
 let canvas
 let c
+//const [door1b, setdoor1b] = useState(false);
 
 import right from "./assets/right.png";
 import standright from "./assets/stand.png";
@@ -33,8 +35,8 @@ class MC {
             y: 0
         }
 
-        this.width = 10
-        this.height = 10
+        this.width = 79
+        this.height = 100
 
         this.imageLoaded = false
         this.image = new Image();
@@ -141,7 +143,7 @@ class Door {
         }
 
         this.width = 70
-        this.height = 50
+        this.height = 30
     }
 
     draw() {
@@ -156,7 +158,7 @@ class Door {
 
 const player = new MC()
 const houses = [new House({x: 1020, y: 28, img: house3}), new House({x: 1500, y: 30, img: house4}), new House({x: 70, y: 30, img: house1}), new House({x: 540, y: 20, img: house2}), new House({x: 2000, y: 30, img: house5})]
-const doors = [new Door({x: 220, y: 250, name: "door1"}), new Door({x: 700, y: 250, name: "door2"}), new Door({x: 1180, y: 250, name: "door3"}), new Door({x: 1650, y: 250, name: "door4"}), new Door({x: 2150, y: 250, name: "door5"}) ]
+const doors = [new Door({x: 220, y: 300, name: "door1"}), new Door({x: 700, y: 250, name: "door2"}), new Door({x: 1180, y: 250, name: "door3"}), new Door({x: 1650, y: 250, name: "door4"}), new Door({x: 2150, y: 250, name: "door5"}) ]
 
 
 const keys = {
@@ -205,7 +207,8 @@ function animate() {
         player.velocity.x = 5;
     } else if ((keys.left.pressed && player.position.x > 100) || (keys.left.pressed && scrollOffset === 0 && player.position.x > 0)) {
         player.velocity.x = -5
-    } else if (keys.up.pressed && player.position.y > 169) {
+    } else if (keys.up.pressed) {
+        // && player.position.y > 169
         player.velocity.y = -5;
         //WHEN CHARACTER POSITION.Y = 170, TRIGGER IN HOUSE SCENE
     } else if (keys.down.pressed && player.position.y <= 255) {
@@ -240,10 +243,42 @@ function animate() {
 
     }
 
+    /*doors.forEach(door => {
+        if ((player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y) && (player.position.x + player.width >= platform.position.x && player.position.x <= platform.position.x + platform.width)) {
+            if (door.name == "door1") {
+                door1b = true
+            } else if (door.name == "door2") {
+                door2b = true
+            } else if (door.name == "door3") {
+                door3b = true
+            } else if (door.name == "door4") {
+                door4b = true
+            } else if (door.name == "door5") {
+                door5b = true
+            }
+        }
+        })*/
+
+        
+        doors.forEach(door => {
+            if (door.position.x < player.position.x + player.width && door.position.x + door.width > player.position.x && door.position.y < player.position.y + player.height && door.height + door.position.y > player.position.y) {
+                console.log(door.name)
+         
+                if (door.name == "door1") {
+                    window.location = "/lotl-dialogue";
+                }
+            }
+        })
+
+        //console.log(door1b)
     
 }
 
-
+/*let door1b
+let door2b
+let door3b
+let door4b
+let door5b*/
 
 addEventListener('keydown', ({keyCode}) => {
     switch (keyCode) {
@@ -300,8 +335,22 @@ const Map = (props) => {
         init();
     }, []);
 
-
     
+
+  
+        /*doors.forEach(door => {
+            if ((player.position.y + player.height <= door.position.y && player.position.y + player.height + player.velocity.y >= door.position.y) && (player.position.x + player.width >= door.position.x && player.position.x <= door.position.x + door.width)) {
+                if (door.name == "door1") {
+                    return <Redirect to="/lotl-dialogue"/>;
+                }
+            }    
+        })*/
+    
+
+    // if (door1b) {
+    //     console.log("yay");
+    //     return <Redirect to="/lotl-dialogue"/>;
+    // }
 
     return (
         <div>
