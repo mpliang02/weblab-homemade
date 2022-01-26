@@ -30,8 +30,6 @@ import { get, post } from "../utilities";
  * Define the "App" component
  */
 
-
- 
 const App = () => {
   const [userId, setUserId] = useState(undefined);
   const [name, setName] = useState(undefined);
@@ -87,11 +85,8 @@ const App = () => {
     post("/api/logout");
   };
 
-
-
   return (
     <>
-      
       <Router>
         <Skeleton
           path="/"
@@ -127,10 +122,10 @@ const App = () => {
         <MargainDialogue path="/margain-dialogue" firstName={firstName} recipe={recipe} />
         <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} recipe={recipe} />
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
-        <Instructions path="/instructions" handleLogout={handleLogout}/>
+        <Instructions path="/instructions" handleLogout={handleLogout} />
         {/* <APITest path="/apitest" /> */}
         <Run path="/run" />
-        <Map path = "/map" /> 
+        <Map path="/map" firstName={firstName} recipe={recipe} />
         {/* <RunningGame path="/running-game" /> */}
         <MomAnimation path="/end" className="fadeOutTransition"></MomAnimation>
         <NotFound default />
