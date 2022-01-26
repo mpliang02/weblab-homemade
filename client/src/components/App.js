@@ -136,10 +136,10 @@ const App = () => {
         <RunMargain path="/runMargain" />
         <RunPheesh path="/runPheesh" />
         <Map path="/map" firstName={firstName} recipe={recipe} />
-        <Lotl2Dialogue path="/lotl2" />
-        <Tiger2Dialogue path="/tiger2" />
-        <Margain2Dialogue path="/margain2" />
-        <Pheesh2Dialogue path="/pheesh2" />
+        <Lotl2Dialogue path="/lotl2" firstName={firstName} recipe={recipe} />
+        <Tiger2Dialogue path="/tiger2" firstName={firstName} recipe={recipe} />
+        <Margain2Dialogue path="/margain2" firstName={firstName} recipe={recipe} />
+        <Pheesh2Dialogue path="/pheesh2" firstName={firstName} recipe={recipe} />
         {/* <RunningGame path="/running-game" /> */}
         <Mom path="/end" className="fadeOutTransition"></Mom>
         <NotFound default />
