@@ -69,7 +69,6 @@
   margin-right: auto;
   position: relative;
   animation: fadeIn 6s, fadeOut 6s 10s forwards;
-  bottom: 10vh;
 }
 
 .fadeInOutFirst {
@@ -78,8 +77,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 57vh;
-  left: 180vh;
+  top: 37vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
@@ -91,8 +90,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 60vh;
-  left: 178vh;
+  top: 40vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
@@ -104,8 +103,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 66vh;
-  left: 178vh;
+  top: 46vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
@@ -117,8 +116,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 72vh;
-  left: 178vh;
+  top: 52vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
@@ -130,8 +129,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 78vh;
-  left: 178vh;
+  top: 58vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
@@ -143,8 +142,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 84vh;
-  left: 178vh;
+  top: 64vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
@@ -156,8 +155,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 90vh;
-  left: 178vh;
+  top: 70vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
@@ -169,8 +168,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 96vh;
-  left: 178vh;
+  top: 76vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
@@ -182,8 +181,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 102vh;
-  left: 178vh;
+  top: 82vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
@@ -195,8 +194,8 @@
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 108vh;
-  left: 178vh;
+  top: 88vh;
+  left: 160vh;
   opacity: 0;
   animation: fadeIn 4s 25s forwards;
   color: white;
