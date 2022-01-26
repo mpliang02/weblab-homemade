@@ -21,7 +21,7 @@ import Map from "./pages/map.js";
 import Instructions from "./pages/Instructions.js";
 //import APITest from "./pages/APITest.js";
 // import RunningGame from "./pages/running game/RunningGame.js";
-import MomAnimation from "./pages/MomAnimation.js";
+import Mom from "./pages/MomAnimation.js";
 import Lotl2Dialogue from "./pages/Lotl2.js";
 import Tiger2Dialogue from "./pages/Tiger2.js";
 import Margain2Dialogue from "./pages/Margain2.js";
@@ -142,7 +142,7 @@ const App = () => {
         <Margain2Dialogue path = "/margain2" /> 
         <Pheesh2Dialogue path = "/pheesh2" /> 
         {/* <RunningGame path="/running-game" /> */}
-        <MomAnimation path="/end" className="fadeOutTransition"></MomAnimation>
+        <Mom path="/end" className="fadeOutTransition"></Mom>
         <NotFound default />
       </Router>
     </>
