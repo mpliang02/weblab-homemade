@@ -10,6 +10,7 @@ import "./Notebook.css";
 //TODO: handle overflow
 const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.googleusercontent.com";
 //TODO stop from adding duplicates or smth as well
+
 const Notebook = ({userId, firstName, handleLogout}) => {
     const [notes, setNotes] = useState([]);
     const [ingredients, setIngredients] = useState(false);//should we actually just access the history and go back or do this??
@@ -37,19 +38,26 @@ const Notebook = ({userId, firstName, handleLogout}) => {
     if (ingredients) {
         return <Redirect to="/ingredients" />
     }
+    
 
+   
     //}, []);
 
     //TODO: load data in from somewhere
+
+    
     return (
         <>
+        
             <div class="wrapper" id="nbwrapper">
                 <p id="ntbk" class="impt">{firstName}'s Notebook</p>
                 <div id="notes" >
                     <Note notelist={notes} />
                 </div>
+    
                 <div class="buttonside" id="ntbkbtn">
                     <div>
+                        
                         <GoogleLogout
                             clientId={GOOGLE_CLIENT_ID}
                             render={(renderProps) => (
@@ -68,7 +76,13 @@ const Notebook = ({userId, firstName, handleLogout}) => {
                 </div>
             </div>
         </>
+        
     );
+
+    
 };
 
+
+
 export default Notebook;
+

@@ -14,6 +14,7 @@ import MargainDialogue from "./pages/MargainDialogue.js";
 import PheeshDialogue from "./pages/PheeshDialogue.js";
 import EmptyHouseDialogue from "./pages/EmptyHouseDialogue.js";
 import Run from "./pages/RUNPLS.js";
+import Map from "./pages/map.js";
 // import RunningGame from "./pages/running game/RunningGame.js";
 import MomAnimation from "./pages/MomAnimation.js";
 
@@ -125,6 +126,7 @@ const App = () => {
         <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} recipe={recipe} />
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
         <Run path="/run" />
+        <Map path = "/map" /> 
         {/* <RunningGame path="/running-game" /> */}
         <MomAnimation path="/end" className="fadeOutTransition"></MomAnimation>
         <NotFound default />

@@ -1,0 +1,11 @@
+.mapBack{
+    position: absolute;
+    background-image: url("../../components/pages/map/map3.png");
+    background-size: cover;
+    width: auto;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+

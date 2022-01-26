@@ -2,7 +2,7 @@
   background-image: url("../../../dist/extras/notebook.png");
   background-size: cover;
   background-position: top center;
-  font-family: "Ink Free";
+  font-family: "Chalkduster", fantasy;
   height: 100%;
   padding: 50px 0px 0px 100px;
   /* overflow: hidden; */
@@ -36,7 +36,8 @@
 
 .impt {
   text-decoration: underline;
-  text-decoration-color: palevioletred;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(255, 186, 186);
 }
 
 /* #logoutdiv {

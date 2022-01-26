@@ -189,7 +189,7 @@ const keys = {
 //resets the game
 function restart() {
     player = new MC()
-    platforms = [new Platform({x:-2, y:585}), new Platform({x: -602, y: 585}), new Platform({x: 598, y: 585}), new Platform({x: 500, y: 200})]
+    platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 500, y: 200})]
     obstacles = [new Obstacle({x: 260, y: 584})]
 }
 
@@ -227,6 +227,8 @@ function animate() {
         player.velocity.x = 5;
     } else if ((keys.left.pressed && player.position.x > 100) || (keys.left.pressed && scrollOffset === 0 && player.position.x > 0)) {
         player.velocity.x = -5
+    } else if (player.position.x < 100) {
+        player.position.x = 100
     } else {
         player.velocity.x = 0
         if (keys.right.pressed) {
