@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import "./DialogueCSS.css";
 
-import tigerbackground1 from "../../../dist/characters/Anger.png";
+import tigerbackground1 from "../../../dist/characters/AngerEdited.png";
 import tigerbackground2 from "../../../dist/characters/Anger2.png";
 
 const TigerDialogueBackground = () => {
