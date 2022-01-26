@@ -28,6 +28,27 @@
     padding-top: 10px;
 }
 
+#titlewrapper {
+    width: 60%;
+    display: flex;
+    height: auto;
+    padding: 0px;
+    justify-content: center;
+}
+
+#titlespan {
+    font-size: 36px;
+    font-family: "Segoe Script";
+    /* width: 50%;
+    text-align: left;
+    padding-top: 10px; */
+    font-weight: normal;
+    background-color: pink;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px 40px 10px 40px;
+}
+
 input {
     height: 40px;
     width: 60%;
@@ -62,6 +83,10 @@ input:focus {
 
 .ingredient:focus-within {
     height: 60px;
+}
+
+#toping {
+    padding-top: 0px;
 }
 
 ::selection {

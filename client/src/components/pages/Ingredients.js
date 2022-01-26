@@ -165,14 +165,18 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
       <div class="wrapper" id="ingwrapper">
         <div id="recipes">
           <form id="ingredient-list" onSubmit={handleSubmit}>
-            <p>enter 5 ingredients below:</p>
-            <div class="ingredient">
+            {/* <div id="titlewrapper" >
+              <h1>homemade</h1>
+            </div> */}
+            <p><span id="titlespan">homemade</span> &nbsp;&nbsp;&nbsp; enter 5 ingredients below:</p>
+            <div class="ingredient" id="toping">
               <input
                 type="text"
                 name="ing1"
                 onChange={handleIng1Change}
                 value={ing1}
                 placeholder="ingredient 1"
+                autoComplete="off"
                 autoFocus
               />
             </div>
@@ -183,6 +187,7 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
                 onChange={handleIng2Change}
                 value={ing2}
                 placeholder="ingredient 2"
+                autoComplete="off"
               />
             </div>
             <div class="ingredient">
@@ -192,6 +197,7 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
                 onChange={handleIng3Change}
                 value={ing3}
                 placeholder="ingredient 3"
+                autoComplete="off"
               />
             </div>
             <div class="ingredient">
@@ -201,6 +207,7 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
                 onChange={handleIng4Change}
                 value={ing4}
                 placeholder="ingredient 4"
+                autoComplete="off"
               />
             </div>
             <div class="ingredient">
@@ -210,6 +217,7 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
                 onChange={handleIng5Change}
                 value={ing5}
                 placeholder="ingredient 5"
+                autoComplete="off"
               />
             </div>
             <div id="submitbtn">
