@@ -2,7 +2,8 @@
   position: absolute;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 68px;
+  padding: 80px;
+  padding-top: 7%;
   resize: none;
   bottom: 1%;
   line-height: 1cm;
@@ -10,22 +11,16 @@
   font-size: 20px;
   margin-left: 37.1%;
   margin-right: auto;
-  margin-bottom: 10px;
+  margin-bottom: 2%;
   background-color: transparent;
   border-color: transparent;
+  background-image: url("../../../dist/extras/Untitled_Artwork.png");
   width: 800px;
   height: 250px;
+  
 }
 
-.dialogueBack {
-  position: absolute;
-  width: 800px;
-  height: 250px;
-  margin-bottom: 10px;
-  bottom: 3%;
-  margin-left: 24.5%;
-  background-image: url("../../../dist/extras/Untitled_Artwork.png");
-}
+
 
 /* .dialogueText {
   position: absolute;
@@ -52,8 +47,8 @@
 .dialogueSpeaker {
   font-size: 250%;
   font-family: "Chalkduster", fantasy;
-  top: 67.5%;
-  left: 41.5%;
+  top: 69.5%;
+  left: 43.5%;
   z-index: 2;
   padding-left: 0%;
   position: absolute;
@@ -68,19 +63,18 @@
 }
 
 .dialogueImage {
-  position: absolute;
-  bottom: 3.75%;
-  left: 16.5%;
-  padding-left: 8.5%;
+  position: relative;
+  bottom: 45%;
+  left: 10%;
   margin: 45px;
   width: auto;
-  height: 24%;
+  height: 30%;
 }
 
 .dialogueBackground {
   width: 100%;
   height: auto;
-  background-size: cover;
+  background-size: cover; 
   background-position: center;
   margin-left: auto;
   margin-right: auto;
