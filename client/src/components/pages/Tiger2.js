@@ -40,7 +40,7 @@ const Tiger2Dialogue = ({ firstName }) => {
       text: "Just remember to breathe afterwards. Your face is as red as my house right now heh.",
       nextLine: 1,
     },
-    { type: "choice", text: `Anyways, off you go - Mr.Tigathon's coming home today and the tea isn't going to finish itself., ${firstName}?`, yes: 1, no: 2 },
+    { type: "choice", text: `Anyways, off you go - Mr.Tigathon's coming home today and the tea isn't going to finish itself, is it ${firstName}?`, yes: 1, no: 2 },
     
   ];
 
