@@ -8,7 +8,7 @@ import ReactAudioPlayer from "react-audio-player";
 import emptyhouseMusic from "../../../dist/Music/cryptic scenery - Åtminstone.mp3";
 import { Redirect } from "@reach/router";
 
-const EmptyHouseDialogue = (props) => {
+const EmptyHouseDialogue = ({ings}) => {
   const [run, setRun] = useState(false);
   const messages = [
     { type: "normal", text: "... ... ...", nextLine: 1 },
@@ -19,7 +19,7 @@ const EmptyHouseDialogue = (props) => {
     },
     {
       type: "choice",
-      text: "Do you want the final ingredient? *Press Y/N*",
+      text: `Do you want the final ingredient, ${ings[4]}? *Press Y/N*`,
       yes: 1,
       no: 2,
     },

@@ -10,10 +10,10 @@ import margainMusic from "../../../dist/Music/M33 Project - Reciclatge.mp3";
 import { Redirect } from "@reach/router";
 
 
-const Margain2Dialogue = ({ firstName }) => {
+const Margain2Dialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
-    { type: "normal", text: "Here...it's the last I have of it...", nextLine: 1 },
+    { type: "normal", text: `Here, take this ${ings[2]}...it's the last I have of it...`, nextLine: 1 },
     {
       type: "normal",
       text: " I-if you use it well it'll probably hopefully h-help her...",

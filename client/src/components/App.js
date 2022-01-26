@@ -124,24 +124,24 @@ const App = () => {
           handleLogout={handleLogout}
         />
         <FroggyDialogue path="/welcome" firstName={firstName} recipe={recipe}></FroggyDialogue>
-        <LotlDialogue path="/lotl-dialogue" firstName={firstName} recipe={recipe} />
-        <TigerDialogue path="/tiger-dialogue" firstName={firstName} recipe={recipe} />
-        <MargainDialogue path="/margain-dialogue" firstName={firstName} recipe={recipe} />
-        <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} recipe={recipe} />
-        <EmptyHouseDialogue path="/emptyhouse-dialogue" />
-        <Instructions path="/instructions" handleLogout={handleLogout} />
+        <LotlDialogue path="/lotl-dialogue" firstName={firstName} recipe={recipe} ings={ings}/>
+        <TigerDialogue path="/tiger-dialogue" firstName={firstName} recipe={recipe} ings={ings} />
+        <MargainDialogue path="/margain-dialogue" firstName={firstName} recipe={recipe} ings={ings}/>
+        <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} recipe={recipe} ings={ings}/>
+        <EmptyHouseDialogue path="/emptyhouse-dialogue" ings={ings}/>
+        <Instructions path="/instructions" handleLogout={handleLogout}/>
         {/* <APITest path="/apitest" /> */}
         <RunLotl path="/runLotl" />
         <RunTiger path="/runTiger" />
         <RunMargain path="/runMargain" />
         <RunPheesh path="/runPheesh" />
         <Map path="/map" firstName={firstName} recipe={recipe} />
-        <Lotl2Dialogue path="/lotl2" firstName={firstName} recipe={recipe} />
-        <Tiger2Dialogue path="/tiger2" firstName={firstName} recipe={recipe} />
-        <Margain2Dialogue path="/margain2" firstName={firstName} recipe={recipe} />
-        <Pheesh2Dialogue path="/pheesh2" firstName={firstName} recipe={recipe} />
+        <Lotl2Dialogue path="/lotl2" firstName={firstName} recipe={recipe} ings={ings}/>
+        <Tiger2Dialogue path="/tiger2" firstName={firstName} recipe={recipe} ings={ings}/>
+        <Margain2Dialogue path="/margain2" firstName={firstName} recipe={recipe} ings={ings}/>
+        <Pheesh2Dialogue path="/pheesh2" firstName={firstName} recipe={recipe} ings={ings}/>
         {/* <RunningGame path="/running-game" /> */}
-        <Mom path="/end" className="fadeOutTransition"></Mom>
+        <Mom path="/end" className="fadeOutTransition" firstName={firstName} recipe={recipe}></Mom>
         <NotFound default />
       </Router>
     </>

@@ -10,10 +10,10 @@ import tigerMusic from "../../../dist/Music/M33 Project - On va exister.mp3";
 import { Redirect } from "@reach/router";
 
 
-const Tiger2Dialogue = ({ firstName }) => {
+const Tiger2Dialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
-    { type: "normal", text: "Let me go find what you need. It's a bit hectic around here...", nextLine: 1 },
+    { type: "normal", text: `Let me go find ${ings[1]}. It's a bit hectic around here...`, nextLine: 1 },
     {
       type: "normal",
       text: "Oh! I'd rather you didn't touch tha- *crash*",

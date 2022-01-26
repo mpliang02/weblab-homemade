@@ -9,7 +9,7 @@ import ReactAudioPlayer from "react-audio-player";
 import margainMusic from "../../../dist/Music/M33 Project - Reciclatge.mp3";
 import { Redirect } from "@reach/router";
 
-const MargainDialogue = ({ firstName }) => {
+const MargainDialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
     { type: "normal", text: "...H-hello...I'm Mrs. Margain.", nextLine: 1 },
@@ -28,7 +28,7 @@ const MargainDialogue = ({ firstName }) => {
     },
     {
       type: "choice",
-      text: "...I-I can give you an ingredient, if you want? *Press Y/N*",
+      text: `...I-I can give you ${ings[2]}, if you want? *Press Y/N*`,
       yes: 1,
       no: 2,
     },

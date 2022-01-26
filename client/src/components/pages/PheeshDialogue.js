@@ -10,7 +10,7 @@ import pheeshMusic from "../../../dist/Music/Marcos H. Bolanos - Suspects.mp3";
 import { Redirect } from "@reach/router";
 
 
-const PheeshDialogue = ({ firstName }) => {
+const PheeshDialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
     { type: "normal", text: "GLUG GLUG GLUG GLUG", nextLine: 1 },

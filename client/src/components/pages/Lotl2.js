@@ -11,7 +11,7 @@ import { Redirect } from "@reach/router";
 
 
 
-const Lotl2Dialogue = ({ firstName }) => {
+const Lotl2Dialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
     {
@@ -21,7 +21,7 @@ const Lotl2Dialogue = ({ firstName }) => {
     },
     {
       type: "normal",
-      text: `So…in actuality I only have one of the things you wanted…I'm sorry about that. I really thought I had everything.`,
+      text: `So…in actuality I only have one of the things you wanted, ${ings[0]}…I'm sorry about that. I really thought I had everything.`,
       nextLine: 1,
     },
     {

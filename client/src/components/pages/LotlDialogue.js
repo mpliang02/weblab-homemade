@@ -9,7 +9,7 @@ import lotlMusic from "../../../dist/Music/Maarten Schellekens - Mallet Play.mp3
 import ReactAudioPlayer from "react-audio-player";
 import { Redirect } from "@reach/router";
 
-const LotlDialogue = ({ firstName }) => {
+const LotlDialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
     {
@@ -43,7 +43,7 @@ const LotlDialogue = ({ firstName }) => {
       yes: 1,
       no: 2,
     },
-    { type: "normal", text: "Perfect! Let's go!", nextLine: 2 },
+    { type: "normal", text: `Perfect! Let's go get ${ings[0]}!`, nextLine: 2 },
     {
       type: "normal",
 
