@@ -22,6 +22,15 @@ const Instructions = ({handleLogout}) => {
     return (
         <>
             <div class="wrapper" id="instwrapper">
+                <div id="contwrapper" >
+                    <div id="instwrap">
+                        <p id="inst">instructions</p>
+                    </div>
+                    <p class="sect" > general: </p>
+                    <p class="cont" > this is a game stupid.  your mom is dead</p>
+                    <p class="sect" > ingredients: </p>
+                    <p class="cont" > enter the ingredients you have in the fridge in your lonely, lonely apartment you poor miserable being</p>
+                </div>
                 <div class="buttonside">
                     <div>
                         <GoogleLogout

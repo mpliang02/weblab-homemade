@@ -1,0 +1,38 @@
+#contwrapper {
+    padding: 50px;
+}
+
+#instwrap {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#inst {
+    font-size: 36px;
+    font-family: "Lucida Sans", "sans-serif";
+    /* width: 50%;
+    text-align: left;
+    padding-top: 10px; */
+    font-weight: normal;
+    background-color: pink;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px 40px 10px 40px;
+    width: 20%;
+}
+
+#inst::selection {
+    background: cornflowerblue;
+}
+
+.sect {
+    font-family: "Lucida Sans", "sans-serif";
+    font-size: 24px;
+    padding-top: 16px;
+}
+
+.cont {
+    font-family: "Lucida Sans", "sans-serif";
+    font-size: 16px;
+}

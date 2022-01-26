@@ -29,21 +29,21 @@ const Skeleton = ({ userId, name, handleLogin, handleLogout }) => {
   return (
     <>
       <div id="welcome">
-        {name ? (
+        {/* {name ? (
           <p>
             you are currently logged in as <span>{name}</span>.
           </p>
         ) : (
           <p>you are not logged in.</p>
-        )}
+        )} */}
 
         {/* not routing within react */}
-        <a href="/running-game">Go to running game</a>
+        {/* <a href="/running-game">Go to running game</a>
         <a href="/lotl-dialogue">Go to Ms. Lotl's dialogue</a>
         <a href="/tiger-dialogue">Go to Mr. Tiger's dialogue</a>
         <a href="/margain-dialogue">Go to Mr. Margain's dialogue</a>
         <a href="/pheesh-dialogue">Go to Mr. Pheesh's dialogue</a>
-        <a href="/emptyhouse-dialogue">Go to empty house dialogue</a>
+        <a href="/emptyhouse-dialogue">Go to empty house dialogue</a> */}
         {/* <a href = "/run">Go to running game</a> */}
       </div>
       <div id="homepage">
