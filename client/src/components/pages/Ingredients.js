@@ -51,7 +51,6 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
     .then(response => response.json())
     .then(response => {
         console.log(response);
-        console.log("fdjiofsdoij");
         console.log(response[0]["title"]);
         if (response.keys().length == 0) {
           alert("no valid recipe! try again");//TODO: add check that uses all our ingredients

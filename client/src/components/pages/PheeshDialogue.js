@@ -1,14 +1,17 @@
 import DialogueBox from "./PheeshDialogueTextBox.js";
 import "./DialogueCSS.css";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 // import pheeshbackground from "../../../dist/characters/pheesh1.png";
 import PheeshDialogueBackground from "./PheeshDialogueBackground.js";
 import pheeshhead1 from "../../../dist/extras/pheeshhead1.png";
 import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
 import ReactAudioPlayer from "react-audio-player";
 import pheeshMusic from "../../../dist/Music/Marcos H. Bolanos - Suspects.mp3";
+import { Redirect } from "@reach/router";
+
 
 const PheeshDialogue = ({ firstName }) => {
+  const [run, setRun] = useState(false);
   const messages = [
     { type: "normal", text: "GLUG GLUG GLUG GLUG", nextLine: 1 },
     { type: "normal", text: "... ... ...", nextLine: 1 },
@@ -34,6 +37,27 @@ const PheeshDialogue = ({ firstName }) => {
     { type: "normal", text: "...Interesting.", nextLine: 2 },
     { type: "normal", text: "You know you can't do that.", nextLine: -2 },
   ];
+
+  addEventListener('keyup', ({keyCode}) => {
+    switch (keyCode) {
+        case 87:
+          setRun(true)
+          break
+
+        case 40:
+            setRun(false)
+            break
+          
+        case 87:
+          setRun(true)
+          break
+    }
+   })
+
+
+  if (run) {
+    return <Redirect to="/run" />;
+  }
 
   return (
     <>
