@@ -16,7 +16,7 @@ const gravity = 0.5
 class Dish {
     constructor() {
         this.position = {
-            x: 900,
+            x: 3300,
             y: 540
         }
 
@@ -171,12 +171,23 @@ class Obstacle {
 
 }
 
+function getRandomx(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function getRandomy(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+  }
 
 let player = new MC()
     
 //array to create multiple platforms (use for each to apply to all)
-let platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 500, y: 200})]
-let obstacles = [new Obstacle({x: 260, y: 584})]
+let platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 1260, y: 585}), new Platform({x: 1890, y: 585}), new Platform({x: 2520, y: 585}), new Platform({x: 3150, y: 585}), new Platform({x: 3780, y: 585}), new Platform({x: getRandomx(200, 800), y: getRandomy(100, 400)}), new Platform({x: getRandomx(800, 1400), y: getRandomy(100, 400)}), new Platform({x: getRandomx(1400, 2000), y: getRandomy(100, 400)}), new Platform({x: getRandomx(2000, 3000), y: getRandomy(100, 400)})]
+let obstacles = [new Obstacle({x: 260, y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584})]
 const dish = new Dish()
 const keys = {
     right: {
@@ -311,6 +322,14 @@ addEventListener('keydown', ({keyCode}) => {
             }
             break
 
+        case 32:
+            if (player.jumping == false) {
+                player.velocity.y = -23
+                player.jumping = true
+                break
+            }
+                break
+
         case 39:
             keys.right.pressed = true
             break
@@ -324,6 +343,10 @@ addEventListener('keydown', ({keyCode}) => {
 addEventListener('keyup', ({keyCode}) => {
     switch (keyCode) {
         case 38:
+            player.velocity.y = 0
+            break
+
+        case 32:
             player.velocity.y = 0
             break
 
