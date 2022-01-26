@@ -5,6 +5,8 @@ import React, { Component } from "react";
 import MargainDialogueBackground from "./MargainDialogueBackground.js";
 import margainhead1 from "../../../dist/extras/margainhead1.png";
 import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
+import ReactAudioPlayer from "react-audio-player";
+import margainMusic from "../../../dist/Music/M33 Project - Reciclatge.mp3";
 
 const MargainDialogue = ({ firstName }) => {
   const messages = [
@@ -34,6 +36,7 @@ const MargainDialogue = ({ firstName }) => {
 
   return (
     <>
+      <ReactAudioPlayer src={margainMusic} autoPlay loop></ReactAudioPlayer>
       <MargainDialogueBackground></MargainDialogueBackground>
       <DialogueBox
         messages={messages}

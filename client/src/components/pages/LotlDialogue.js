@@ -5,6 +5,8 @@ import React, { Component } from "react";
 import LotlDialogueBackground from "./LotlDialogueBackground.js";
 import lotlhead1 from "../../../dist/extras/lotlhead1.png";
 import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
+import lotlMusic from "../../../dist/Music/Maarten Schellekens - Mallet Play.mp3";
+import ReactAudioPlayer from "react-audio-player";
 
 const LotlDialogue = ({ firstName }) => {
   const messages = [
@@ -39,6 +41,7 @@ const LotlDialogue = ({ firstName }) => {
 
   return (
     <>
+      <ReactAudioPlayer src={lotlMusic} autoPlay loop></ReactAudioPlayer>
       <LotlDialogueBackground></LotlDialogueBackground>
       <DialogueBox
         messages={messages}

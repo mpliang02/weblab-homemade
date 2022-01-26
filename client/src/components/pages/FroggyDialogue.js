@@ -5,6 +5,8 @@ import React, { Component } from "react";
 import MapBackground from "./MapBackground.js";
 import froggy from "../../../dist/mrfrog.png";
 import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
+import welcomeMusic from "../../../dist/Music/M33 Project - Pal de Pluja.mp3";
+import ReactAudioPlayer from "react-audio-player";
 
 const FroggyDialogue = ({ firstName, recipe }) => {
   const messages = [
@@ -28,6 +30,7 @@ const FroggyDialogue = ({ firstName, recipe }) => {
 
   return (
     <>
+      <ReactAudioPlayer src={welcomeMusic} autoPlay loop></ReactAudioPlayer>
       <MapBackground></MapBackground>
       <DialogueBox
         messages={messages}

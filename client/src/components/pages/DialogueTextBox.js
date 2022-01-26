@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Message from "./Message.js";
 import back from "../../../dist/extras/Untitled_Artwork.png";
 //        <img className="dialogueTextBox" src={dialogueTextBox}></img>
@@ -37,10 +37,15 @@ const DialogueBox = ({ messages, characterName, dialogueImage }) => {
 
   return (
     <div>
-      <div className="dialogueSpeaker">{characterName}</div> 
-      <img className = "dialogueBack" src = {back}></img>
-      <textarea disabled className = "dialogueTextBox" value={messages[currentDialogue].text} name={currentDialogue}> 
-      </textarea>
+      <div className="dialogueSpeaker">{characterName}</div>
+      <img className="dialogueBack" src={back}></img>
+      <textarea
+        disabled
+        className="dialogueTextBox"
+        value={messages[currentDialogue].text}
+        name={currentDialogue}
+      ></textarea>
+
       <img className="dialogueImage" src={dialogueImage}></img>
     </div>
   );

@@ -5,6 +5,8 @@ import React, { Component } from "react";
 import TigerDialogueBackground from "./TigerDialogueBackground.js";
 import tigerhead1 from "../../../dist/extras/tigerhead1.png";
 import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
+import ReactAudioPlayer from "react-audio-player";
+import tigerMusic from "../../../dist/Music/M33 Project - On va exister.mp3";
 
 const TigerDialogue = ({ firstName }) => {
   const messages = [
@@ -32,6 +34,7 @@ const TigerDialogue = ({ firstName }) => {
 
   return (
     <>
+      <ReactAudioPlayer src={tigerMusic} autoPlay loop></ReactAudioPlayer>
       <TigerDialogueBackground></TigerDialogueBackground>
       <DialogueBox
         messages={messages}

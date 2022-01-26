@@ -3,6 +3,7 @@ import { useState } from "react";
 import Message from "./Message.js";
 import dialogueTextBox from "../../../dist/extras/Untitled_Artwork.png";
 import blankBox from "../../../dist/extras/box1.png";
+import back from "../../../dist/extras/Untitled_Artwork.png";
 
 import "./DialogueCSS.css";
 
@@ -38,10 +39,16 @@ const DialogueBox = ({ messages, characterName, dialogueImage }) => {
 
   return (
     <div>
-      <img className="froggyTextBox" src={dialogueTextBox}></img>
+      <img className="frogBox" src={blankBox}></img>
       <div className="dialogueSpeaker">{characterName}</div>
-      <Message words={messages[currentDialogue].text} key={currentDialogue} />
-      <img className="dialogueImage" src={blankBox}></img>
+      <img className="dialogueBack" src={back}></img>
+      <textarea
+        disabled
+        className="dialogueTextBox"
+        value={messages[currentDialogue].text}
+        name={currentDialogue}
+      ></textarea>
+
       <img className="froggyImage" src={dialogueImage}></img>
     </div>
   );

@@ -1,35 +1,33 @@
-
 .dialogueTextBox {
-  position:absolute;
+  position: absolute;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 68px; 
-  resize: none; 
-  bottom: 4%;
+  padding: 68px;
+  resize: none;
+  bottom: 1%;
   line-height: 1cm;
   font-family: "Chalkduster", fantasy;
-  font-size:20px;
-  margin-left: 33%; 
-  margin-right: auto; 
+  font-size: 20px;
+  margin-left: 37.1%;
+  margin-right: auto;
   margin-bottom: 10px;
   background-color: transparent;
-  border-color:transparent;
+  border-color: transparent;
   width: 800px;
   height: 250px;
 }
 
 .dialogueBack {
-  position:absolute;
+  position: absolute;
   width: 800px;
   height: 250px;
   margin-bottom: 10px;
   bottom: 3%;
-  margin-left: 33%;
+  margin-left: 24.5%;
   background-image: url("../../../dist/extras/Untitled_Artwork.png");
-  
 }
 
-.dialogueText {
+/* .dialogueText {
   position: absolute;
   margin: 0 auto;
   padding: 20%;
@@ -40,7 +38,7 @@
   overflow: hidden;
   animation: typeLetter 3s steps(90, end);
   font-family: "Ink Free";
-}
+} */
 
 @keyframes typeLetter {
   from {
@@ -51,13 +49,15 @@
   }
 }
 
-/*.dialogueSpeaker {
+.dialogueSpeaker {
   font-size: 250%;
-  font-family: "Ink Free";
+  font-family: "Chalkduster", fantasy;
   top: 67.5%;
+  left: 41.5%;
+  z-index: 2;
   padding-left: 0%;
   position: absolute;
-}*/
+}
 
 .dialogueEnder {
   font-size: 80%;
@@ -69,13 +69,12 @@
 
 .dialogueImage {
   position: absolute;
-  bottom: 0%;
-  left: 0%;
+  bottom: 3.75%;
+  left: 16.5%;
   padding-left: 8.5%;
   margin: 45px;
   width: auto;
-  height: 250px;
-  
+  height: 24%;
 }
 
 .dialogueBackground {
@@ -83,17 +82,29 @@
   height: 100%;
   display: block;
   margin-left: auto;
-  margin-right: auto;  
-  
+  margin-right: auto;
 }
 
 body {
   overflow: hidden;
 }
+
+.frogBox {
+  position: absolute;
+  z-index: 2;
+  bottom: 2.2%;
+  left: 15.5%;
+  padding-left: 8.5%;
+  margin: 55px;
+  width: auto;
+  height: 175px;
+}
+
 .froggyImage {
   position: absolute;
-  bottom: 2.5%;
-  left: 0;
+  bottom: 3.95%;
+  left: 22.25%;
+  z-index: 3;
   padding-left: 3.9%;
   margin: 4.3%;
   width: 7.5%;
@@ -114,14 +125,14 @@ body {
   position: absolute;
   width: 20%;
   height: 10%;
-  bottom: 9%;
-  left: 41.8%;
+  bottom: 10%;
+  left: 52.75%;
 }
 
 .InstructionsText {
   position: absolute;
-  top: 84.8%;
-  left: 43.6%;
+  top: 84%;
+  left: 54.5%;
   font-size: 90%;
   font-family: "Ink Free";
 }
@@ -130,14 +141,24 @@ body {
   position: absolute;
   width: 20%;
   height: 10%;
-  bottom: 9%;
-  left: 38%;
+  bottom: 10.3%;
+  left: 52.85%;
 }
 
 .froggyInstructionsText {
   position: absolute;
-  top: 84.8%;
-  left: 39.7%;
+  top: 83.65%;
+  left: 54.67%;
   font-size: 90%;
   font-family: "Ink Free";
+}
+
+.pheeshImage {
+  position: absolute;
+  bottom: 3.7%;
+  left: 16%;
+  padding-left: 8.5%;
+  margin: 45px;
+  width: auto;
+  height: 22%;
 }

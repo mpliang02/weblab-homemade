@@ -1,10 +1,12 @@
-import DialogueBox from "./DialogueTextBox.js";
+import DialogueBox from "./PheeshDialogueTextBox.js";
 import "./DialogueCSS.css";
 import React, { Component } from "react";
 // import pheeshbackground from "../../../dist/characters/pheesh1.png";
 import PheeshDialogueBackground from "./PheeshDialogueBackground.js";
 import pheeshhead1 from "../../../dist/extras/pheeshhead1.png";
 import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
+import ReactAudioPlayer from "react-audio-player";
+import pheeshMusic from "../../../dist/Music/Marcos H. Bolanos - Suspects.mp3";
 
 const PheeshDialogue = ({ firstName }) => {
   const messages = [
@@ -35,6 +37,7 @@ const PheeshDialogue = ({ firstName }) => {
 
   return (
     <>
+      <ReactAudioPlayer src={pheeshMusic} autoPlay loop></ReactAudioPlayer>
       <PheeshDialogueBackground></PheeshDialogueBackground>
       <DialogueBox
         messages={messages}
