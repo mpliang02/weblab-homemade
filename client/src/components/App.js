@@ -126,7 +126,7 @@ const App = () => {
         <MargainDialogue path="/margain-dialogue" firstName={firstName} recipe={recipe} />
         <PheeshDialogue path="/pheesh-dialogue" firstName={firstName} recipe={recipe} />
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
-        <APITest path="/apitest" />
+        {/* <APITest path="/apitest" /> */}
         <Run path="/run" />
         <Map path = "/map" /> 
         {/* <RunningGame path="/running-game" /> */}
