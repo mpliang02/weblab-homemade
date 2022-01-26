@@ -190,8 +190,8 @@ function getRandomy(min, max) {
 let player = new MC()
     
 //array to create multiple platforms (use for each to apply to all)
-let platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 1260, y: 585}), new Platform({x: 1890, y: 585}), new Platform({x: 2520, y: 585}), new Platform({x: 3150, y: 585}), new Platform({x: 3780, y: 585}), new Platform({x: getRandomx(200, 800), y: getRandomy(100, 400)}), new Platform({x: getRandomx(800, 1400), y: getRandomy(100, 400)}), new Platform({x: getRandomx(1400, 2000), y: getRandomy(100, 400)}), new Platform({x: getRandomx(2000, 3000), y: getRandomy(100, 400)})]
-let obstacles = [new Obstacle({x: 260, y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584})]
+let platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 1260, y: 585}), new Platform({x: 1890, y: 585}), new Platform({x: 2520, y: 585}), new Platform({x: 3150, y: 585}), new Platform({x: 3780, y: 585}), new Platform({x: 4410, y: 585}), new Platform({x: 5040, y: 585})]
+let obstacles = []
 const dish = new Dish()
 const keys = {
     right: {
@@ -205,8 +205,7 @@ const keys = {
 //resets the game
 function restart() {
     player = new MC()
-    platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 1260, y: 585}), new Platform({x: 1890, y: 585}), new Platform({x: 2520, y: 585}), new Platform({x: 3150, y: 585}), new Platform({x: 3780, y: 585}), new Platform({x: getRandomx(200, 800), y: getRandomy(100, 400)}), new Platform({x: getRandomx(800, 1400), y: getRandomy(100, 400)}), new Platform({x: getRandomx(1400, 2000), y: getRandomy(100, 400)}), new Platform({x: getRandomx(2000, 3000), y: getRandomy(100, 400)})]
-    obstacles = [new Obstacle({x: 260, y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584})]
+     platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 1260, y: 585}), new Platform({x: 1890, y: 585}), new Platform({x: 2520, y: 585}), new Platform({x: 3150, y: 585}), new Platform({x: 3780, y: 585}), new Platform({x: 4410, y: 585}), new Platform({x: 5040, y: 585})]
 }
 
 //how far player has travelled from start 
