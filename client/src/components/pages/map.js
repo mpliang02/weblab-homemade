@@ -263,6 +263,8 @@ function animate() {
         doors.forEach(door => {
             if (door.position.x < player.position.x + player.width && door.position.x + door.width > player.position.x && door.position.y < player.position.y + player.height && door.height + door.position.y > player.position.y) {
                 console.log(door.name)
+
+                window.location = "/lotl-dialogue";
          
                 if (door.name == "door1") {
                     window.location = "/lotl-dialogue";
