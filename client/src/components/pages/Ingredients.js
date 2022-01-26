@@ -40,7 +40,47 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("about to call api");
-    get("/api/recipes").then((recipeObjs) => {
+    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ing1}%2C${ing2}%2C${ing3}%2C${ing4}%2C${ing5}&number=5&ignorePantry=false&ranking=1`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+            "x-rapidapi-key": "8dc60b8972msh9ed1cbe3fa19685p179872jsn68a02d450704"
+        }
+    })
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        console.log("fdjiofsdoij");
+        console.log(response[0]["title"]);
+        if (response.keys().length == 0) {
+          alert("no valid recipe! try again");//TODO: add check that uses all our ingredients
+        }
+        else {//TODO: allow recipe choice selection
+          setRecipeName(response[0]["title"]);
+          setSub(true);
+          post("/api/newnote", {
+            userid: userId,
+            ings: [ing1, ing2, ing3, ing4, ing5],
+            recipeName: response[0]["title"],
+          }).then((note) => {
+            console.log(note);
+          });
+        }
+        /*response.data.map(item => {
+            console.log(item);
+            console.log(item.title);
+        });
+        /*alert(JSON.parse(response));
+        alert(response[0]);
+        alert(response[0]["name"]);
+        alert(JSON.parse(response[0]["name"]));
+        alert(response);*/
+    })
+    .catch(err => {
+        console.error(err);
+        alert("error! try again");
+    });
+    /*get("/api/recipes").then((recipeObjs) => {
       console.log("api called");
       //console.log(recipeObjs);
       const dish = matchRecipe(recipeObjs);
@@ -59,7 +99,7 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
         console.log("invalid", dish);
         alert("invalid dish!  try again");
       }
-    });
+    });*/
     //alert(firstName);
     //alert(`your ingredients are: ${ing1} and ${ing2} and ${ing3} and ${ing4} and ${ing5} and thats it lolz `);
     //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
@@ -102,7 +142,9 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
 
   if (sub) {
     setIngs([ing1, ing2, ing3, ing4, ing5]);
-    setRecipe(recipeName);
+    setRecipe(recipeName);//TODO: consolidate recipe name functions??
+    console.log(recipeName);
+    console.log("fjdiosoijfds");
     //return <Redirect to={{ pathname: '/game', ing1:  {ing1} , ing2: {ing2}, ing3: {ing3}, ing4: {ing4}, ing5: {ing5}}} />
     //return <Redirect to='/game' />
     //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
