@@ -29,15 +29,15 @@ const EmptyHouseDialogue = (props) => {
 
   addEventListener('keyup', ({keyCode}) => {
     switch (keyCode) {
-        case 89:
+        case 87:
           setRun(true)
           break
 
-        case 78:
+        case 83:
             setRun(false)
             break
           
-        case 89:
+        case 87:
           setRun(true)
           break
     }
