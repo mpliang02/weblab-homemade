@@ -56,7 +56,7 @@ const PheeshDialogue = ({ firstName }) => {
 
 
   if (run) {
-    return <Redirect to="/run" />;
+    return <Redirect to="/runPheesh" />;
   }
 
   return (

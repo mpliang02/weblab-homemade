@@ -10,32 +10,36 @@ import margainMusic from "../../../dist/Music/M33 Project - Reciclatge.mp3";
 import { Redirect } from "@reach/router";
 
 
-const MargainDialogue = ({ firstName }) => {
+const Margain2Dialogue = ({ firstName }) => {
   const [run, setRun] = useState(false);
   const messages = [
-    { type: "normal", text: "...H-hello...I'm Mrs. Margain.", nextLine: 1 },
+    { type: "normal", text: "Here...it's the last I have of it...", nextLine: 1 },
     {
       type: "normal",
-      text: "W-Who are you…? Ah...I-I'm really sorry about the mess...",
+      text: " I-if you use it well it'll probably hopefully h-help her...",
       nextLine: 1,
     },
-    { type: "normal", text: `...Y-you...you're making what? For her?`, nextLine: 1 },
-    { type: "normal", text: `...${firstName}...Really? Well...`, nextLine: 1 },
-    { type: "normal", text: "...I suppose it isn't my place.", nextLine: 1 },
     {
-      type: "normal",
-      text: "...I-I don't have much, but for a little bit of your time...",
-      nextLine: 1,
-    },
+        type: "normal",
+        text: "Y-yeah I definitely think so...",
+        nextLine: 1,
+      },
+      {
+        type: "normal",
+        text: "All things are weighed equal in this w-world…it gives and it t-takes",
+        nextLine: 1,
+      }, 
+      {
+        type: "normal",
+        text: "...so if w-we give more I'm sure it'll take less. Even the universe has a conscience...I-i think...",
+        nextLine: 1,
+      }, 
     {
       type: "choice",
-      text: "...I-I can give you an ingredient, if you want?",
+      text: "...P-please leave...",
       yes: 1,
       no: 2,
-    },
-    { type: "normal", text: `...Good luck, ${firstName}.`, nextLine: 2 },
-    { type: "normal", text: "...You can't do that.", nextLine: -2 },
-  ];
+    }];
   
   addEventListener('keyup', ({keyCode}) => {
     switch (keyCode) {
@@ -55,7 +59,7 @@ const MargainDialogue = ({ firstName }) => {
 
 
   if (run) {
-    return <Redirect to="/runMargain" />;
+    return <Redirect to="/map" />;
   }
 
   return (
@@ -73,4 +77,4 @@ const MargainDialogue = ({ firstName }) => {
   );
 };
 
-export default MargainDialogue;
+export default Margain2Dialogue;

@@ -11,22 +11,27 @@ import { Redirect } from "@reach/router";
 
 
 
-const LotlDialogue = ({ firstName }) => {
+const Lotl2Dialogue = ({ firstName }) => {
   const [run, setRun] = useState(false);
   const messages = [
     {
       type: "normal",
-      text: `Hey, ${firstName}! Nice to finally meet you - You can call me Ms.Lotl if you'd like. `,
+      text: `Nice job, ${firstName}!`,
       nextLine: 1,
     },
     {
       type: "normal",
-      text: `I heard about what happened…`,
+      text: `So…in actuality I only have one of the things you wanted…I'm sorry about that. I really thought I had everything.`,
       nextLine: 1,
     },
     {
       type: "normal",
-      text: "Oh? I don't need to worry? She's…she's at home right now? ",
+      text: "Truthfully, this dish is such a great idea! You should visit Mr. Tiger's house - I'm sure he'll have something.",
+      nextLine: 1,
+    },
+    {
+      type: "normal",
+      text: "Hm? What's that? ",
       nextLine: 1,
     },
     {
@@ -36,21 +41,13 @@ const LotlDialogue = ({ firstName }) => {
     },
     {
       type: "normal",
-      text: "Ahem well, you said you're making a meal for…? That's so cute!",
+      text: "......",
       nextLine: 1,
     },
     {
       type: "choice",
-      text: "Mmm I think I've got everything you need for that dish. Do you want anything?",
+      text: "I'm sure everything will be fine. On your way now!",
       yes: 1,
-      no: 2,
-    },
-    { type: "normal", text: "Perfect! Let's go!", nextLine: 2 },
-    {
-      type: "normal",
-      
-      text: "I'm sorry, but you can't do that.",
-      nextLine: -2,
     },
   ];
 
@@ -72,7 +69,7 @@ const LotlDialogue = ({ firstName }) => {
 
 
   if (run) {
-    return <Redirect to="/runLotl" />;
+    return <Redirect to="/map" />;
   }
 
   return (
@@ -90,4 +87,4 @@ const LotlDialogue = ({ firstName }) => {
   );
 };
 
-export default LotlDialogue;
+export default Lotl2Dialogue;

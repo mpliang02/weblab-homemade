@@ -1,3 +1,7 @@
+import { URLSearchParams } from "core-js/modules/web.url-search-params";
+import React, { useEffect } from "react";
+import gameMusic from "../../../dist/Music/Mr.ruiZ - Beach Ballin'.mp3";
+import ReactAudioPlayer from "react-audio-player";
 
 let canvas;
 let c;
@@ -207,13 +211,7 @@ function restart() {
 
 //how far player has travelled from start 
 let scrollOffset = 0
-function init() {
-    canvas = document.getElementById('game-canvas');
-    c = canvas.getContext('2d');
-    canvas.width = innerWidth; 
-    canvas.height = innerHeight; 
-    animate();
-}
+
 function animate() {   
     //gravity 
     requestAnimationFrame(animate)
@@ -303,6 +301,7 @@ function animate() {
 
     if (dish.position.x < player.position.x + player.width && dish.position.x + dish.width > player.position.x && dish.position.y < player.position.y + player.height && dish.height + dish.position.y > player.position.y) {
         dish.position.y = 900
+        window.location = ("/tiger2")
         
     }
 
@@ -363,5 +362,28 @@ addEventListener('keyup', ({keyCode}) => {
 
 
 // animate()
+function init() {
+    canvas = document.getElementById('game-canvas');
+    c = canvas.getContext('2d');
+    canvas.width = innerWidth; 
+    canvas.height = innerHeight; 
+    animate();
+}
 
-export default init;
+const RunTiger = (props) => {
+    useEffect(() => {
+      init();
+    }, []);
+  
+    return (
+      <div className="runBack">
+        <ReactAudioPlayer src={gameMusic} autoPlay loop></ReactAudioPlayer>
+        <div className="Game-body">
+          <canvas id="game-canvas" width="800" height="800" />
+        </div>
+      </div>
+    );
+  };
+  
+  export default RunTiger;
+
