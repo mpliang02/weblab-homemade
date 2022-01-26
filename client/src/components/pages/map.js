@@ -278,16 +278,16 @@ function animate() {
                 if (door.name == "door1") {
                     door1b = true;
                     window.location = "/lotl-dialogue";
-                } else if (door.name == "door2" && door1b) {
+                } else if (door.name == "door2" ) {
                     door2b = true
                     window.location = "/tiger-dialogue";
-                } else if (door.name == "door3" && door2b) {
+                } else if (door.name == "door3" ) {
                     door3b = true
                     window.location = "/margain-dialogue";
-                } else if (door.name == "door4" && door3b) {
+                } else if (door.name == "door4" ) {
                     door4b = true
                     window.location = "/pheesh-dialogue";
-                } else if (door.name == "door5" && door4b) {
+                } else if (door.name == "door5") {
                     window.location = "/emptyhouse-dialogue";
                 }
             }
