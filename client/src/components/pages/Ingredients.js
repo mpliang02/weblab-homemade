@@ -60,6 +60,7 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
         } else {
           //TODO: allow recipe choice selection
           setRecipeName(response[0]["title"]);
+          setIngs([ing1, ing2, ing3, ing4, ing5]);
           setSub(true);
           post("/api/newnote", {
             userid: userId,

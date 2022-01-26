@@ -11,6 +11,7 @@ import { Redirect } from "@reach/router";
 
 const LotlDialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
+  console.log(ings);
   const messages = [
     {
       type: "normal",
@@ -43,7 +44,7 @@ const LotlDialogue = ({ firstName, ings }) => {
       yes: 1,
       no: 2,
     },
-    { type: "normal", text: `Perfect! Let's go get ${ings[0]}!`, nextLine: 2 },
+    { type: "normal", text: `Perfect! Let's go!`, nextLine: 2 },
     {
       type: "normal",
 

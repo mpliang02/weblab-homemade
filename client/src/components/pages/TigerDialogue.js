@@ -9,7 +9,6 @@ import ReactAudioPlayer from "react-audio-player";
 import tigerMusic from "../../../dist/Music/M33 Project - On va exister.mp3";
 import { Redirect } from "@reach/router";
 
-
 const TigerDialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
@@ -30,27 +29,31 @@ const TigerDialogue = ({ firstName, ings }) => {
       text: "Aha did Ms.Lotl tell you about me? Yes yes she's quite sweet - though sometimes it's as if her head's filled with nothing but rainbows.",
       nextLine: 1,
     },
-    { type: "choice", text: `Mmm so you have the first ingredient. I have another if you need it, ${ings[1]}!... *Press Y/N*` , yes: 1, no: 2 },
+    {
+      type: "choice",
+      text: `Mmm so you have the first ingredient. I have another if you need it!... *Press Y/N*`,
+      yes: 1,
+      no: 2,
+    },
     { type: "normal", text: "Off you go!", nextLine: 2 },
     { type: "normal", text: "Hey, you can't do that.", nextLine: -2 },
   ];
 
-  addEventListener('keyup', ({keyCode}) => {
+  addEventListener("keyup", ({ keyCode }) => {
     switch (keyCode) {
-        case 89:
-          setRun(true)
-          break
+      case 89:
+        setRun(true);
+        break;
 
-        case 78:
-            setRun(false)
-            break
-          
-        case 89:
-          setRun(true)
-          break
+      case 78:
+        setRun(false);
+        break;
+
+      case 89:
+        setRun(true);
+        break;
     }
-   })
-
+  });
 
   if (run) {
     return <Redirect to="/runTiger" />;

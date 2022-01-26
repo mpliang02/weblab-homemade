@@ -9,11 +9,14 @@ import ReactAudioPlayer from "react-audio-player";
 import tigerMusic from "../../../dist/Music/M33 Project - On va exister.mp3";
 import { Redirect } from "@reach/router";
 
-
 const Tiger2Dialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
-    { type: "normal", text: `Let me go find ${ings[1]}. It's a bit hectic around here...`, nextLine: 1 },
+    {
+      type: "normal",
+      text: `Let me go find the ingredient. It's a bit hectic around here...`,
+      nextLine: 1,
+    },
     {
       type: "normal",
       text: "Oh! I'd rather you didn't touch tha- *crash*",
@@ -24,7 +27,11 @@ const Tiger2Dialogue = ({ firstName, ings }) => {
       text: `...`,
       nextLine: 1,
     },
-    { type: "normal", text: "Breathe. Ground yourself. Inhale 5 counts and exhale 5.", nextLine: 1 },
+    {
+      type: "normal",
+      text: "Breathe. Ground yourself. Inhale 5 counts and exhale 5.",
+      nextLine: 1,
+    },
     {
       type: "normal",
       text: "Hey, hey…it's fine. Don't worry about it.",
@@ -40,27 +47,29 @@ const Tiger2Dialogue = ({ firstName, ings }) => {
       text: "Just remember to breathe afterwards. Your face is as red as my house right now heh.",
       nextLine: 1,
     },
-    { type: "choice", text: `Anyways, off you go - Mr.Tigathon's coming home today and the tea isn't going to finish itself, is it ${firstName}? *Press Y*`, yes: 1, no: 2 },
-    
+    {
+      type: "choice",
+      text: `Anyways, off you go - Mr.Tigathon's coming home today and the tea isn't going to finish itself, is it ${firstName}? *Press Y*`,
+      yes: 1,
+      no: 2,
+    },
   ];
 
-  addEventListener('keyup', ({keyCode}) => {
+  addEventListener("keyup", ({ keyCode }) => {
     switch (keyCode) {
-        case 89:
-          setRun(true)
-          break
+      case 89:
+        setRun(true);
+        break;
 
-        case 78:
-            setRun(false)
-            break
-        
-        case 89:
-          setRun(true)
-          break
-         
+      case 78:
+        setRun(false);
+        break;
+
+      case 89:
+        setRun(true);
+        break;
     }
-   })
-
+  });
 
   if (run) {
     return <Redirect to="/map" />;

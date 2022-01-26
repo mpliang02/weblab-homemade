@@ -9,54 +9,53 @@ import ReactAudioPlayer from "react-audio-player";
 import margainMusic from "../../../dist/Music/M33 Project - Reciclatge.mp3";
 import { Redirect } from "@reach/router";
 
-
 const Margain2Dialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
-    { type: "normal", text: `Here, take this ${ings[2]}...it's the last I have of it...`, nextLine: 1 },
+    { type: "normal", text: `Here, take this...it's the last I have of it...`, nextLine: 1 },
     {
       type: "normal",
       text: " I-if you use it well it'll probably hopefully h-help her...",
       nextLine: 1,
     },
     {
-        type: "normal",
-        text: "Y-yeah I definitely think so...",
-        nextLine: 1,
-      },
-      {
-        type: "normal",
-        text: "All things are weighed equal in this w-world…it gives and it t-takes",
-        nextLine: 1,
-      }, 
-      {
-        type: "normal",
-        text: "...so if w-we give more I'm sure it'll take less. Even the universe has a conscience...I-i think...",
-        nextLine: 1,
-      }, 
+      type: "normal",
+      text: "Y-yeah I definitely think so...",
+      nextLine: 1,
+    },
+    {
+      type: "normal",
+      text: "All things are weighed equal in this w-world…it gives and it t-takes",
+      nextLine: 1,
+    },
+    {
+      type: "normal",
+      text: "...so if w-we give more I'm sure it'll take less. Even the universe has a conscience...I-i think...",
+      nextLine: 1,
+    },
     {
       type: "choice",
       text: "...P-please leave... *Press Y*",
       yes: 1,
       no: 2,
-    }];
-  
-  addEventListener('keyup', ({keyCode}) => {
+    },
+  ];
+
+  addEventListener("keyup", ({ keyCode }) => {
     switch (keyCode) {
-        case 89:
-          setRun(true)
-          break
+      case 89:
+        setRun(true);
+        break;
 
-        case 78:
-            setRun(false)
-            break
-          
-        case 89:
-          setRun(true)
-          break
+      case 78:
+        setRun(false);
+        break;
+
+      case 89:
+        setRun(true);
+        break;
     }
-   })
-
+  });
 
   if (run) {
     return <Redirect to="/map" />;

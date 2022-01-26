@@ -28,7 +28,7 @@ const MargainDialogue = ({ firstName, ings }) => {
     },
     {
       type: "choice",
-      text: `...I-I can give you ${ings[2]}, if you want? *Press Y/N*`,
+      text: `...I-I can give you another ingredient, if you want? *Press Y/N*`,
       yes: 1,
       no: 2,
     },

@@ -9,8 +9,6 @@ import lotlMusic from "../../../dist/Music/Maarten Schellekens - Mallet Play.mp3
 import ReactAudioPlayer from "react-audio-player";
 import { Redirect } from "@reach/router";
 
-
-
 const Lotl2Dialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
@@ -21,7 +19,7 @@ const Lotl2Dialogue = ({ firstName, ings }) => {
     },
     {
       type: "normal",
-      text: `So…in actuality I only have one of the things you wanted, ${ings[0]}…I'm sorry about that. I really thought I had everything.`,
+      text: `So…in actuality I only have one of the things you wanted…I'm sorry about that. I really thought I had everything.`,
       nextLine: 1,
     },
     {
@@ -51,22 +49,21 @@ const Lotl2Dialogue = ({ firstName, ings }) => {
     },
   ];
 
-  addEventListener('keyup', ({keyCode}) => {
+  addEventListener("keyup", ({ keyCode }) => {
     switch (keyCode) {
-        case 89:
-          setRun(true)
-          break
+      case 89:
+        setRun(true);
+        break;
 
-        case 78:
-            setRun(false)
-            break
-          
-        case 89:
-          setRun(true)
-          break
+      case 78:
+        setRun(false);
+        break;
+
+      case 89:
+        setRun(true);
+        break;
     }
-   })
-
+  });
 
   if (run) {
     return <Redirect to="/map" />;

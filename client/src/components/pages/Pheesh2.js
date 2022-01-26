@@ -9,7 +9,6 @@ import ReactAudioPlayer from "react-audio-player";
 import pheeshMusic from "../../../dist/Music/Marcos H. Bolanos - Suspects.mp3";
 import { Redirect } from "@reach/router";
 
-
 const Pheesh2Dialogue = ({ firstName, ings }) => {
   const [run, setRun] = useState(false);
   const messages = [
@@ -25,40 +24,51 @@ const Pheesh2Dialogue = ({ firstName, ings }) => {
       text: `I just wanted my house to reflect my character - it's as empty as my soul is dark.`,
       nextLine: 1,
     },
-    { type: "normal", text: "I'm kidding again obviously. Far too old for that kinda phase.", nextLine: 1 },
-    { type: "normal", text: `...No just...it's a pain. I'd help you more but sleep is sounding real nice right about now. `, nextLine: 1 },
+    {
+      type: "normal",
+      text: "I'm kidding again obviously. Far too old for that kinda phase.",
+      nextLine: 1,
+    },
+    {
+      type: "normal",
+      text: `...No just...it's a pain. I'd help you more but sleep is sounding real nice right about now. `,
+      nextLine: 1,
+    },
     { type: "normal", text: "Hm?", nextLine: 1 },
     { type: "normal", text: "It's already morning? I hadn't noticed. ", nextLine: 1 },
     { type: "normal", text: "...", nextLine: 1 },
     { type: "normal", text: "Please stop crying...", nextLine: 1 },
-    { type: "choice", text: "...Are you sure you want to keep going? *Press Y/N*",yes:1, no:4  },
+    { type: "choice", text: "...Are you sure you want to keep going? *Press W/S*", yes: 1, no: 4 },
     { type: "normal", text: "...", nextLine: 1 },
-    { type: "choice", text: "Are you sure? *Press Y/N*", yes:1, no:2},
-    { type: "normal", text: `...Well if you need it I got a fin to lend...in spirit. I'll be seeing you ${firstName}. *Press W to continue*`, nextLine: 3 },
-    { type: "normal", text: "...I guess we're stuck here together then...", nextLine: 1},
-    { type: "choice", text: "... *Press Y to go back...or don't.*", yes:-3}
+    { type: "choice", text: "Are you sure? *Press W/S*", yes: 1, no: 2 },
+    {
+      type: "normal",
+      text: `...Well if you need it I got a fin to lend...in spirit. I'll be seeing you ${firstName}. *Press Y*`,
+      nextLine: 3,
+    },
+    { type: "normal", text: "...I guess we're stuck here together then...", nextLine: 1 },
+    { type: "choice", text: "... *Press W to go back...or don't.*", yes: -3 },
   ];
 
-  addEventListener('keyup', ({keyCode}) => {
+  addEventListener("keyup", ({ keyCode }) => {
     switch (keyCode) {
-        case 87:
-          setRun(true)
-          break
+      case 89:
+        setRun(true);
+        break;
 
-        case 83:
-            setRun(false)
-            break
-          
-        case 87:
-          setRun(true)
-          break
+      case 78:
+        setRun(false);
+        break;
+
+      case 89:
+        setRun(true);
+        break;
     }
-   })
-
+  });
 
   if (run) {
     return <Redirect to="/map" />;
-  } 
+  }
 
   return (
     <>
