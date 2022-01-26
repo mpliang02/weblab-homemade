@@ -158,7 +158,7 @@ class Door {
 
     draw() {
      
-        c.fillStyle = 'red';
+        c.fillStyle = 'rgba(0,0,0,0)';
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
         
     }

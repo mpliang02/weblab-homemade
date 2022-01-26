@@ -201,8 +201,8 @@ const keys = {
 //resets the game
 function restart() {
     player = new MC()
-    platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 500, y: 200})]
-    obstacles = [new Obstacle({x: 260, y: 584})]
+    platforms = [new Platform({x:-2, y:585}), new Platform({x: 628, y: 585}), new Platform({x: 1260, y: 585}), new Platform({x: 1890, y: 585}), new Platform({x: 2520, y: 585}), new Platform({x: 3150, y: 585}), new Platform({x: 3780, y: 585}), new Platform({x: getRandomx(200, 800), y: getRandomy(100, 400)}), new Platform({x: getRandomx(800, 1400), y: getRandomy(100, 400)}), new Platform({x: getRandomx(1400, 2000), y: getRandomy(100, 400)}), new Platform({x: getRandomx(2000, 3000), y: getRandomy(100, 400)})]
+    obstacles = [new Obstacle({x: 260, y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584}), new Obstacle({x: getRandomx(0, 3000), y: 584})]
 }
 
 //how far player has travelled from start 
@@ -303,6 +303,7 @@ function animate() {
 
     if (dish.position.x < player.position.x + player.width && dish.position.x + dish.width > player.position.x && dish.position.y < player.position.y + player.height && dish.height + dish.position.y > player.position.y) {
         dish.position.y = 900
+        
     }
 
     //win limiter
