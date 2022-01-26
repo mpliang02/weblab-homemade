@@ -15,13 +15,12 @@
 }
 
 .fadeInTransition {
-  width: 100%;
-  height: auto;
+  width: 206vh;
+  height: 115vh;
   background-size: cover;
-  left: 0%;
-  bottom: 0%;
-  margin-left: auto;
-  margin-right: auto;
+  left: 0vh;
+  /* margin-left: auto;
+  margin-right: auto; */
   position: absolute;
   opacity: 0;
   animation: fadeIn 6s linear 16s forwards;
@@ -29,11 +28,12 @@
 
 .fadeInText {
   width: auto;
-  height: 100%;
+  height: 10vh;
   position: absolute;
-  left: 15%;
-  opacity: 0;
-  animation: fadeIn 6s linear 25s forwards;
+  left: 100vh;
+  top: 80vh;
+  /* opacity: 0;
+  animation: fadeIn 6s linear 25s forwards; */
 }
 
 @keyframes fadeIn {
@@ -69,165 +69,148 @@
   margin-right: auto;
   position: relative;
   animation: fadeIn 6s, fadeOut 6s 10s forwards;
-  bottom: 25%;
+  bottom: 10vh;
 }
 
 .fadeInOutFirst {
   font-family: "Chalkduster", fantasy;
-  font-size: 200%;
+  font-size: 2vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 5%;
-  left: 40%;
+  top: 57vh;
+  left: 180vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 25s;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutSecond {
   font-family: "Chalkduster", fantasy;
-  font-size: 125%;
+  font-size: 1.5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 12%;
-  left: 25%;
+  top: 60vh;
+  left: 178vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 25s forwards;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutThird {
   font-family: "Chalkduster", fantasy;
-  font-size: 125%;
+  font-size: 1.5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 15.5%;
-  left: 25.5%;
+  top: 66vh;
+  left: 178vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 25s forwards;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutFourth {
   font-family: "Chalkduster", fantasy;
-  font-size: 125%;
+  font-size: 1.5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 19%;
-  left: 21.5%;
+  top: 72vh;
+  left: 178vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 25s forwards;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutFifth {
   font-family: "Chalkduster", fantasy;
-  font-size: 125%;
+  font-size: 1.5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 22.5%;
-  left: 25.85%;
+  top: 78vh;
+  left: 178vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 25s forwards;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutSixth {
   font-family: "Chalkduster", fantasy;
-  font-size: 125%;
+  font-size: 1.5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 26%;
-  left: 25.4%;
+  top: 84vh;
+  left: 178vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 25s forwards;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutSeventh {
   font-family: "Chalkduster", fantasy;
-  font-size: 125%;
+  font-size: 1.5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 12%;
-  left: 26%;
+  top: 90vh;
+  left: 178vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 34s forwards;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutEighth {
   font-family: "Chalkduster", fantasy;
-  font-size: 125%;
+  font-size: 1.5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 15.5%;
-  left: 23.2%;
+  top: 96vh;
+  left: 178vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 34s forwards;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutNinth {
   font-family: "Chalkduster", fantasy;
-  font-size: 125%;
+  font-size: 1.5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 19%;
-  left: 21.9%;
+  top: 102vh;
+  left: 178vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 34s forwards;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutTenth {
   font-family: "Chalkduster", fantasy;
-  font-size: 125%;
+  font-size: 1.5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 22.5%;
-  left: 24.8%;
+  top: 108vh;
+  left: 178vh;
   opacity: 0;
-  animation: fadeInAndOut 8s 34s forwards;
+  animation: fadeIn 4s 25s forwards;
   color: white;
 }
 
 .fadeInOutEleventh {
   font-family: "Chalkduster", fantasy;
-  font-size: 200%;
+  font-size: 5vh;
   z-index: 2;
   position: absolute;
   margin: 0;
-  top: 19%;
-  left: 37.5%;
+  top: 25vh;
+  left: 75vh;
   opacity: 0;
-  animation: fadeIn 4s 43s forwards;
+  animation: fadeIn 4s 29s forwards;
   color: white;
-}
-
-.lineBreaksAndFade {
-  white-space: pre-line;
-  z-index: 2;
-  position: absolute;
-  top: 12%;
-  /* font-family: "Chalkduster", fantasy;
-  font-size: 125%;
-  z-index: 2;
-  position: absolute;
-  margin: 0;
-  top: 12%;
-  left: 24.8%;
-  opacity: 0;
-  animation: fadeInAndOut 8s 25s forwards;
-  color: white; */
 }
