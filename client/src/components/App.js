@@ -27,7 +27,6 @@ import Tiger2Dialogue from "./pages/Tiger2.js";
 import Margain2Dialogue from "./pages/Margain2.js";
 import Pheesh2Dialogue from "./pages/Pheesh2.js";
 
-
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
@@ -136,11 +135,11 @@ const App = () => {
         <RunTiger path="/runTiger" />
         <RunMargain path="/runMargain" />
         <RunPheesh path="/runPheesh" />
-        <Map path = "/map" /> 
-        <Lotl2Dialogue path = "/lotl2" /> 
-        <Tiger2Dialogue path = "/tiger2" /> 
-        <Margain2Dialogue path = "/margain2" /> 
-        <Pheesh2Dialogue path = "/pheesh2" /> 
+        <Map path="/map" firstName={firstName} recipe={recipe} />
+        <Lotl2Dialogue path="/lotl2" />
+        <Tiger2Dialogue path="/tiger2" />
+        <Margain2Dialogue path="/margain2" />
+        <Pheesh2Dialogue path="/pheesh2" />
         {/* <RunningGame path="/running-game" /> */}
         <Mom path="/end" className="fadeOutTransition"></Mom>
         <NotFound default />
