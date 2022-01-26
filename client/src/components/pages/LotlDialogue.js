@@ -1,4 +1,4 @@
-import DialogueBox from "./DialogueTextBox.js";
+import DialogueBox from "./LotlDialogueTextBox.js";
 import "./DialogueCSS.css";
 import React, { Component } from "react";
 // import lotlbackground from "../../../dist/characters/lotl1.png";

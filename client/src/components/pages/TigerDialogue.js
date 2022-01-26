@@ -1,4 +1,4 @@
-import DialogueBox from "./DialogueTextBox.js";
+import DialogueBox from "./TigerDialogueTextBox.js";
 import "./DialogueCSS.css";
 import React, { Component } from "react";
 // import tigerbackground from "../../../dist/characters/tiger1.png";
