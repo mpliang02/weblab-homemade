@@ -27,10 +27,10 @@ const Instructions = ({handleLogout}) => {
                         <p id="inst">Instructions</p>
                     </div>
                     <p class="sect" > DIALOGUE: </p>
-                    <p class="cont" > Enter to proceed <br/> Y for YES <br/> N for NO </p>
+                    <p class="cont" > Enter to proceed <br/> W for YES <br/> S for NO </p>
                     <p class="sect" > RUNNER: </p>
                     <p class="cont" > Arrow keys + space bar </p>
-                    <p class = "cont"> When knocking, please wait at the door for a bit as the village may take a while!</p>
+                    <p class = "cont"> When knocking, please wait at the door for a bit as the village may take a while! (Press W to end interactions) </p>
                 </div>
                 <div class="buttonside">
                     <div>
