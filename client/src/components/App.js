@@ -132,7 +132,6 @@ const App = () => {
         <EmptyHouseDialogue path="/emptyhouse-dialogue" />
         <Instructions path="/instructions" handleLogout={handleLogout} />
         {/* <APITest path="/apitest" /> */}
-<<<<<<< HEAD
         <RunLotl path="/runLotl" />
         <RunTiger path="/runTiger" />
         <RunMargain path="/runMargain" />
@@ -142,10 +141,6 @@ const App = () => {
         <Tiger2Dialogue path = "/tiger2" /> 
         <Margain2Dialogue path = "/margain2" /> 
         <Pheesh2Dialogue path = "/pheesh2" /> 
-=======
-        <Run path="/run" />
-        <Map path="/map" firstName={firstName} recipe={recipe} />
->>>>>>> d5f5317a4a4039ded2f2b931dc3d4d8cde7ac5e1
         {/* <RunningGame path="/running-game" /> */}
         <MomAnimation path="/end" className="fadeOutTransition"></MomAnimation>
         <NotFound default />
