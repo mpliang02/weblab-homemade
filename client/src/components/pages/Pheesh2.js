@@ -38,9 +38,14 @@ const Pheesh2Dialogue = ({ firstName, ings }) => {
     { type: "normal", text: "It's already morning? I hadn't noticed. ", nextLine: 1 },
     { type: "normal", text: "...", nextLine: 1 },
     { type: "normal", text: "Please stop crying...", nextLine: 1 },
-    { type: "choice", text: "...Are you sure you want to keep going? *Press W/S*", yes: 1, no: 4 },
+    {
+      type: "choice",
+      text: "...Are you sure you want to keep going? *Press W/S for yes/no*",
+      yes: 1,
+      no: 4,
+    },
     { type: "normal", text: "...", nextLine: 1 },
-    { type: "choice", text: "Are you sure? *Press W/S*", yes: 1, no: 2 },
+    { type: "choice", text: "Are you sure? *Press W/S for yes/no*", yes: 1, no: 2 },
     {
       type: "normal",
       text: `...Well if you need it I got a fin to lend...in spirit. I'll be seeing you ${firstName}. *Press Y*`,
