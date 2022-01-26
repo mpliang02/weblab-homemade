@@ -11,7 +11,7 @@ const Run = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="runBack">
       <ReactAudioPlayer src={gameMusic} autoPlay loop></ReactAudioPlayer>
       <div className="Game-body">
         <canvas id="game-canvas" width="800" height="800" />

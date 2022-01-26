@@ -9,6 +9,7 @@ import left from "./assets/left.png";
 import standleft from "./assets/standleft.png";
 import grass_platform from "./assets/grass_platform.png";
 import puddle from "./assets/puddle.png";
+import "./run.css";
 
 const gravity = 0.5
 

@@ -1,5 +1,9 @@
 import React, { useEffect, useState} from "react";
+import DialogueBox from "./DialogueTextBox.js";
+import "./DialogueCSS.css";
 import "./map.css";
+import { Redirect } from "@reach/router";
+
 
 let canvas
 let c
@@ -126,11 +130,34 @@ class House {
         
     }
 
+}
+
+class Door {
+    constructor({x, y, name}) {
+        
+        this.position = {
+            x, 
+            y
+        }
+
+        this.width = 70
+        this.height = 50
+    }
+
+    draw() {
+     
+        c.fillStyle = 'red';
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+        
+    }
+
 
 }
 
 const player = new MC()
 const houses = [new House({x: 1020, y: 28, img: house3}), new House({x: 1500, y: 30, img: house4}), new House({x: 70, y: 30, img: house1}), new House({x: 540, y: 20, img: house2}), new House({x: 2000, y: 30, img: house5})]
+const doors = [new Door({x: 220, y: 250, name: "door1"}), new Door({x: 700, y: 250, name: "door2"}), new Door({x: 1180, y: 250, name: "door3"}), new Door({x: 1650, y: 250, name: "door4"}), new Door({x: 2150, y: 250, name: "door5"}) ]
+
 
 const keys = {
     right: {
@@ -151,12 +178,21 @@ let scrollOffset = 0;
 
 function animate() {   
     //gravity 
+    console.log(player.position.x);
+
     requestAnimationFrame(animate)
     c.clearRect(0, 0, canvas.width, canvas.height);
     
+    
+
     houses.forEach(house => {
         house.draw()
     })
+
+    doors.forEach(door => {
+        door.draw()
+    })
+
 
     player.update()
 
@@ -183,6 +219,10 @@ function animate() {
             houses.forEach(house => {
                 house.position.x -= 5
             })
+
+            doors.forEach(door => {
+                door.position.x -= 5
+            })
       
         
         } else if (keys.left.pressed && (scrollOffset > 0)) {
@@ -191,103 +231,19 @@ function animate() {
                 house.position.x += 5
             })
 
+            doors.forEach(door => {
+                door.position.x += 5
+            })
+
             
         }
 
     }
 
-
-    //collision detection
-   /* houses.forEach(house => {
-    if ((player.position.y + player.height <= house.position.y && player.position.y + player.height + player.velocity.y >= house.position.y) && (player.position.x + player.width >= house.position.x && player.position.x <= house.position.x + house.width)) {
-        player.velocity.y = 0
-        console.log("oof")
-    }
-    })
-
-    houses.forEach(house => {
-        if (house.position.x < player.position.x + player.width && house.position.x + house.width > player.position.x && house.position.y < player.position.y + player.height && house.height + house.position.y > player.position.y) {
-            //player.velocity.y = 0
-            console.log("oof")
-        }
-    })*/
     
 }
 
 
-
-/*function animate() {
-    //gravity 
-    requestAnimationFrame(animate)
-    c.clearRect(0, 0, canvas.width, canvas.height);
-    
-    
-    houses.forEach(house => {
-        house.draw()
-    })
-
-    player.update()
-
-
-
-      
-    if (keys.right.pressed && (player.position.x < window.innerWidth - 100)) {
-        player.velocity.x = 5;
-    } else if ((keys.left.pressed) && player.position.x > 50) {
-        player.velocity.x = -5
-    } else {
-        player.velocity.x = 0
-        player.velocity.y = 0
-        if (keys.right.pressed) {
-            scrollOffset += 5
-            houses.forEach(house => {
-                house.position.x -= 5
-                
-            })
-        
-        } else if (keys.left.pressed && (scrollOffset > 0)) {
-            scrollOffset -= 5
-            houses.forEach(house => {
-                house.position.x += 5
-            })
-            
-        }
-        
-
-  if (keys.right.pressed && (player.position.x < window.innerWidth - 100)) {
-        player.velocity.x = 5;
-    } else if (keys.left.pressed && player.position.x > 50) {
-        player.velocity.x = -5
-    } else if (keys.down.pressed && player.position.y < 570) {
-        player.velocity.y =5;
-    } else if (keys.up.pressed && player.position.y > 100) {
-        player.velocity.y = -5;
-    } else {
-        player.velocity.x = 0 
-        player.velocity.y = 0
-    }
-    
-
-    houses.forEach(house => {
-        if ((player.position.y + player.height <= house.position.y && player.position.y + player.height + player.velocity.y >= house.position.y) && (player.position.x + player.width >= hosue.position.x && player.position.x <= house.position.x + house.width)) {
-     
-            player.velocity.y = 0
-        }
-        
-
-    houses.forEach(house => {
-        if (house.position.x < player.position.x + player.width && house.position.x + house.width > player.position.x) {
-            player.velocity.x = 0
-            
-        } else if (house.position.y < player.position.y + player.height && house.height + house.position.y > player.position.y) {
-            
-            player.velocity.y = 0
-        }
-    
-  
-    })
-    
-}*/
 
 addEventListener('keydown', ({keyCode}) => {
     switch (keyCode) {
@@ -343,6 +299,9 @@ const Map = (props) => {
     useEffect(() => {
         init();
     }, []);
+
+
+    
 
     return (
         <div>
