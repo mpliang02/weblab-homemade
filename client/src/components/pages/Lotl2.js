@@ -46,7 +46,7 @@ const Lotl2Dialogue = ({ firstName }) => {
     },
     {
       type: "choice",
-      text: "I'm sure everything will be fine. On your way now!",
+      text: "I'm sure everything will be fine. On your way now! *Press Y*",
       yes: 1,
     },
   ];

@@ -30,7 +30,7 @@ const PheeshDialogue = ({ firstName }) => {
     { type: "normal", text: "...Just some food for thought.", nextLine: 1 },
     {
       type: "choice",
-      text: `Do you want to keep going?`,
+      text: `Do you want to keep going? *Press Y/N*`,
       yes: 1,
       no: 2,
     },

@@ -39,7 +39,7 @@ const LotlDialogue = ({ firstName }) => {
     },
     {
       type: "choice",
-      text: "Mmm...I think I've got everything you need for that dish. Do you want anything?",
+      text: "Mmm...I think I've got everything you need for that dish. Do you want anything? *Press Y/N*",
       yes: 1,
       no: 2,
     },

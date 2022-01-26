@@ -36,7 +36,7 @@ const Margain2Dialogue = ({ firstName }) => {
       }, 
     {
       type: "choice",
-      text: "...P-please leave...",
+      text: "...P-please leave... *Press Y*",
       yes: 1,
       no: 2,
     }];

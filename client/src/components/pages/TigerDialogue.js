@@ -30,7 +30,7 @@ const TigerDialogue = ({ firstName }) => {
       text: "Aha did Ms.Lotl tell you about me? Yes yes she's quite sweet - though sometimes it's as if her head's filled with nothing but rainbows.",
       nextLine: 1,
     },
-    { type: "choice", text: `Mmm so you have the first ingredient. I have another if you need it...`, yes: 1, no: 2 },
+    { type: "choice", text: `Mmm so you have the first ingredient. I have another if you need it... *Press Y/N*` , yes: 1, no: 2 },
     { type: "normal", text: "Off you go!", nextLine: 2 },
     { type: "normal", text: "Hey, you can't do that.", nextLine: -2 },
   ];

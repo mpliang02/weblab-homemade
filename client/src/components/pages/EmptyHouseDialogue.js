@@ -17,15 +17,14 @@ const EmptyHouseDialogue = (props) => {
       text: "...Nobody's home.",
       nextLine: 1,
     },
-    { type: "normal", text: "...Were you expecting someone?", nextLine: 1 },
     {
       type: "choice",
-      text: "Do you want the final ingredient?",
+      text: "Do you want the final ingredient? *Press Y/N*",
       yes: 1,
       no: 2,
     },
     { type: "normal", text: "...", nextLine: 2 },
-    { type: "normal", text: "You must take it.", nextLine: -2 },
+    { type: "normal", text: "Take it.", nextLine: -2 },
   ];
 
   addEventListener("keyup", ({ keyCode }) => {
