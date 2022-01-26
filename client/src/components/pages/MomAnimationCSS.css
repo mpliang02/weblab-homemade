@@ -15,10 +15,13 @@
 }
 
 .fadeInTransition {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
   position: absolute;
-  left: 15%;
   opacity: 0;
   animation: fadeIn 6s linear 16s forwards;
 }
@@ -57,11 +60,15 @@
 }
 
 .fadeInOut {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   animation: fadeIn 6s, fadeOut 6s 10s forwards;
-  left: 15%;
+  bottom: 25%;
 }
 
 .fadeInOutFirst {
