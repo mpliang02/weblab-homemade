@@ -68,13 +68,12 @@
 }
 
 .dialogueImage {
-  position: absolute;
-  bottom: 3.75%;
-  left: 16.5%;
-  padding-left: 8.5%;
+  position: relative;
+  bottom: 45%;
+  left: 10%;
   margin: 45px;
   width: auto;
-  height: 24%;
+  height: 30%;
 }
 
 .dialogueBackground {

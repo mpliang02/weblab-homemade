@@ -38,7 +38,6 @@ const DialogueBox = ({ messages, characterName, dialogueImage }) => {
   return (
     <div>
       <div className="dialogueSpeaker">{characterName}</div>
-      <img className="dialogueBack" src={back}></img>
       <textarea
         disabled
         className="dialogueTextBox"

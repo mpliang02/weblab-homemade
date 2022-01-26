@@ -71,7 +71,7 @@ const Notebook = ({userId, firstName, handleLogout}) => {
                         />
                     </div>
                     <div>
-                        <button onClick={toIngredients}>Back</button>
+                        <button onClick={toIngredients}>back</button>
                     </div>
                 </div>
             </div>
