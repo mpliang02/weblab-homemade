@@ -34,22 +34,22 @@ const Pheesh2Dialogue = ({ firstName }) => {
     { type: "choice", text: "...Are you sure you want to keep going?",yes:1, no:4  },
     { type: "normal", text: "...", nextLine: 1 },
     { type: "choice", text: "Are you sure?", yes:1, no:2},
-    { type: "normal", text: `...Well if you need it I got a fin to lend...in spirit. I'll be seeing you ${firstName}. *Press Y to continue*`, nextLine: 3 },
+    { type: "normal", text: `...Well if you need it I got a fin to lend...in spirit. I'll be seeing you ${firstName}. *Press W to continue*`, nextLine: 3 },
     { type: "normal", text: "...I guess we're stuck here together then...", nextLine: 1},
     { type: "choice", text: "... *Press W to go back...or don't.*", yes:-3}
   ];
 
   addEventListener('keyup', ({keyCode}) => {
     switch (keyCode) {
-        case 89:
+        case 87:
           setRun(true)
           break
 
-        case 78:
+        case 83:
             setRun(false)
             break
           
-        case 89:
+        case 87:
           setRun(true)
           break
     }

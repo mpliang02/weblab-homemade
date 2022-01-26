@@ -22,7 +22,7 @@ const PheeshDialogue = ({ firstName }) => {
     },
     {
       type: "normal",
-      text: `${firstName}, you've got a lot already.`,
+      text: `...${firstName}, you've got a lot already.`,
       nextLine: 1,
     },
     { type: "normal", text: "...But you already knew that, didn't you?", nextLine: 1 },
@@ -40,15 +40,15 @@ const PheeshDialogue = ({ firstName }) => {
 
   addEventListener('keyup', ({keyCode}) => {
     switch (keyCode) {
-        case 87:
+        case 89:
           setRun(true)
           break
 
-        case 40:
+        case 78:
             setRun(false)
             break
           
-        case 87:
+        case 89:
           setRun(true)
           break
     }

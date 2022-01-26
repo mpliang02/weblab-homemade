@@ -54,15 +54,15 @@ const LotlDialogue = ({ firstName }) => {
 
   addEventListener("keyup", ({ keyCode }) => {
     switch (keyCode) {
-      case 87:
+      case 89:
         setRun(true);
         break;
 
-      case 40:
+      case 78:
         setRun(false);
         break;
 
-      case 87:
+      case 89:
         setRun(true);
         break;
     }
