@@ -41,21 +41,24 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("about to call api");
-    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ing1}%2C${ing2}%2C${ing3}%2C${ing4}%2C${ing5}&number=5&ignorePantry=false&ranking=1`, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-            "x-rapidapi-key": "8dc60b8972msh9ed1cbe3fa19685p179872jsn68a02d450704"
-        }
-    })
-    .then(response => response.json())
-    .then(response => {
+    fetch(
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ing1}%2C${ing2}%2C${ing3}%2C${ing4}%2C${ing5}&number=5&ignorePantry=false&ranking=1`,
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+          "x-rapidapi-key": "8dc60b8972msh9ed1cbe3fa19685p179872jsn68a02d450704",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((response) => {
         console.log(response);
         console.log(response[0]["title"]);
         if (response.keys().length == 0) {
-          alert("no valid recipe! try again");//TODO: add check that uses all our ingredients
-        }
-        else {//TODO: allow recipe choice selection
+          alert("no valid recipe! try again"); //TODO: add check that uses all our ingredients
+        } else {
+          //TODO: allow recipe choice selection
           setRecipeName(response[0]["title"]);
           setSub(true);
           post("/api/newnote", {
@@ -75,11 +78,11 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
         alert(response[0]["name"]);
         alert(JSON.parse(response[0]["name"]));
         alert(response);*/
-    })
-    .catch(err => {
+      })
+      .catch((err) => {
         console.error(err);
         alert("error! try again");
-    });
+      });
     /*get("/api/recipes").then((recipeObjs) => {
       console.log("api called");
       //console.log(recipeObjs);
@@ -142,14 +145,14 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
 
   if (sub) {
     setIngs([ing1, ing2, ing3, ing4, ing5]);
-    setRecipe(recipeName);//TODO: consolidate recipe name functions??
+    setRecipe(recipeName); //TODO: consolidate recipe name functions??
     console.log(recipeName);
     console.log("fjdiosoijfds");
     //return <Redirect to={{ pathname: '/game', ing1:  {ing1} , ing2: {ing2}, ing3: {ing3}, ing4: {ing4}, ing5: {ing5}}} />
     //return <Redirect to='/game' />
     //return <Redirect to={{ pathname: '/game', state: {ing1:  ing1 , ing2: ing2, ing3: ing3, ing4: ing4, ing5: ing5}}} />
     //return <Redirect to={`/game/${ing1}/${ing2}/${ing3}/${ing4}/${ing5}/${recipeName}`} />;
-    return <Redirect to="/welcome" />;
+    return <Redirect to="/map" />;
   }
 
   const accessNotebook = (e) => {
@@ -162,7 +165,7 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
 
   const toInstructions = (e) => {
     setInst(true);
-  }
+  };
 
   if (inst) {
     return <Redirect to="/instructions" />;
@@ -176,7 +179,9 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
             {/* <div id="titlewrapper" >
               <h1>homemade</h1>
             </div> */}
-            <p><span id="titlespan">homemade</span> &nbsp;&nbsp;&nbsp; enter 5 ingredients below:</p>
+            <p>
+              <span id="titlespan">homemade</span> &nbsp;&nbsp;&nbsp; enter 5 ingredients below:
+            </p>
             <div class="ingredient" id="toping">
               <input
                 type="text"

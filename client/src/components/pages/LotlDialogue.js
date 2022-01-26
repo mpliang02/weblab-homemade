@@ -9,8 +9,6 @@ import lotlMusic from "../../../dist/Music/Maarten Schellekens - Mallet Play.mp3
 import ReactAudioPlayer from "react-audio-player";
 import { Redirect } from "@reach/router";
 
-
-
 const LotlDialogue = ({ firstName }) => {
   const [run, setRun] = useState(false);
   const messages = [
@@ -36,40 +34,39 @@ const LotlDialogue = ({ firstName }) => {
     },
     {
       type: "normal",
-      text: "Ahem well, you said you're making a meal for…? That's so cute!",
+      text: "Ahem...well, you said you're making a meal for…? That's so cute!",
       nextLine: 1,
     },
     {
       type: "choice",
-      text: "Mmm I think I've got everything you need for that dish. Do you want anything?",
+      text: "Mmm...I think I've got everything you need for that dish. Do you want anything?",
       yes: 1,
       no: 2,
     },
     { type: "normal", text: "Perfect! Let's go!", nextLine: 2 },
     {
       type: "normal",
-      
+
       text: "I'm sorry, but you can't do that.",
       nextLine: -2,
     },
   ];
 
-  addEventListener('keyup', ({keyCode}) => {
+  addEventListener("keyup", ({ keyCode }) => {
     switch (keyCode) {
-        case 87:
-          setRun(true)
-          break
+      case 87:
+        setRun(true);
+        break;
 
-        case 40:
-            setRun(false)
-            break
-          
-        case 87:
-          setRun(true)
-          break
+      case 40:
+        setRun(false);
+        break;
+
+      case 87:
+        setRun(true);
+        break;
     }
-   })
-
+  });
 
   if (run) {
     return <Redirect to="/runLotl" />;
