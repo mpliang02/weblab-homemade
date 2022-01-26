@@ -49,6 +49,10 @@
     padding: 10px 40px 10px 40px;
 }
 
+#titlespan::selection {
+    background: cornflowerblue;
+}
+
 input {
     height: 40px;
     width: 60%;

@@ -6,6 +6,7 @@ import { get, post } from "../../utilities.js";
 
 import "../../utilities.css";
 import "./Ingredients.css";
+import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react-dom";
 
 const GOOGLE_CLIENT_ID = "417583844892-c3aanl2sookiph3kmgb7cna6f3l459qc.apps.googleusercontent.com";
 //ref="fdjisofdjs" onSubmit="fjdisofds"
@@ -18,7 +19,7 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
   const [recipeName, setRecipeName] = useState("");
   const [sub, setSub] = useState(false);
   const [notebook, setNotebook] = useState(false);
-
+  const [inst, setInst] = useState(false);
   const [good, setGood] = useState(true);
 
   const handleIng1Change = (e) => {
@@ -160,6 +161,14 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
     return <Redirect to="/notebook" />;
   }
 
+  const toInstructions = (e) => {
+    setInst(true);
+  }
+
+  if (inst) {
+    return <Redirect to="/instructions" />;
+  }
+
   return (
     <>
       <div class="wrapper" id="ingwrapper">
@@ -240,8 +249,13 @@ const Ingredients = ({ userId, firstName, handleLogout, setIngs, setRecipe }) =>
             />
           </div>
           <div>
+            <button id="instbtn" onClick={toInstructions}>
+              instructions
+            </button>
+          </div>
+          <div>
             <button id="notebookbtn" onClick={accessNotebook}>
-              Notebook
+              notebook
             </button>
           </div>
         </div>
