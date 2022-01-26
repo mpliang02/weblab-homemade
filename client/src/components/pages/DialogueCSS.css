@@ -5,7 +5,7 @@
   padding: 21vh;
   resize: none;
   bottom: 0vh;
-  line-height: 6vh;
+  line-height: 3vh;
   font-family: "Chalkduster", fantasy;
   font-size: 2.5vh;
   margin-left: 54vh;
@@ -16,7 +16,6 @@
   width: 125vh;
   height: 34vh;
   z-index: 2;
-  
 }
 
 .dialogueBack {

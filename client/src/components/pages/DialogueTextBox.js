@@ -44,6 +44,7 @@ const DialogueBox = ({ messages, characterName, dialogueImage }) => {
         value={messages[currentDialogue].text}
         name={currentDialogue}
       ></textarea>
+      <img className="dialogueBack" src={back}></img>
       <img className="dialogueImage" src={dialogueImage}></img>
     </div>
   );

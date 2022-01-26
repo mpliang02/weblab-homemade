@@ -9,7 +9,6 @@ import ReactAudioPlayer from "react-audio-player";
 import margainMusic from "../../../dist/Music/M33 Project - Reciclatge.mp3";
 import { Redirect } from "@reach/router";
 
-
 const MargainDialogue = ({ firstName }) => {
   const [run, setRun] = useState(false);
   const messages = [
@@ -36,23 +35,22 @@ const MargainDialogue = ({ firstName }) => {
     { type: "normal", text: `...Good luck, ${firstName}.`, nextLine: 2 },
     { type: "normal", text: "...You can't do that.", nextLine: -2 },
   ];
-  
-  addEventListener('keyup', ({keyCode}) => {
+
+  addEventListener("keyup", ({ keyCode }) => {
     switch (keyCode) {
-        case 87:
-          setRun(true)
-          break
+      case 87:
+        setRun(true);
+        break;
 
-        case 40:
-            setRun(false)
-            break
-          
-        case 87:
-          setRun(true)
-          break
+      case 40:
+        setRun(false);
+        break;
+
+      case 87:
+        setRun(true);
+        break;
     }
-   })
-
+  });
 
   if (run) {
     return <Redirect to="/runMargain" />;
@@ -64,7 +62,7 @@ const MargainDialogue = ({ firstName }) => {
       <MargainDialogueBackground></MargainDialogueBackground>
       <DialogueBox
         messages={messages}
-        characterName={"Mr. Margain"}
+        characterName={"Mrs. Margain"}
         dialogueImage={margainhead1}
       ></DialogueBox>
       <img className="InstructionsBox" src={instructionsBox}></img>

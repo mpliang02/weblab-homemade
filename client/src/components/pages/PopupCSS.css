@@ -1,0 +1,15 @@
+.popUp {
+  font-family: "Chalkduster", fantasy;
+  z-index: 2;
+  position: absolute;
+  font-size: 2vh;
+  top: 2.5vh;
+  width: 32vh;
+  left: 3.5vh;
+}
+
+.popUpBackground {
+  width: 39vh;
+  height: 16vh;
+  right: 5vh;
+}
