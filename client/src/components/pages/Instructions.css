@@ -28,11 +28,15 @@
 
 .sect {
     font-family: "Lucida Sans", "sans-serif";
-    font-size: 24px;
+    font-size: 35px;
     padding-top: 16px;
+    text-align: center;
 }
 
 .cont {
     font-family: "Lucida Sans", "sans-serif";
-    font-size: 16px;
+    font-size: 30px;
+    line-height: 1cm;
+    text-align: center;
+
 }

@@ -24,12 +24,12 @@ const Instructions = ({handleLogout}) => {
             <div class="wrapper" id="instwrapper">
                 <div id="contwrapper" >
                     <div id="instwrap">
-                        <p id="inst">instructions</p>
+                        <p id="inst">Instructions</p>
                     </div>
-                    <p class="sect" > general: </p>
-                    <p class="cont" > this is a game stupid.  your mom is dead</p>
-                    <p class="sect" > ingredients: </p>
-                    <p class="cont" > enter the ingredients you have in the fridge in your lonely, lonely apartment you poor miserable being</p>
+                    <p class="sect" > DIALOGUE: </p>
+                    <p class="cont" > Enter to proceed <br/> Y for YES <br/> N for NO </p>
+                    <p class="sect" > RUNNER: </p>
+                    <p class="cont" > Arrow keys + space bar </p>
                 </div>
                 <div class="buttonside">
                     <div>
