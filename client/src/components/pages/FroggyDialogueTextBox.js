@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import Message from "./Message.js";
 import dialogueTextBox from "../../../dist/extras/Untitled_Artwork.png";
 import blankBox from "../../../dist/extras/box1.png";
 import back from "../../../dist/extras/Untitled_Artwork.png";
