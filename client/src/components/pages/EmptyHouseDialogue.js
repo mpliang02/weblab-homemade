@@ -1,6 +1,6 @@
 import DialogueBox from "./DialogueTextBox.js";
 import "./DialogueCSS.css";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import emptyhousebackground from "../../../dist/extras/emptyhouse.png";
 import emptyimage from "../../../dist/extras/box1.png";
 import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
@@ -8,6 +8,7 @@ import ReactAudioPlayer from "react-audio-player";
 import emptyhouseMusic from "../../../dist/Music/cryptic scenery - Åtminstone.mp3";
 
 const EmptyHouseDialogue = (props) => {
+  const [run, setRun] = useState(false);
   const messages = [
     { type: "normal", text: "... ... ...", nextLine: 1 },
     {
@@ -25,6 +26,27 @@ const EmptyHouseDialogue = (props) => {
     { type: "normal", text: "...", nextLine: 2 },
     { type: "normal", text: "You must take it.", nextLine: -2 },
   ];
+
+  addEventListener('keyup', ({keyCode}) => {
+    switch (keyCode) {
+        case 89:
+          setRun(true)
+          break
+
+        case 78:
+            setRun(false)
+            break
+          
+        case 89:
+          setRun(true)
+          break
+    }
+   })
+
+
+  if (run) {
+    return <Redirect to="/end" />;
+  } 
 
   return (
     <>
