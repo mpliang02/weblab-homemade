@@ -6,6 +6,7 @@ import emptyimage from "../../../dist/extras/box1.png";
 import instructionsBox from "../../../dist/extras/Untitled_Artwork.png";
 import ReactAudioPlayer from "react-audio-player";
 import emptyhouseMusic from "../../../dist/Music/cryptic scenery - Åtminstone.mp3";
+import { Redirect } from "@reach/router";
 
 const EmptyHouseDialogue = (props) => {
   const [run, setRun] = useState(false);
@@ -27,26 +28,25 @@ const EmptyHouseDialogue = (props) => {
     { type: "normal", text: "You must take it.", nextLine: -2 },
   ];
 
-  addEventListener('keyup', ({keyCode}) => {
+  addEventListener("keyup", ({ keyCode }) => {
     switch (keyCode) {
-        case 87:
-          setRun(true)
-          break
+      case 87:
+        setRun(true);
+        break;
 
-        case 83:
-            setRun(false)
-            break
-          
-        case 87:
-          setRun(true)
-          break
+      case 83:
+        setRun(false);
+        break;
+
+      case 87:
+        setRun(true);
+        break;
     }
-   })
-
+  });
 
   if (run) {
     return <Redirect to="/end" />;
-  } 
+  }
 
   return (
     <>
