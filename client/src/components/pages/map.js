@@ -376,7 +376,7 @@ const FroggyDialogue = ({ firstName, recipe }) => {
       nextLine: 1,
     },
     { type: "normal", text: "Go knock on each door and see what they have!", nextLine: 1 },
-    { type: "normal", text: "Remember, press ENTER to proceed with dialogue, Y to say YES, and N to say NO.", nextLine: 1 },
+    { type: "normal", text: "Remember, press ENTER to proceed with dialogue, W to say YES, and S to say NO.", nextLine: 1 },
 
   ];
   return (
